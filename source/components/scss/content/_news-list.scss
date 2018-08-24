@@ -1,0 +1,123 @@
+.news-list {
+	padding-top: 33px;
+	@media #{$mobile} {
+		padding-top: 3px;
+	}
+	&__title {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 65px;
+		@media #{$mobile} {
+			margin-bottom: 20px;
+			margin-top: 30px;
+		}
+		p {
+			font-size: 40px;
+			font-weight: 200;
+			@media #{$mobile} {
+				font-size: 20px;
+			}
+		}
+	}
+	&__block {
+		display: block;
+		margin-left: -8px;
+		margin-right: -8px;
+		@media #{$mobile} {
+			padding: 0 20px;
+			text-align: center;
+		}
+	}
+	&__box {
+		padding-left: 8px;
+		padding-right: 8px;
+		margin-bottom: 57px;
+		min-height: 290px;
+	}
+	&__data, &__views {
+		display: inline-block;
+		vertical-align: top;
+		margin-top: 15px;
+	}
+	&__data {
+		p {
+			color: #a9a9a9;
+			font-size: 10px;
+		}
+	}
+	&__views {
+		margin-left: 15px;
+		p {
+			color: #a9a9a9;
+			font-size: 10px;
+			padding-left: 20px;
+			position: relative;
+			&:before {
+				content: '';
+				position: absolute;
+				top: 0px;
+				bottom: 0px;
+				left: 0px;
+				margin: auto;
+				width: 14px;
+				height: 9px;
+				background: url(../images/view.png)no-repeat center;
+				background-size: contain;
+			}
+		}
+	}
+	&__img {
+		min-height: 209px;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+	}
+	&__text {
+		margin-top: 13px;
+		margin-left: 2px;
+		@media #{$mobile} {
+			margin-left: 0;
+			margin-bottom: 40px;
+		}
+		p {
+			font-size: 14px;
+			color: #000;
+			line-height: 24px;
+		}
+	}
+	&__loadmore {
+		display: block;
+		text-align: center;
+		margin-top: 17px;
+		margin-bottom: 138px;
+		padding-bottom: 27px;
+		position: relative;
+		&:before {
+			content: '';
+			position: absolute;
+			width: 0px;
+			height: 0px;
+			padding: 5px;
+			border-color: #c9c9c9;
+			border-style: solid;
+			border-width: 0px 2px 2px 0px;
+			bottom: 0px;
+			left: 0px;
+			right: 0px;
+			margin: auto;
+			@include addPrefix(transform, rotate(45deg));
+		}
+		span, p {
+			display: inline-block;
+			font-size: 14px;
+		}
+		p {
+			color: #9b9a99;
+		}
+		span {
+			margin: 0 3px;
+			color: #54c918;
+		}
+		
+	}
+}

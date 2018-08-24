@@ -1,0 +1,63 @@
+extends ../templates/base
+
+block variables
+	- var classBody = 'looks-page';
+	- var classWrapper = 'looks';
+
+block title
+	title Луки
+
+block main
+	section.breadcrumb
+		.container
+			ul.clearfix
+				li
+					a(href='./') Назад
+				li
+					a(href='./') Девочкам
+				li Луки
+			.breadcrumb__download
+				a(href="#") Скачать каталог
+					span PDF, 1.56MB
+	.looks
+		.container
+			.looks__title
+				p Лучшие сочетания
+				span На этой странице мы покажем вам лучшие сочетания наших моделей, чтоб ваши детки выглядели еще лучше.
+			ul.looks__block.row
+				mixin looksItem(img)
+					li.looks__item.col-sm-6
+						.looks__img(style="background-image: url(" + require('../../components/images/looks-img-' + img + '.jpg') + ")")
+						ul.looks__goods.row
+							block
+				mixin looksGoods(img, name, price)
+					li.col-sm-6
+						.looks__goods-item
+							.looks__goods-left
+								.looks__goods-img
+									img(src=require('../../components/images/pic-' + img + '.png'))
+								.looks__goods-info
+									.looks__goods-name
+										p #{name}
+									.looks__goods-price
+										p #{price}
+											span грн.
+							.looks__goods-right
+								ul
+									li.looks__goods-fav
+										a(href="#")
+									li.looks__goods-cart
+										a(href="#")
+				+looksItem('1')
+					+looksGoods('6', 'Рубашка в полоску', '219,00')
+					+looksGoods('7', 'джинсовые шорты', '106,00')
+				+looksItem('2')
+					+looksGoods('8', 'футболка с рукавами в рубчик', '219,00')
+					+looksGoods('9', 'брюки-кюлоты', '303,00')
+					+looksGoods('10', 'шляпка с лентой', '219,00')
+				+looksItem('3')
+					+looksGoods('11', 'футболка в полоску', '219,00')
+					+looksGoods('12', 'комбинезон', '106,00')
+				+looksItem('4')
+					+looksGoods('13', 'топ в полоску', '219,00')
+					+looksGoods('14', 'джинсовое платье', '106,00')

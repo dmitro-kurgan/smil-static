@@ -1,0 +1,72 @@
+extends ../templates/base
+
+block variables
+	- var classBody = 'account-page';
+	- var classWrapper = 'account';
+
+block title
+	title Личные данные
+
+block main
+	section.breadcrumb
+		.container
+			ul.clearfix
+				li
+					a(href='./') Назад
+				li Личные данные
+			.breadcrumb__download
+				a(href="#") Скачать каталог
+					span PDF, 1.56MB
+	.account.personal-data
+		.container
+			.row
+				.col-sm-3
+					.account__nav
+						h2.account__nav-title Личный кабинет
+						ul
+							mixin li(name, link)
+								li
+									a(href= link) #{name}
+							li(class="active")
+								a(href="account-socials-in.html") Личные данные
+							+li('Изменение пароля', 'change-pwd.html')
+							+li('Адреса доставки', 'delivery-address.html')
+							+li('История заказов', 'orders-history.html')
+							+li('Просмотренные товары', 'viewed-goods.html')
+							li
+								a(href="#", class="account__log-out") Выйти
+				.col-sm-9
+					.account__title
+						h1 Личные данные
+					.account__content
+						.account__personal-data
+							form.account__form
+								.form-group
+									label(for="name") Имя
+									input.form-control(type="text", name="name", id="name", required)
+								.form-group
+									label(for="surname") Фамилия
+									input.form-control(type="text", name="surname", id="surname", required)
+								.form-group
+									label(for="mail") Электронная почта
+									input.form-control(type="text", name="mail", id="mail", required)
+								.form-group
+									label(for="tel") Телефон
+									input.form-control(type="text", name="tel", id="tel", required)
+								.form-group
+									label(for="secondtel") Второй телефон
+									input.form-control(type="text", name="secondtel", id="secondtel", required)
+								.checkbox-block.form-group
+									.checkbox
+										label(for='checkbox1')
+											input(type='checkbox', name='checkbox1', id='checkbox1')
+											.checkbox-square
+											| Хочу получать персональные предложения и скидки по эл. почте
+								button(type="submit").btn Сохранить
+							.account__socials.account__socials--in
+								p Соцсети для входа в аккаунт
+								.account__socials-btns
+									.account__fb
+										a(href="#").btn.btn--fb Facebook
+									.account__google
+										a(href="#").btn.btn--google Google

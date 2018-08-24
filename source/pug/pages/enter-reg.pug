@@ -1,0 +1,59 @@
+extends ../templates/base
+
+block variables
+	- var classBody = 'enter-reg-page';
+	- var classWrapper = 'enter-reg-list';
+
+block title
+	title Вход и регистрация
+
+block main
+	section.breadcrumb
+		.container
+			ul.clearfix
+				li
+					a(href='./') Вернуться
+	.enter-reg
+		.container
+			.enter-reg__block.row
+				.enter-reg__left.col-sm-6
+					.enter-reg__title
+						p Вход в оптовую часть
+					form.enter-reg__form
+						.form-group
+							label(for='mail') Электронная почта
+							input.form-control(type='text', id='mail', name='mail')
+						.form-group
+							label(for='pwd') Пароль
+							input.form-control(type='password', id='pwd', name='pwd')
+						.checkbox
+							label(for='checkbox')
+								input(type='checkbox', name='checkbox', id='checkbox')
+								.radio-square
+								| Запомнить меня
+						button.btn(type='submit') Войти
+						.enter-reg__forgot-pwd
+							a(href="#") Забыли пароль?
+				.enter-reg__right.col-sm-6
+					.enter-reg__title
+						p Регистрация партнера
+					form.enter-reg__form
+						.form-group
+							label(for='lastname') Фамилия
+							input.form-control(type='text', id='lastname', name='lastname')
+						.form-group
+							label(for='name') Имя
+							input.form-control(type='text', id='name', name='name')
+						.form-group
+							label(for='midname') Отчество
+							input.form-control(type='text', id='midname', name='midname')
+						.form-group
+							label(for='tel') Телефон
+							input.form-control(type='tel', id='tel', name='tel')
+						.form-group
+							label(for='email') Электронная почта
+							input.form-control(type='text', id='email', name='email')
+						.form-group
+							label(for='city') Город
+							input.form-control(type='text', id='city', name='city')
+						button.btn(type='submit') Отправить заявку

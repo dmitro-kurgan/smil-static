@@ -1,0 +1,86 @@
+extends ../templates/base
+
+block variables
+	- var classBody = 'where-to-buy-page';
+	- var classWrapper = 'where-to-buy';
+
+block title
+	title Где купить
+
+block main
+	section.breadcrumb
+		.container
+			ul.clearfix
+				li
+					a(href='./') Назад
+				li Виды полотен
+			.breadcrumb__download
+				a(href="#") Скачать каталог
+					span PDF, 1.56MB
+	.where-to-buy
+		.container
+			ul.row.where-to-buy__block
+				li.col-md-3.where-to-buy__left
+					.where-to-buy__title
+						p Где купить?
+					form
+						.form-group
+							label(for="country") Страна
+							select.selectpicker.custom-picker(title='Украина', id="country", name="country", required)
+								option Украина
+								option Россия
+								option Казахстан
+								option Беларусь
+								option Молдова
+						.form-group
+							label(for="city") Город
+							select.selectpicker.custom-picker(title='Киев', id="city", name="city", required)
+								option Киев
+								option Харьков
+								option Одесса
+								option Днепр
+								option Львов
+						.form-group
+							label(for="district") Района
+							select.selectpicker.custom-picker(title='Дарницкий', id="district", name="district", required)
+								option Дарницкий
+								option Деснянский
+								option Днепровский
+								option Оболонский
+								option Печерский
+								option Подольский
+								option Святошинский
+								option Шевченковский
+								option Соломянский
+						button(type="submit").btn.where-to-buy__search Поиск магазина
+				li.col-md-9.where-to-buy__right
+					.where-to-buy__map#map
+			.where-to-buy__bottom
+				h5 Магазины
+				ul.row.where-to-buy__shops
+					li.col-sm-3
+						ul
+							mixin li(className, name, address)
+								li
+									a(href="#", class="where-to-buy__shop" + className)
+										p #{name}
+										span #{address}
+							+li(' active', '«Бебизона» магазин', 'Киев Ул. Анны Ахматовой, 14-А')
+							+li('', 'Магазин «Фунтик»', 'Киев Ул. Харьковское шоссе, 144б')
+							+li('', 'Магазин «Оденем деток»', 'Киев, http://odenemdetok.com.ua')
+							+li('', 'Магазин «Беби парк»', 'Киев ул.Днепровская наережная, 26')
+					li.col-sm-3
+						ul
+							+li('', 'Интернет-магазин «Лучик»', 'Киев, www.luchik.com.ua')
+							+li('', 'Магазин «Егорка»', 'Киев ул.Л.Руденко 6а')
+							+li('', 'Магазин «Егорка»', 'Магазин "Дитячі мрії" Киев, ул.О.Пчелки, 6')
+					li.col-sm-3
+						ul
+							+li('', 'Интернет-магазин «Умка»', 'Киев, ул.Сормовская, 15')
+							+li('', 'Магазин «Мама и я»', 'Киев, ул.Княжий затон, 11')
+							+li('', 'Магазин «Дитячі мрії»', 'Киев, ул.О.Пчелки, 6')
+					li.col-sm-3
+						ul
+							+li('', 'Интернет-магазин «Кииндер»', 'Киев, ул.Срибнокильская, 1а')
+							+li('', 'Магазин «Все для мами та немовля»', 'Киев, ул.Декабристов, 2а')
+							+li('', 'Магазин «Тигреня»', 'Киев, ул.Вербицкого, 30')

@@ -1,0 +1,198 @@
+extends ../templates/base
+
+block variables
+	- var classBody = 'wholesale-catalog-item-page';
+	- var classWrapper = 'wholesale-catalog-item';
+
+block title
+	title Каталог
+
+block main
+	section.breadcrumb
+		.container
+			ul.clearfix
+				li
+					a(href='./') Назад
+				li
+					a(href='./') Девочкам
+				li
+					a(href='./') Ползунки-штанишки
+				li Ползунки
+			.breadcrumb__download
+				a(href="#") Скачать каталог
+					span PDF, 1.56MB
+	.catalog-item
+		.container
+			.row.catalog-item__block
+				.col-md-5.col-lg-6.catalog-item__left-block
+					.slider.slick-catalog-item
+						mixin catalog(img)
+							div
+								.slick-catalog-item__item
+									a(href="#").catalog-item__to-fullscreen
+									//- img(class="zoomImg", src=require('../../components/images/catalog-item-' + img + '.png'), data-zoom-image=require('../../components/images/catalog-item-' + img + '.png'))
+									img(class="zoomImg", src=require('../../components/images/catalog-item-' + img + '.png'))
+						+catalog('1')
+						+catalog('1')
+						+catalog('1')
+						+catalog('1')
+						+catalog('1')
+						+catalog('1')
+				.col-md-7.col-lg-6.catalog-item__right-block
+					.catalog-item__top
+						.catalog-item__article
+							p Артикул:
+							span 
+						.catalog-item__name-price
+							.catalog-item__name
+								p Комплект крестильный для мальчика в коробке
+							.catalog-item__price
+								p.catalog-item__price--new 449,00
+									i грн.
+								p.catalog-item__price--old 549,00
+									i грн.
+					.catalog-item__choose-color
+						ul.clearfix
+							mixin li(img, color)
+								li
+									a(href="#")
+										img(src=require('../../components/images/catalog-item-'+ img + '.png'))
+										span(style="background-color: #" + color)
+							+li('1', 'f7b198')
+							+li('2', '2c2d3f')
+							+li('3', 'd5e3f3')
+					.catalog-item__form
+						form
+							p.catalog-item__form-title Список размеров
+							div
+								.catalog-item__size-list
+									
+									ul.clearfix
+										li
+											p 92
+										li
+											p 98
+										li
+											p 100
+										li
+											p 102
+										li
+											p 104
+										li
+											p 106
+										li
+											p 108
+										li
+											p 110
+										li
+											p 112
+										li
+											p 114
+								.catalog-item__buy
+									p.catalog-item__total-price 449,00
+										i грн.
+									button(type="submit").btn.btn--add-to-cart Купить
+						include ../modules/modals-table-sizes
+						include ../modules/modals-ask
+					.catalog-item__chars
+						.catalog-item__chars-left
+							h5 Характеристики
+							.catalog-item__chars-lists
+								ul
+									li
+										p Коллекция:
+										span Загадочный цветок
+									li
+										p Вид продукции:
+										span Майка футболка
+									li
+										p Для кого:
+										span Девочка
+									li
+										p Возрастная группа:
+										span от 6 до 18 месяцев
+									li
+										p Вид полотна:
+										span Интерлок-жаккард
+						.catalog-item__chars-right
+							ul
+								li.catalog-item__list-size
+									a(href="#", id="tableSizes")
+										img(src=require('../../components/images/table-size.png'))
+										p Таблица размеров
+								li.catalog-item__ask
+									a(href="#", id="ask")
+										img(src=require('../../components/images/ask.png'))
+										p Задать вопрос
+			.row
+				.col-md-5.col-lg-6
+					.catalog-item__banner
+						h4 Дополни образ
+						.catalog-item__banner-inner(style="background-image:url(" + require('../../components/images/img-15.jpg') + ")")
+							.catalog-item__banner-box
+								ul.catalog-item__banner-list
+									mixin bannerList(img, name, price)
+										li.catalog-item__banner-item
+											.catalog-item__banner-left
+												.catalog-item__banner-img
+													img(src=require('../../components/images/pic-' + img + '.png'))
+												.catalog-item__banner-info
+													.catalog-item__banner-name
+														p #{name}
+													.catalog-item__banner-price
+														p #{price}
+															span грн.
+											.catalog-item__banner-right
+												ul
+													li.catalog-item__banner-fav
+														a(href="#").like
+													li.catalog-item__banner-cart
+														a(href="#")
+									+bannerList('21', 'топ с вышивкой', '119,00')
+			section.popular
+				.popular__block
+					mixin sliderPopularBox(img, name, price)
+						div
+							.catalog__item
+								.catalog__img
+									img(src=require('../../components/images/item-' + img + '.png'))
+								.catalog__info
+									.catalog__info-left
+										.catalog__name
+											p #{name}
+										.catalog__price(class= className)
+											p #{price}
+												span грн.
+									.catalog__info-right
+										ul.clearfix
+											li.catalog__fav
+												a(href="#").like
+											li.catalog__cart
+												a(href="#")
+					mixin sliderPopular()
+						- for (var i = 0; i < 2; i++) {
+							+sliderPopularBox('12', 'ползунки-штанишки', '149,00', '')
+							+sliderPopularBox('5', 'ползунки-штанишки', '249,00', '')
+							+sliderPopularBox('6', 'ползунки-штанишки', '349,00', '')
+							+sliderPopularBox('7', 'ползунки-штанишки', '299,00', '')
+						- };
+					ul.nav.nav-tabs
+						li.active
+							a(data-toggle='tab', href='#popular', title='Популярные товары') Популярные товары
+						li
+							a(data-toggle='tab', href='#news', title='Новинки') Новинки
+						li
+							a(data-toggle='tab', href='#viewed', title='Вы смотрели') Вы смотрели
+					.tab-content.clearfix
+						#popular.tab-pane.fade.in.active
+							.slider.slick-popular
+								+sliderPopular()
+						#news.tab-pane.fade
+							.slider.slick-news
+								+sliderPopular()
+						#viewed.tab-pane.fade
+							.slider.slick-viewed
+								+sliderPopular()
+			.catalog-item__fullscreen#fullscreenBlock
+				a(href="#").catalog-item__fullscreen-close#fullscreenClose
+				img(src="#")

@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Каталог</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=no">
+  <link href="./css/style.css" rel="stylesheet"></head>
+  <body class="catalog-item-page">
+    <div class="loader"></div>
+    <div class="wrapper wrapper--catalog-item">
+      <header>
+        <div class="header">
+          <div class="header__top" style="background-image: url(images/top-bar.jpg)">
+            <p>Распродажа прошлых коллекций! Скидка до -50%</p>
+          </div>
+          <div class="header__main">
+            <div class="container">
+              <div class="header__logo">
+                <!-- a(href="./", style='background-image: url(' + require('../../components/images/logo.png') + ')')--><a href="./"><span class="header__logo-img"></span></a><span class="circle circle--small"></span><span class="circle circle--mid"></span><span class="circle circle--large"></span>
+              </div>
+              <div class="header__content">
+                <div class="header__content-top">
+                  <div class="header__hamburger" id="hamburger"><span class="top"></span><span class="mid"></span><span class="bottom"></span></div>
+                  <ul class="header__nav clearfix">
+                    <li><a href="where-to-buy.html">где купить?</a></li>
+                    <li><a href="about.html">о бренде</a></li>
+                    <li><a href="#">партнерам</a></li>
+                    <li><a href="delivery-payment.html">доставка и оплата</a></li>
+                    <li><a href="contacts.html">контакты</a></li>
+                  </ul>
+                  <ul class="header__tel">
+                    <li><a href="tel:+380666387267">+38 (066) 638-72-67</a>
+                      <ul class="header__tel-sub">
+                        <li><a href="tel:+380666387267">+38 (066) 638-72-67</a></li>
+                        <li><a href="tel:+380666387268">+38 (066) 638-72-68</a></li>
+                        <li><a href="tel:+380666387269">+38 (066) 638-72-69</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <ul class="header__right">
+                    <li class="header__search--mob"><a href="#" id="searchBtn"></a></li>
+                    <li class="header__login login" id="headerLogin"><a href="login-reg.html">
+                        <div class="description">Вход и регистрация</div></a></li>
+                    <li class="header__fav" id="headerFav"><a href="wishlist.html">
+                        <div class="description">Список желаний</div><span class="header__quantity">1</span></a></li>
+                    <li class="header__cart" id="headerCart"><a href="#">
+                        <div class="description">Корзина</div><span class="header__quantity">1</span></a>
+                      <div class="header__cart-dropdown" id="headerCartDropdown">
+                        <ul class="header__cart-dropdown-list">
+                                                    <li class="header__cart-dropdown-box">
+                                                      <div class="header__cart-dropdown-img"><img src="images/cart-item-1.png"></div>
+                                                      <div class="header__cart-dropdown-info">
+                                                        <div class="header__cart-dropdown-name">
+                                                          <p>Ползунки-штанишки</p>
+                                                        </div>
+                                                        <div class="header__cart-dropdown-size">
+                                                          <p>Размер: <span>18</span></p>
+                                                        </div>
+                                                        <div class="header__cart-dropdown-quantity"><span class="plus">+</span>
+                                                          <input class="input" value="1" type=""><span class="minus">-</span>
+                                                        </div>
+                                                      </div>
+                                                      <div class="header__cart-dropdown-price">
+                                                        <p class="header__cart-dropdown-cost">1140,00<span>грн.</span></p>
+                                                      </div><a class="header__cart-dropdown-del-item" href="#"></a>
+                                                    </li>
+                                                    <li class="header__cart-dropdown-box">
+                                                      <div class="header__cart-dropdown-img"><img src="images/cart-item-2.png"></div>
+                                                      <div class="header__cart-dropdown-info">
+                                                        <div class="header__cart-dropdown-name">
+                                                          <p>Комбинезон</p>
+                                                        </div>
+                                                        <div class="header__cart-dropdown-size">
+                                                          <p>Размер: <span>s</span></p>
+                                                        </div>
+                                                        <div class="header__cart-dropdown-quantity"><span class="plus">+</span>
+                                                          <input class="input" value="1" type=""><span class="minus">-</span>
+                                                        </div>
+                                                      </div>
+                                                      <div class="header__cart-dropdown-price">
+                                                        <p class="header__cart-dropdown-cost">649,00<span>грн.</span></p>
+                                                      </div><a class="header__cart-dropdown-del-item" href="#"></a>
+                                                    </li>
+                                                    <li class="header__cart-dropdown-box">
+                                                      <div class="header__cart-dropdown-img"><img src="images/cart-item-3.png"></div>
+                                                      <div class="header__cart-dropdown-info">
+                                                        <div class="header__cart-dropdown-name">
+                                                          <p>Платье</p>
+                                                        </div>
+                                                        <div class="header__cart-dropdown-size">
+                                                          <p>Размер: <span>14</span></p>
+                                                        </div>
+                                                        <div class="header__cart-dropdown-quantity"><span class="plus">+</span>
+                                                          <input class="input" value="1" type=""><span class="minus">-</span>
+                                                        </div>
+                                                      </div>
+                                                      <div class="header__cart-dropdown-price">
+                                                        <p class="header__cart-dropdown-cost">5049,00<span>грн.</span></p>
+                                                      </div><a class="header__cart-dropdown-del-item" href="#"></a>
+                                                    </li>
+                        </ul>
+                        <div class="header__cart-dropdown-total">
+                          <p>Общая сумма</p><span>6838,00 грн.</span>
+                        </div><a class="btn header__cart-dropdown-order" href="#">Оформить заказ</a>
+                        <div class="header__cart-dropdown-free">
+                          <p>Бесплатная доставка при заказе от 1000 грн.</p>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="header__content-bottom">
+                  <ul class="header__categories clearfix">
+                          <li><a href="#">Малышам</a>
+                          </li>
+                          <li><a href="#">Девочкам</a>
+                            <div class="header__dropdown">
+                              <div class="container">
+                                <div class="header__dropdown-content">
+                                  <div class="header__dropdown-left">
+                                    <ul class="nav nav-tabs">
+                                      <li class="active"><a data-toggle="tab" href="#tab1">Новая коллекция</a></li>
+                                      <li><a data-toggle="tab" href="#tab2">Look</a></li>
+                                      <li><a data-toggle="tab" href="#tab3">Распродажа</a></li>
+                                    </ul>
+                                  </div>
+                                  <div class="header__dropdown-center">
+                                    <div class="tab-content clearfix">
+                                      <div class="tab-pane fade in active" id="tab1">
+                                              <ul>
+                                                <li><a href="catalog.html">Аксессуары</a></li>
+                                                <li><a href="catalog.html">Блузы</a></li>
+                                                <li><a href="catalog.html">Боди</a></li>
+                                                <li><a href="catalog.html">Бриджи, шорты</a></li>
+                                                <li><a href="catalog.html">Брюки, штаны</a></li>
+                                                <li><a href="catalog.html">Головные уборы</a></li>
+                                                <li><a href="catalog.html">Гольфы</a></li>
+                                              </ul>
+                                              <ul>
+                                                <li><a href="catalog.html">Горловины</a></li>
+                                                <li><a href="catalog.html">Жакеты, кофты, куртки, бомберы</a></li>
+                                                <li><a href="catalog.html">Жилеты</a></li>
+                                                <li><a href="catalog.html">Комбинезоны</a></li>
+                                                <li><a href="catalog.html">Комплекты</a></li>
+                                                <li><a href="catalog.html">Костюмы</a></li>
+                                                <li><a href="catalog.html">Леггинсы, лосины</a></li>
+                                              </ul>
+                                              <ul>
+                                                <li><a href="catalog.html">Майки, футболки</a></li>
+                                                <li><a href="catalog.html">Нижнее белье</a></li>
+                                                <li><a href="catalog.html">Пижамы</a></li>
+                                                <li><a href="catalog.html">Платья, сарафаны, туники, юбки</a></li>
+                                                <li><a href="catalog.html">Свитшоты</a></li>
+                                                <li><a href="catalog.html">2-6 лет</a></li>
+                                                <li><a href="catalog.html">7-16 лет</a></li>
+                                              </ul>
+                                      </div>
+                                      <div class="tab-pane fade" id="tab2">
+                                              <ul>
+                                                <li><a href="catalog.html">Аксессуары</a></li>
+                                                <li><a href="catalog.html">Блузы</a></li>
+                                                <li><a href="catalog.html">Боди</a></li>
+                                                <li><a href="catalog.html">Бриджи, шорты</a></li>
+                                                <li><a href="catalog.html">Брюки, штаны</a></li>
+                                                <li><a href="catalog.html">Головные уборы</a></li>
+                                                <li><a href="catalog.html">Гольфы</a></li>
+                                              </ul>
+                                              <ul>
+                                                <li><a href="catalog.html">Горловины</a></li>
+                                                <li><a href="catalog.html">Жакеты, кофты, куртки, бомберы</a></li>
+                                                <li><a href="catalog.html">Жилеты</a></li>
+                                                <li><a href="catalog.html">Комбинезоны</a></li>
+                                                <li><a href="catalog.html">Комплекты</a></li>
+                                                <li><a href="catalog.html">Костюмы</a></li>
+                                                <li><a href="catalog.html">Леггинсы, лосины</a></li>
+                                              </ul>
+                                              <ul>
+                                                <li><a href="catalog.html">Майки, футболки</a></li>
+                                                <li><a href="catalog.html">Нижнее белье</a></li>
+                                                <li><a href="catalog.html">Пижамы</a></li>
+                                                <li><a href="catalog.html">Платья, сарафаны, туники, юбки</a></li>
+                                                <li><a href="catalog.html">Свитшоты</a></li>
+                                                <li><a href="catalog.html">2-6 лет</a></li>
+                                                <li><a href="catalog.html">7-16 лет</a></li>
+                                              </ul>
+                                      </div>
+                                      <div class="tab-pane fade" id="tab3">
+                                              <ul>
+                                                <li><a href="catalog.html">Аксессуары</a></li>
+                                                <li><a href="catalog.html">Блузы</a></li>
+                                                <li><a href="catalog.html">Боди</a></li>
+                                                <li><a href="catalog.html">Бриджи, шорты</a></li>
+                                                <li><a href="catalog.html">Брюки, штаны</a></li>
+                                                <li><a href="catalog.html">Головные уборы</a></li>
+                                                <li><a href="catalog.html">Гольфы</a></li>
+                                              </ul>
+                                              <ul>
+                                                <li><a href="catalog.html">Горловины</a></li>
+                                                <li><a href="catalog.html">Жакеты, кофты, куртки, бомберы</a></li>
+                                                <li><a href="catalog.html">Жилеты</a></li>
+                                                <li><a href="catalog.html">Комбинезоны</a></li>
+                                                <li><a href="catalog.html">Комплекты</a></li>
+                                                <li><a href="catalog.html">Костюмы</a></li>
+                                                <li><a href="catalog.html">Леггинсы, лосины</a></li>
+                                              </ul>
+                                              <ul>
+                                                <li><a href="catalog.html">Майки, футболки</a></li>
+                                                <li><a href="catalog.html">Нижнее белье</a></li>
+                                                <li><a href="catalog.html">Пижамы</a></li>
+                                                <li><a href="catalog.html">Платья, сарафаны, туники, юбки</a></li>
+                                                <li><a href="catalog.html">Свитшоты</a></li>
+                                                <li><a href="catalog.html">2-6 лет</a></li>
+                                                <li><a href="catalog.html">7-16 лет</a></li>
+                                              </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="header__dropdown-right">
+                                    <div class="header__dropdown-banner" style="background-image: url(images/banner-1.jpg)">
+                                      <h4>«НАРЯДНАЯ ОДЕЖДА»</h4><span>новая коллекция</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li><a href="#">Мальчикам</a>
+                          </li>
+                          <li><a href="#">Школьная форма</a>
+                          </li>
+                          <li><a href="#">Распродажа</a>
+                          </li>
+                  </ul>
+                  <form class="header__search" id="searchInput">
+                    <div class="form-group">
+                      <input class="form-control" type="search" placeholder="Поиск">
+                      <button type="submit"></button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="content">
+        <section class="breadcrumb">
+          <div class="container">
+            <ul class="clearfix">
+              <li><a href="./">Назад</a></li>
+              <li><a href="./">Девочкам</a></li>
+              <li><a href="./">Ползунки-штанишки</a></li>
+              <li>Ползунки</li>
+            </ul>
+            <div class="breadcrumb__download"><a href="#">Скачать каталог<span>PDF, 1.56MB</span></a></div>
+          </div>
+        </section>
+        <div class="catalog-item">
+          <div class="container">
+            <div class="row catalog-item__block">
+              <div class="col-md-5 col-lg-6 catalog-item__left-block">
+                <div class="slider slick-catalog-item">
+                                    <div>
+                                      <div class="slick-catalog-item__item"><a class="catalog-item__to-fullscreen" href="#"></a><img class="zoomImg" src="images/catalog-item-1.png"></div>
+                                    </div>
+                                    <div>
+                                      <div class="slick-catalog-item__item"><a class="catalog-item__to-fullscreen" href="#"></a><img class="zoomImg" src="images/catalog-item-1.png"></div>
+                                    </div>
+                                    <div>
+                                      <div class="slick-catalog-item__item"><a class="catalog-item__to-fullscreen" href="#"></a><img class="zoomImg" src="images/catalog-item-1.png"></div>
+                                    </div>
+                                    <div>
+                                      <div class="slick-catalog-item__item"><a class="catalog-item__to-fullscreen" href="#"></a><img class="zoomImg" src="images/catalog-item-1.png"></div>
+                                    </div>
+                                    <div>
+                                      <div class="slick-catalog-item__item"><a class="catalog-item__to-fullscreen" href="#"></a><img class="zoomImg" src="images/catalog-item-1.png"></div>
+                                    </div>
+                                    <div>
+                                      <div class="slick-catalog-item__item"><a class="catalog-item__to-fullscreen" href="#"></a><img class="zoomImg" src="images/catalog-item-1.png"></div>
+                                    </div>
+                </div>
+              </div>
+              <div class="col-md-7 col-lg-6 catalog-item__right-block">
+                <div class="catalog-item__top">
+                  <div class="catalog-item__article">
+                    <p>Артикул:</p><span> </span>
+                  </div>
+                  <div class="catalog-item__name-price">
+                    <div class="catalog-item__name">
+                      <p>Комплект крестильный для мальчика в коробке</p>
+                    </div>
+                    <div class="catalog-item__price">
+                      <p class="catalog-item__price--new">449,00<i>грн.</i></p>
+                      <p class="catalog-item__price--old">549,00<i>грн.</i></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="catalog-item__choose-color">
+                  <ul class="clearfix">
+                                        <li><a href="#"><img src="images/catalog-item-1.png"><span style="background-color: #f7b198"></span></a></li>
+                                        <li><a href="#"><img src="images/catalog-item-2.png"><span style="background-color: #2c2d3f"></span></a></li>
+                                        <li><a href="#"><img src="images/catalog-item-3.png"><span style="background-color: #d5e3f3"></span></a></li>
+                  </ul>
+                </div>
+                <div class="catalog-item__form">
+                  <form>
+                    <div class="form-group">
+                      <label for="">Размер</label>
+                      <div class="dropdown-input"><a href="#" id="dropdownInput"><span class="dropdown-input__num">138-140</span></a>
+                        <div class="sub-menu">
+                          <ul>
+                            <li><a class="has-limit" href="#"><span class="dropdown-input__num">132-134</span><i>Осталось 2шт.</i></a></li>
+                            <li><a href="#"><span class="dropdown-input__num">134-138</span></a></li>
+                            <li><a href="#"><span class="dropdown-input__num">138-140</span></a></li>
+                            <li><a class="has-not" href="#"><span class="dropdown-input__num">140-142</span><i>Закончилось</i></a></li>
+                            <li><a class="has-not" href="#"><span class="dropdown-input__num">142-144</span><i>Закончилось</i></a></li>
+                            <li><a class="has-not" href="#"><span class="dropdown-input__num">144-146</span><i>Закончилось</i></a></li>
+                            <li><a href="#"><span class="dropdown-input__num">146-148</span></a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="amount">Количество</label>
+                      <select class="selectpicker custom-picker select-transporter" title="1" id="amount" required>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                      </select>
+                    </div>
+                    <div class="catalog-item__buy">
+                      <p class="catalog-item__total-price">449,00<i>грн.</i></p>
+                      <button class="btn btn--add-to-cart" type="submit">В корзину</button>
+                    </div><a class="catalog-item__reserved" href="#"><span>
+                        <div class="catalog-item__img"></div><i>Отложено</i></span></a>
+                  </form>
+                  <div class="pop-up pop-up--table-sizes" id="popupTableSizes">
+                    <div class="pop-up__close" id="closePopupTableSizes"></div>
+                    <div class="pop-up__block">
+                      <div class="pop-up--table-sizes__content">
+                                                <h5>Новорожденная группа</h5>
+                                                <table class="table">
+                                                  <thead>
+                                                    <tr>
+                                                      <td>Возраст</td>
+                                                      <td>Рост, см</td>
+                                                      <td>Обхват груди, см</td>
+                                                      <td>Обхват головы</td>
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                                            <tr>
+                                                                              <td>0-1 мес.</td>
+                                                                              <td>50</td>
+                                                                              <td>40</td>
+                                                                              <td>35</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                              <td>1-2 мес.</td>
+                                                                              <td>56</td>
+                                                                              <td>40</td>
+                                                                              <td>37</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                              <td>3 мес.</td>
+                                                                              <td>62</td>
+                                                                              <td>40</td>
+                                                                              <td>39</td>
+                                                                            </tr>
+                                                  </tbody>
+                                                </table>
+                      </div>
+                    </div>
+                  </div>
+<div class="pop-up pop-up--ask" id="popupAsk">
+  <div class="pop-up__close" id="closePopupAsk"></div>
+  <div class="pop-up__block">
+    <div class="pop-up-title pop-up--ask__title">
+      <h5>Задать вопрос</h5>
+    </div>
+    <div class="pop-up--ask__form">
+      <form class="row">
+        <div class="form-group col-sm-6">
+          <label for="ask-name">Ваше имя</label>
+          <input class="form-control" type="text" name="ask-name" id="ask-name" required>
+        </div>
+        <div class="form-group col-sm-6">
+          <label for="ask-theme">Тема вопроса</label>
+          <select class="selectpicker custom-picker" title="Выберите тему" id="ask-theme" required>
+            <option>Тема 1</option>
+            <option>Тема 2</option>
+            <option>Тема 3</option>
+          </select>
+        </div>
+        <div class="form-group col-sm-12">
+          <label for="ask-question">Задайте вопрос</label>
+          <textarea class="form-control" id="ask-question"></textarea>
+        </div>
+        <button class="btn btn--send" type="submit">Отправить</button>
+      </form>
+    </div>
+  </div>
+</div>
+                </div>
+                <div class="catalog-item__chars">
+                  <div class="catalog-item__chars-left">
+                    <h5>Характеристики</h5>
+                    <div class="catalog-item__chars-lists">
+                      <ul>
+                        <li>
+                          <p>Коллекция:</p><span>Загадочный цветок</span>
+                        </li>
+                        <li>
+                          <p>Вид продукции:</p><span>Майка футболка</span>
+                        </li>
+                        <li>
+                          <p>Для кого:</p><span>Девочка</span>
+                        </li>
+                        <li>
+                          <p>Возрастная группа:</p><span>от 6 до 18 месяцев</span>
+                        </li>
+                        <li>
+                          <p>Вид полотна:</p><span>Интерлок-жаккард</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="catalog-item__chars-right">
+                    <ul class="clearfix">
+                      <li class="catalog-item__list-size"><a href="#" id="tableSizes"><img src="images/table-size.png">
+                          <p>Таблица размеров</p></a></li>
+                      <li class="catalog-item__ask"><a href="#" id="ask"><img src="images/ask.png">
+                          <p>Задать вопрос</p></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-5 col-lg-6">
+                <div class="catalog-item__banner">
+                  <h4>Дополни образ</h4>
+                  <div class="catalog-item__banner-inner" style="background-image:url(images/img-15.jpg)">
+                    <div class="catalog-item__banner-box">
+                      <h6 class="catalog-item__banner-title">На ребенке надето<span></span></h6>
+                      <ul class="catalog-item__banner-list">
+                                                <li class="catalog-item__banner-item">
+                                                  <div class="catalog-item__banner-left">
+                                                    <div class="catalog-item__banner-img"><img src="images/pic-21.png"></div>
+                                                    <div class="catalog-item__banner-info">
+                                                      <div class="catalog-item__banner-name">
+                                                        <p>топ с вышивкой</p>
+                                                      </div>
+                                                      <div class="catalog-item__banner-price">
+                                                        <p>119,00<span>грн.</span></p>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                  <div class="catalog-item__banner-right">
+                                                    <ul>
+                                                      <li class="catalog-item__banner-fav"><a class="like" href="#"></a></li>
+                                                      <li class="catalog-item__banner-cart"><a href="#"></a></li>
+                                                    </ul>
+                                                  </div>
+                                                </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6"></div>
+              </div>
+            </div>
+            <section class="popular">
+              <div class="popular__block">
+                <ul class="nav nav-tabs">
+                  <li class="active"><a data-toggle="tab" href="#popular" title="Популярные товары">Популярные товары</a></li>
+                  <li><a data-toggle="tab" href="#news" title="Новинки">Новинки</a></li>
+                  <li><a data-toggle="tab" href="#viewed" title="Вы смотрели">Вы смотрели</a></li>
+                </ul>
+                <div class="tab-content clearfix">
+                  <div class="tab-pane fade in active" id="popular">
+                    <div class="slider slick-popular">
+                                                      <div>
+                                                        <div class="catalog__item">
+                                                          <div class="catalog__img"><img src="images/item-12.png"></div>
+                                                          <div class="catalog__info">
+                                                            <div class="catalog__info-left">
+                                                              <div class="catalog__name">
+                                                                <p>ползунки-штанишки</p>
+                                                              </div>
+                                                              <div class="catalog__price">
+                                                                <p>149,00<span>грн.</span></p>
+                                                              </div>
+                                                            </div>
+                                                            <div class="catalog__info-right">
+                                                              <ul class="clearfix">
+                                                                <li class="catalog__fav"><a class="like" href="#"></a></li>
+                                                                <li class="catalog__cart"><a href="#"></a></li>
+                                                              </ul>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                      <div>
+                                                        <div class="catalog__item">
+                                                          <div class="catalog__img"><img src="images/item-5.png"></div>
+                                                          <div class="catalog__info">
+                                                            <div class="catalog__info-left">
+                                                              <div class="catalog__name">
+                                                                <p>ползунки-штанишки</p>
+                                                              </div>
+                                                              <div class="catalog__price">
+                                                                <p>249,00<span>грн.</span></p>
+                                                              </div>
+                                                            </div>
+                                                            <div class="catalog__info-right">
+                                                              <ul class="clearfix">
+                                                                <li class="catalog__fav"><a class="like" href="#"></a></li>
+                                                                <li class="catalog__cart"><a href="#"></a></li>
+                                                              </ul>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                      <div>
+                                                        <div class="catalog__item">
+                                                          <div class="catalog__img"><img src="images/item-6.png"></div>
+                                                          <div class="catalog__info">
+                                                            <div class="catalog__info-left">
+                                                              <div class="catalog__name">
+                                                                <p>ползунки-штанишки</p>
+                                                              </div>
+                                                              <div class="catalog__price">
+                                                                <p>349,00<span>грн.</span></p>
+                                                              </div>
+                                                            </div>
+                                                            <div class="catalog__info-right">
+                                                              <ul class="clearfix">
+                                                                <li class="catalog__fav"><a class="like" href="#"></a></li>
+                                                                <li class="catalog__cart"><a href="#"></a></li>
+                                                              </ul>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                      <div>
+                                                        <div class="catalog__item">
+                                                          <div class="catalog__img"><img src="images/item-7.png"></div>
+                                                          <div class="catalog__info">
+                                                            <div class="catalog__info-left">
+                                                              <div class="catalog__name">
+                                                                <p>ползунки-штанишки</p>
+                                                              </div>
+                                                              <div class="catalog__price">
+                                                                <p>299,00<span>грн.</span></p>
+                                                              </div>
+                                                            </div>
+                                                            <div class="catalog__info-right">
+                                                              <ul class="clearfix">
+                                                                <li class="catalog__fav"><a class="like" href="#"></a></li>
+                                                                <li class="catalog__cart"><a href="#"></a></li>
+                                                              </ul>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                      <div>
+                                                        <div class="catalog__item">
+                                                          <div class="catalog__img"><img src="images/item-12.png"></div>
+                                                          <div class="catalog__info">
+                                                            <div class="catalog__info-left">
+                                                              <div class="catalog__name">
+                                                                <p>ползунки-штанишки</p>
+                                                              </div>
+                                                              <div class="catalog__price">
+                                                                <p>149,00<span>грн.</span></p>
+                                                              </div>
+                                                            </div>
+                                                            <div class="catalog__info-right">
+                                                              <ul class="clearfix">
+                                                                <li class="catalog__fav"><a class="like" href="#"></a></li>
+                                                                <li class="catalog__cart"><a href="#"></a></li>
+                                                              </ul>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                      <div>
+                                                        <div class="catalog__item">
+                                                          <div class="catalog__img"><img src="images/item-5.png"></div>
+                                                          <div class="catalog__info">
+                                                            <div class="catalog__info-left">
+                                                              <div class="catalog__name">
+                                                                <p>ползунки-штанишки</p>
+                                                              </div>
+                                                              <div class="catalog__price">
+                                                                <p>249,00<span>грн.</span></p>
+                                                              </div>
+                                                            </div>
+                                                            <div class="catalog__info-right">
+                                                              <ul class="clearfix">
+                                                                <li class="catalog__fav"><a class="like" href="#"></a></li>
+                                                                <li class="catalog__cart"><a href="#"></a></li>
+                                                              </ul>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                      <div>
+                                                        <div class="catalog__item">
+                                                          <div class="catalog__img"><img src="images/item-6.png"></div>
+                                                          <div class="catalog__info">
+                                                            <div class="catalog__info-left">
+                                                              <div class="catalog__name">
+                                                                <p>ползунки-штанишки</p>
+                                                              </div>
+                                                              <div class="catalog__price">
+                                                                <p>349,00<span>грн.</span></p>
+                                                              </div>
+                                                            </div>
+                                                            <div class="catalog__info-right">
+                                                              <ul class="clearfix">
+                                                                <li class="catalog__fav"><a class="like" href="#"></a></li>
+                                                                <li class="catalog__cart"><a href="#"></a></li>
+                                                              </ul>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                      <div>
+                                                        <div class="catalog__item">
+                                                          <div class="catalog__img"><img src="images/item-7.png"></div>
+                                                          <div class="catalog__info">
+                                                            <div class="catalog__info-left">
+                                                              <div class="catalog__name">
+                                                                <p>ползунки-штанишки</p>
+                                                              </div>
+                                                              <div class="catalog__price">
+                                                                <p>299,00<span>грн.</span></p>
+                                                              </div>
+                                                            </div>
+                                                            <div class="catalog__info-right">
+                                                              <ul class="clearfix">
+                                                                <li class="catalog__fav"><a class="like" href="#"></a></li>
+                                                                <li class="catalog__cart"><a href="#"></a></li>
+                                                              </ul>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="news">
+                    <div class="slider slick-news">
+                                                      <div>
+                                                        <div class="catalog__item">
+                                                          <div class="catalog__img"><img src="images/item-12.png"></div>
+                                                          <div class="catalog__info">
+                                                            <div class="catalog__info-left">
+                                                              <div class="catalog__name">
+                                                                <p>ползунки-штанишки</p>
+                                                              </div>
+                                                              <div class="catalog__price">
+                                                                <p>149,00<span>грн.</span></p>
+                                                              </div>
+                                                            </div>
+                                                            <div class="catalog__info-right">
+                                                              <ul class="clearfix">
+                                                                <li class="catalog__fav"><a class="like" href="#"></a></li>
+                                                                <li class="catalog__cart"><a href="#"></a></li>
+                                                              </ul>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                      <div>
+                                                        <div class="catalog__item">
+                                                          <div class="catalog__img"><img src="images/item-5.png"></div>
+                                                          <div class="catalog__info">
+                                                            <div class="catalog__info-left">
+                                                              <div class="catalog__name">
+                                                                <p>ползунки-штанишки</p>
+                                                              </div>
+                                                              <div class="catalog__price">
+                                                                <p>249,00<span>грн.</span></p>
+                                                              </div>
+                                                            </div>
+                                                            <div class="catalog__info-right">
+                                                              <ul class="clearfix">
+                                                                <li class="catalog__fav"><a class="like" href="#"></a></li>
+                                                                <li class="catalog__cart"><a href="#"></a></li>
+                                                              </ul>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                      <div>
+                                                        <div class="catalog__item">
+                                                          <div class="catalog__img"><img src="images/item-6.png"></div>
+                                                          <div class="catalog__info">
+                                                            <div class="catalog__info-left">
+                                                              <div class="catalog__name">
+                                                                <p>ползунки-штанишки</p>
+                                                              </div>
+                                                              <div class="catalog__price">
+                                                                <p>349,00<span>грн.</span></p>
+                                                              </div>
+                                                            </div>
+                                                            <div class="catalog__info-right">
+                                                              <ul class="clearfix">
+                                                                <li class="catalog__fav"><a class="like" href="#"></a></li>
+                                                                <li class="catalog__cart"><a href="#"></a></li>
+                                                              </ul>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                      <div>
+                                                        <div class="catalog__item">
+                                                          <div class="catalog__img"><img src="images/item-7.png"></div>
+                                                          <div class="catalog__info">
+                                                            <div class="catalog__info-left">
+                                                              <div class="catalog__name">
+                                                                <p>ползунки-штанишки</p>
+                                                              </div>
+                                                              <div class="catalog__price">
+                                                                <p>299,00<span>грн.</span></p>
+                                                              </div>
+                                                            </div>
+                                                            <div class="catalog__info-right">
+                                                              <ul class="clearfix">
+                                                                <li class="catalog__fav"><a class="like" href="#"></a></li>
+                                                                <li class="catalog__cart"><a href="#"></a></li>
+                                                              </ul>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                      <div>
+                                                        <div class="catalog__item">
+                                                          <div class="catalog__img"><img src="images/item-12.png"></div>
+                                                          <div class="catalog__info">
+                                                            <div class="catalog__info-left">
+                                                              <div class="catalog__name">
+                                                                <p>ползунки-штанишки</p>
+                                                              </div>
+                                                              <div class="catalog__price">
+                                                                <p>149,00<span>грн.</span></p>
+                                                              </div>
+                                                            </div>
+                                                            <div class="catalog__info-right">
+                                                              <ul class="clearfix">
+                                                                <li class="catalog__fav"><a class="like" href="#"></a></li>
+                                                                <li class="catalog__cart"><a href="#"></a></li>
+                                                              </ul>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                      <div>
+                                                        <div class="catalog__item">
+                                                          <div class="catalog__img"><img src="images/item-5.png"></div>
+                                                          <div class="catalog__info">
+                                                            <div class="catalog__info-left">
+                                                              <div class="catalog__name">
+                                                                <p>ползунки-штанишки</p>
+                                                              </div>
+                                                              <div class="catalog__price">
+                                                                <p>249,00<span>грн.</span></p>
+                                                              </div>
+                                                            </div>
+                                                            <div class="catalog__info-right">
+                                                              <ul class="clearfix">
+                                                                <li class="catalog__fav"><a class="like" href="#"></a></li>
+                                                                <li class="catalog__cart"><a href="#"></a></li>
+                                                              </ul>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                      <div>
+                                                        <div class="catalog__item">
+                                                          <div class="catalog__img"><img src="images/item-6.png"></div>
+                                                          <div class="catalog__info">
+                                                            <div class="catalog__info-left">
+                                                              <div class="catalog__name">
+                                                                <p>ползунки-штанишки</p>
+                                                              </div>
+                                                              <div class="catalog__price">
+                                                                <p>349,00<span>грн.</span></p>
+                                                              </div>
+                                                            </div>
+                                                            <div class="catalog__info-right">
+                                                              <ul class="clearfix">
+                                                                <li class="catalog__fav"><a class="like" href="#"></a></li>
+                                                                <li class="catalog__cart"><a href="#"></a></li>
+                                                              </ul>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                      <div>
+                                                        <div class="catalog__item">
+                                                          <div class="catalog__img"><img src="images/item-7.png"></div>
+                                                          <div class="catalog__info">
+                                                            <div class="catalog__info-left">
+                                                              <div class="catalog__name">
+                                                                <p>ползунки-штанишки</p>
+                                                              </div>
+                                                              <div class="catalog__price">
+                                                                <p>299,00<span>грн.</span></p>
+                                                              </div>
+                                                            </div>
+                                                            <div class="catalog__info-right">
+                                                              <ul class="clearfix">
+                                                                <li class="catalog__fav"><a class="like" href="#"></a></li>
+                                                                <li class="catalog__cart"><a href="#"></a></li>
+                                                              </ul>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="viewed">
+                    <div class="slider slick-viewed">
+                                                      <div>
+                                                        <div class="catalog__item">
+                                                          <div class="catalog__img"><img src="images/item-12.png"></div>
+                                                          <div class="catalog__info">
+                                                            <div class="catalog__info-left">
+                                                              <div class="catalog__name">
+                                                                <p>ползунки-штанишки</p>
+                                                              </div>
+                                                              <div class="catalog__price">
+                                                                <p>149,00<span>грн.</span></p>
+                                                              </div>
+                                                            </div>
+                                                            <div class="catalog__info-right">
+                                                              <ul class="clearfix">
+                                                                <li class="catalog__fav"><a class="like" href="#"></a></li>
+                                                                <li class="catalog__cart"><a href="#"></a></li>
+                                                              </ul>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                      <div>
+                                                        <div class="catalog__item">
+                                                          <div class="catalog__img"><img src="images/item-5.png"></div>
+                                                          <div class="catalog__info">
+                                                            <div class="catalog__info-left">
+                                                              <div class="catalog__name">
+                                                                <p>ползунки-штанишки</p>
+                                                              </div>
+                                                              <div class="catalog__price">
+                                                                <p>249,00<span>грн.</span></p>
+                                                              </div>
+                                                            </div>
+                                                            <div class="catalog__info-right">
+                                                              <ul class="clearfix">
+                                                                <li class="catalog__fav"><a class="like" href="#"></a></li>
+                                                                <li class="catalog__cart"><a href="#"></a></li>
+                                                              </ul>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                      <div>
+                                                        <div class="catalog__item">
+                                                          <div class="catalog__img"><img src="images/item-6.png"></div>
+                                                          <div class="catalog__info">
+                                                            <div class="catalog__info-left">
+                                                              <div class="catalog__name">
+                                                                <p>ползунки-штанишки</p>
+                                                              </div>
+                                                              <div class="catalog__price">
+                                                                <p>349,00<span>грн.</span></p>
+                                                              </div>
+                                                            </div>
+                                                            <div class="catalog__info-right">
+                                                              <ul class="clearfix">
+                                                                <li class="catalog__fav"><a class="like" href="#"></a></li>
+                                                                <li class="catalog__cart"><a href="#"></a></li>
+                                                              </ul>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                      <div>
+                                                        <div class="catalog__item">
+                                                          <div class="catalog__img"><img src="images/item-7.png"></div>
+                                                          <div class="catalog__info">
+                                                            <div class="catalog__info-left">
+                                                              <div class="catalog__name">
+                                                                <p>ползунки-штанишки</p>
+                                                              </div>
+                                                              <div class="catalog__price">
+                                                                <p>299,00<span>грн.</span></p>
+                                                              </div>
+                                                            </div>
+                                                            <div class="catalog__info-right">
+                                                              <ul class="clearfix">
+                                                                <li class="catalog__fav"><a class="like" href="#"></a></li>
+                                                                <li class="catalog__cart"><a href="#"></a></li>
+                                                              </ul>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                      <div>
+                                                        <div class="catalog__item">
+                                                          <div class="catalog__img"><img src="images/item-12.png"></div>
+                                                          <div class="catalog__info">
+                                                            <div class="catalog__info-left">
+                                                              <div class="catalog__name">
+                                                                <p>ползунки-штанишки</p>
+                                                              </div>
+                                                              <div class="catalog__price">
+                                                                <p>149,00<span>грн.</span></p>
+                                                              </div>
+                                                            </div>
+                                                            <div class="catalog__info-right">
+                                                              <ul class="clearfix">
+                                                                <li class="catalog__fav"><a class="like" href="#"></a></li>
+                                                                <li class="catalog__cart"><a href="#"></a></li>
+                                                              </ul>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                      <div>
+                                                        <div class="catalog__item">
+                                                          <div class="catalog__img"><img src="images/item-5.png"></div>
+                                                          <div class="catalog__info">
+                                                            <div class="catalog__info-left">
+                                                              <div class="catalog__name">
+                                                                <p>ползунки-штанишки</p>
+                                                              </div>
+                                                              <div class="catalog__price">
+                                                                <p>249,00<span>грн.</span></p>
+                                                              </div>
+                                                            </div>
+                                                            <div class="catalog__info-right">
+                                                              <ul class="clearfix">
+                                                                <li class="catalog__fav"><a class="like" href="#"></a></li>
+                                                                <li class="catalog__cart"><a href="#"></a></li>
+                                                              </ul>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                      <div>
+                                                        <div class="catalog__item">
+                                                          <div class="catalog__img"><img src="images/item-6.png"></div>
+                                                          <div class="catalog__info">
+                                                            <div class="catalog__info-left">
+                                                              <div class="catalog__name">
+                                                                <p>ползунки-штанишки</p>
+                                                              </div>
+                                                              <div class="catalog__price">
+                                                                <p>349,00<span>грн.</span></p>
+                                                              </div>
+                                                            </div>
+                                                            <div class="catalog__info-right">
+                                                              <ul class="clearfix">
+                                                                <li class="catalog__fav"><a class="like" href="#"></a></li>
+                                                                <li class="catalog__cart"><a href="#"></a></li>
+                                                              </ul>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                      <div>
+                                                        <div class="catalog__item">
+                                                          <div class="catalog__img"><img src="images/item-7.png"></div>
+                                                          <div class="catalog__info">
+                                                            <div class="catalog__info-left">
+                                                              <div class="catalog__name">
+                                                                <p>ползунки-штанишки</p>
+                                                              </div>
+                                                              <div class="catalog__price">
+                                                                <p>299,00<span>грн.</span></p>
+                                                              </div>
+                                                            </div>
+                                                            <div class="catalog__info-right">
+                                                              <ul class="clearfix">
+                                                                <li class="catalog__fav"><a class="like" href="#"></a></li>
+                                                                <li class="catalog__cart"><a href="#"></a></li>
+                                                              </ul>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <div class="catalog-item__fullscreen" id="fullscreenBlock"><a class="catalog-item__fullscreen-close" href="#" id="fullscreenClose"></a><img src=""></div>
+          </div>
+        </div>
+      </div>
+<footer>
+  <div class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__left">
+          <div class="footer__copyright"><span><span id="year"></span>Smil™</span><a href="#"><img src="images/work-ua.png" alt=""></a></div>
+        </div>
+        <div class="footer__center">
+          <div class="footer__company">
+            <p class="footer__title">Компания</p>
+            <ul>
+              <li><a href="about.html" title="О бренде">О бренде</a></li>
+              <li><a href="news-list.html" title="Новости">Новости</a></li>
+              <li><a href="vacancy.html" title="Вакансии">Вакансии</a></li>
+            </ul>
+          </div>
+          <div class="footer__programs">
+            <p class="footer__title">Программы лояльности</p>
+            <ul>
+              <li><a href="#" title="Клубная карта">Клубная карта</a></li>
+              <li><a href="#" title="Подарочный сертификат">Подарочный сертификат</a></li>
+            </ul>
+          </div>
+          <div class="footer__guide">
+            <p class="footer__title">Руководство по изделиям</p>
+            <ul>
+              <li><a href="textile.html" title="Виды полотен">Виды полотен</a></li>
+              <li><a href="sizing.html" title="Размерная сетка">Размерная сетка</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__right">
+          <div class="footer__socials">
+            <ul class="clearfix">
+              <li><a class="instagram" href="http://instagram.com" target="_blank"></a></li>
+              <li><a class="facebook" href="http://facebook.com" target="_blank"></a></li>
+              <li><a class="youtube" href="http://youtube.com" target="_blank"></a></li>
+              <li><a class="behance" href="http://vk.com" target="_blank"></a></li>
+            </ul>
+          </div>
+          <div class="footer__develop"><a href="#"></a></div>
+        </div>
+        <div class="footer__top"></div>
+        <div class="footer__mid"></div>
+        <div class="footer__bottom"></div>
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+  <script type="text/javascript" src="js/bundle.js"></script></body>
+</html>

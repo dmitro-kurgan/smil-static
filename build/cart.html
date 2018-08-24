@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Корзина</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=no">
+  <link href="./css/style.css" rel="stylesheet"></head>
+  <body class="cart-page">
+    <div class="loader"></div>
+    <div class="wrapper wrapper--cart">
+      <header>
+        <div class="header">
+          <div class="header__top" style="background-image: url(images/top-bar.jpg)">
+            <p>Распродажа прошлых коллекций! Скидка до -50%</p>
+          </div>
+          <div class="header__main">
+            <div class="container">
+              <div class="header__logo">
+                <!-- a(href="./", style='background-image: url(' + require('../../components/images/logo.png') + ')')--><a href="./"><span class="header__logo-img"></span></a><span class="circle circle--small"></span><span class="circle circle--mid"></span><span class="circle circle--large"></span>
+              </div>
+              <div class="header__content">
+                <div class="header__content-top">
+                  <div class="header__hamburger" id="hamburger"><span class="top"></span><span class="mid"></span><span class="bottom"></span></div>
+                  <ul class="header__nav clearfix">
+                    <li><a href="where-to-buy.html">где купить?</a></li>
+                    <li><a href="about.html">о бренде</a></li>
+                    <li><a href="#">партнерам</a></li>
+                    <li><a href="delivery-payment.html">доставка и оплата</a></li>
+                    <li><a href="contacts.html">контакты</a></li>
+                  </ul>
+                  <ul class="header__tel">
+                    <li><a href="tel:+380666387267">+38 (066) 638-72-67</a>
+                      <ul class="header__tel-sub">
+                        <li><a href="tel:+380666387267">+38 (066) 638-72-67</a></li>
+                        <li><a href="tel:+380666387268">+38 (066) 638-72-68</a></li>
+                        <li><a href="tel:+380666387269">+38 (066) 638-72-69</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <ul class="header__right">
+                    <li class="header__search--mob"><a href="#" id="searchBtn"></a></li>
+                    <li class="header__login login" id="headerLogin"><a href="login-reg.html">
+                        <div class="description">Вход и регистрация</div></a></li>
+                    <li class="header__fav" id="headerFav"><a href="wishlist.html">
+                        <div class="description">Список желаний</div><span class="header__quantity">1</span></a></li>
+                    <li class="header__cart" id="headerCart"><a href="#">
+                        <div class="description">Корзина</div><span class="header__quantity">1</span></a>
+                      <div class="header__cart-dropdown" id="headerCartDropdown">
+                        <ul class="header__cart-dropdown-list">
+                                                    <li class="header__cart-dropdown-box">
+                                                      <div class="header__cart-dropdown-img"><img src="images/cart-item-1.png"></div>
+                                                      <div class="header__cart-dropdown-info">
+                                                        <div class="header__cart-dropdown-name">
+                                                          <p>Ползунки-штанишки</p>
+                                                        </div>
+                                                        <div class="header__cart-dropdown-size">
+                                                          <p>Размер: <span>18</span></p>
+                                                        </div>
+                                                        <div class="header__cart-dropdown-quantity"><span class="plus">+</span>
+                                                          <input class="input" value="1" type=""><span class="minus">-</span>
+                                                        </div>
+                                                      </div>
+                                                      <div class="header__cart-dropdown-price">
+                                                        <p class="header__cart-dropdown-cost">1140,00<span>грн.</span></p>
+                                                      </div><a class="header__cart-dropdown-del-item" href="#"></a>
+                                                    </li>
+                                                    <li class="header__cart-dropdown-box">
+                                                      <div class="header__cart-dropdown-img"><img src="images/cart-item-2.png"></div>
+                                                      <div class="header__cart-dropdown-info">
+                                                        <div class="header__cart-dropdown-name">
+                                                          <p>Комбинезон</p>
+                                                        </div>
+                                                        <div class="header__cart-dropdown-size">
+                                                          <p>Размер: <span>s</span></p>
+                                                        </div>
+                                                        <div class="header__cart-dropdown-quantity"><span class="plus">+</span>
+                                                          <input class="input" value="1" type=""><span class="minus">-</span>
+                                                        </div>
+                                                      </div>
+                                                      <div class="header__cart-dropdown-price">
+                                                        <p class="header__cart-dropdown-cost">649,00<span>грн.</span></p>
+                                                      </div><a class="header__cart-dropdown-del-item" href="#"></a>
+                                                    </li>
+                                                    <li class="header__cart-dropdown-box">
+                                                      <div class="header__cart-dropdown-img"><img src="images/cart-item-3.png"></div>
+                                                      <div class="header__cart-dropdown-info">
+                                                        <div class="header__cart-dropdown-name">
+                                                          <p>Платье</p>
+                                                        </div>
+                                                        <div class="header__cart-dropdown-size">
+                                                          <p>Размер: <span>14</span></p>
+                                                        </div>
+                                                        <div class="header__cart-dropdown-quantity"><span class="plus">+</span>
+                                                          <input class="input" value="1" type=""><span class="minus">-</span>
+                                                        </div>
+                                                      </div>
+                                                      <div class="header__cart-dropdown-price">
+                                                        <p class="header__cart-dropdown-cost">5049,00<span>грн.</span></p>
+                                                      </div><a class="header__cart-dropdown-del-item" href="#"></a>
+                                                    </li>
+                        </ul>
+                        <div class="header__cart-dropdown-total">
+                          <p>Общая сумма</p><span>6838,00 грн.</span>
+                        </div><a class="btn header__cart-dropdown-order" href="#">Оформить заказ</a>
+                        <div class="header__cart-dropdown-free">
+                          <p>Бесплатная доставка при заказе от 1000 грн.</p>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="header__content-bottom">
+                  <ul class="header__categories clearfix">
+                          <li><a href="#">Малышам</a>
+                          </li>
+                          <li><a href="#">Девочкам</a>
+                            <div class="header__dropdown">
+                              <div class="container">
+                                <div class="header__dropdown-content">
+                                  <div class="header__dropdown-left">
+                                    <ul class="nav nav-tabs">
+                                      <li class="active"><a data-toggle="tab" href="#tab1">Новая коллекция</a></li>
+                                      <li><a data-toggle="tab" href="#tab2">Look</a></li>
+                                      <li><a data-toggle="tab" href="#tab3">Распродажа</a></li>
+                                    </ul>
+                                  </div>
+                                  <div class="header__dropdown-center">
+                                    <div class="tab-content clearfix">
+                                      <div class="tab-pane fade in active" id="tab1">
+                                              <ul>
+                                                <li><a href="catalog.html">Аксессуары</a></li>
+                                                <li><a href="catalog.html">Блузы</a></li>
+                                                <li><a href="catalog.html">Боди</a></li>
+                                                <li><a href="catalog.html">Бриджи, шорты</a></li>
+                                                <li><a href="catalog.html">Брюки, штаны</a></li>
+                                                <li><a href="catalog.html">Головные уборы</a></li>
+                                                <li><a href="catalog.html">Гольфы</a></li>
+                                              </ul>
+                                              <ul>
+                                                <li><a href="catalog.html">Горловины</a></li>
+                                                <li><a href="catalog.html">Жакеты, кофты, куртки, бомберы</a></li>
+                                                <li><a href="catalog.html">Жилеты</a></li>
+                                                <li><a href="catalog.html">Комбинезоны</a></li>
+                                                <li><a href="catalog.html">Комплекты</a></li>
+                                                <li><a href="catalog.html">Костюмы</a></li>
+                                                <li><a href="catalog.html">Леггинсы, лосины</a></li>
+                                              </ul>
+                                              <ul>
+                                                <li><a href="catalog.html">Майки, футболки</a></li>
+                                                <li><a href="catalog.html">Нижнее белье</a></li>
+                                                <li><a href="catalog.html">Пижамы</a></li>
+                                                <li><a href="catalog.html">Платья, сарафаны, туники, юбки</a></li>
+                                                <li><a href="catalog.html">Свитшоты</a></li>
+                                                <li><a href="catalog.html">2-6 лет</a></li>
+                                                <li><a href="catalog.html">7-16 лет</a></li>
+                                              </ul>
+                                      </div>
+                                      <div class="tab-pane fade" id="tab2">
+                                              <ul>
+                                                <li><a href="catalog.html">Аксессуары</a></li>
+                                                <li><a href="catalog.html">Блузы</a></li>
+                                                <li><a href="catalog.html">Боди</a></li>
+                                                <li><a href="catalog.html">Бриджи, шорты</a></li>
+                                                <li><a href="catalog.html">Брюки, штаны</a></li>
+                                                <li><a href="catalog.html">Головные уборы</a></li>
+                                                <li><a href="catalog.html">Гольфы</a></li>
+                                              </ul>
+                                              <ul>
+                                                <li><a href="catalog.html">Горловины</a></li>
+                                                <li><a href="catalog.html">Жакеты, кофты, куртки, бомберы</a></li>
+                                                <li><a href="catalog.html">Жилеты</a></li>
+                                                <li><a href="catalog.html">Комбинезоны</a></li>
+                                                <li><a href="catalog.html">Комплекты</a></li>
+                                                <li><a href="catalog.html">Костюмы</a></li>
+                                                <li><a href="catalog.html">Леггинсы, лосины</a></li>
+                                              </ul>
+                                              <ul>
+                                                <li><a href="catalog.html">Майки, футболки</a></li>
+                                                <li><a href="catalog.html">Нижнее белье</a></li>
+                                                <li><a href="catalog.html">Пижамы</a></li>
+                                                <li><a href="catalog.html">Платья, сарафаны, туники, юбки</a></li>
+                                                <li><a href="catalog.html">Свитшоты</a></li>
+                                                <li><a href="catalog.html">2-6 лет</a></li>
+                                                <li><a href="catalog.html">7-16 лет</a></li>
+                                              </ul>
+                                      </div>
+                                      <div class="tab-pane fade" id="tab3">
+                                              <ul>
+                                                <li><a href="catalog.html">Аксессуары</a></li>
+                                                <li><a href="catalog.html">Блузы</a></li>
+                                                <li><a href="catalog.html">Боди</a></li>
+                                                <li><a href="catalog.html">Бриджи, шорты</a></li>
+                                                <li><a href="catalog.html">Брюки, штаны</a></li>
+                                                <li><a href="catalog.html">Головные уборы</a></li>
+                                                <li><a href="catalog.html">Гольфы</a></li>
+                                              </ul>
+                                              <ul>
+                                                <li><a href="catalog.html">Горловины</a></li>
+                                                <li><a href="catalog.html">Жакеты, кофты, куртки, бомберы</a></li>
+                                                <li><a href="catalog.html">Жилеты</a></li>
+                                                <li><a href="catalog.html">Комбинезоны</a></li>
+                                                <li><a href="catalog.html">Комплекты</a></li>
+                                                <li><a href="catalog.html">Костюмы</a></li>
+                                                <li><a href="catalog.html">Леггинсы, лосины</a></li>
+                                              </ul>
+                                              <ul>
+                                                <li><a href="catalog.html">Майки, футболки</a></li>
+                                                <li><a href="catalog.html">Нижнее белье</a></li>
+                                                <li><a href="catalog.html">Пижамы</a></li>
+                                                <li><a href="catalog.html">Платья, сарафаны, туники, юбки</a></li>
+                                                <li><a href="catalog.html">Свитшоты</a></li>
+                                                <li><a href="catalog.html">2-6 лет</a></li>
+                                                <li><a href="catalog.html">7-16 лет</a></li>
+                                              </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="header__dropdown-right">
+                                    <div class="header__dropdown-banner" style="background-image: url(images/banner-1.jpg)">
+                                      <h4>«НАРЯДНАЯ ОДЕЖДА»</h4><span>новая коллекция</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li><a href="#">Мальчикам</a>
+                          </li>
+                          <li><a href="#">Школьная форма</a>
+                          </li>
+                          <li><a href="#">Распродажа</a>
+                          </li>
+                  </ul>
+                  <form class="header__search" id="searchInput">
+                    <div class="form-group">
+                      <input class="form-control" type="search" placeholder="Поиск">
+                      <button type="submit"></button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="content">
+        <div class="container">
+          <div class="free-top">
+            <p>Бесплатная доставка при заказе от 1000 грн.</p>
+            <div class="free-top__close"></div>
+          </div>
+          <div class="back-to"><a href="#">Продолжить покупки</a></div>
+          <div class="cart row">
+            <div class="cart__left col-md-6">
+              <div class="cart__title"> 
+                <p>Корзина</p><a class="cart__title-delete" href="recover.html">Удалить все</a>
+              </div>
+              <div class="cart__left-main">
+                <div class="cart__left-alert">
+                  <p>По некоторым позициям кол-во доступных единиц меньше, чем было выбрано.</p>
+                  <div class="close"></div>
+                </div>
+                <div class="cart__left-goods">
+                  <div class="table">
+                    <div class="thead">
+                      <div class="tr">
+                        <div class="th th-1">
+                          <p>Товар</p>
+                        </div>
+                        <div class="th th-2">
+                          <p>Описание</p>
+                        </div>
+                        <div class="th th-3">
+                          <p>Кол-во</p>
+                        </div>
+                        <div class="th th-4">
+                          <p>Цена</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tbody">
+                                            <div class="tr">
+                                              <div class="td td-1">
+                                                <div class="cart__left-img"><img src="images/panties-1.png">
+                                                  <div class="discontinued">
+                                                    <p>товар снят с производства</p>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="td td-2">
+                                                <div class="cart__left-description">
+                                                  <div class="cart__left-article">
+                                                    <p>Артикул:</p><span>114290</span>
+                                                  </div>
+                                                  <div class="cart__left-name">
+                                                    <p>Ползунки-штанишки</p>
+                                                  </div>
+                                                  <div class="cart__left-color">
+                                                    <p>Цвет:</p><span>Красный</span>
+                                                  </div>
+                                                  <div class="cart__left-size">
+                                                    <p>Размер:</p><span>56</span>
+                                                  </div>
+                                                  <div class="cart__left-edit"><a href="#">
+                                                      <p>Редактировать</p></a></div>
+                                                  <div class="cart__left-save"><a href="#">
+                                                      <p>Отложить на потом</p></a></div>
+                                                </div>
+                                              </div>
+                                              <div class="td td-3">
+                                                <div class="cart__left-quantity"><span class="plus">+</span>
+                                                  <input class="input" value="1" type=""><span class="minus">-</span>
+                                                  <p class="limit">Осталось 2шт.</p>
+                                                </div>
+                                              </div>
+                                              <div class="td td-4">
+                                                <div class="cart__left-price"><a class="delete" href="#"></a>
+                                                  <!-- .price.price--increase-->
+                                                  <!-- 	p -->
+                                                  <!-- 		| Стоимость увеличилась с-->
+                                                  <!-- 		span 510,00-->
+                                                  <!-- 		| грн.-->
+                                                  <div class="price price--old">
+                                                    <p>1540,00 грн.</p>
+                                                  </div>
+                                                  <div class="price price--now">
+                                                    <p>1140,00 грн.</p>
+                                                  </div>
+                                                  <div class="price price--per-one"> 
+                                                    <p>за 1 шт.</p><span>570,00 грн.</span>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="tr">
+                                              <div class="td td-1">
+                                                <div class="cart__left-img"><img src="images/panties-2.png">
+                                                  <div class="discontinued">
+                                                    <p>товар снят с производства</p>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="td td-2">
+                                                <div class="cart__left-description">
+                                                  <div class="cart__left-article">
+                                                    <p>Артикул:</p><span>114290</span>
+                                                  </div>
+                                                  <div class="cart__left-name">
+                                                    <p>Ползунки-штанишки</p>
+                                                  </div>
+                                                  <div class="cart__left-color">
+                                                    <p>Цвет:</p><span>Желтый</span>
+                                                  </div>
+                                                  <div class="cart__left-size">
+                                                    <p>Размер:</p><span>56</span>
+                                                  </div>
+                                                  <div class="cart__left-edit"><a href="#">
+                                                      <p>Редактировать</p></a></div>
+                                                  <div class="cart__left-save"><a href="#">
+                                                      <p>Отложить на потом</p></a></div>
+                                                </div>
+                                              </div>
+                                              <div class="td td-3">
+                                                <div class="cart__left-quantity"><span class="plus">+</span>
+                                                  <input class="input" value="1" type=""><span class="minus">-</span>
+                                                  <p class="limit">Осталось 2шт.</p>
+                                                </div>
+                                              </div>
+                                              <div class="td td-4">
+                                                <div class="cart__left-price"><a class="delete" href="#"></a>
+                                                  <div class="price price--now">
+                                                    <p>1140,00 грн.</p>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="tr">
+                                              <div class="td td-1">
+                                                <div class="cart__left-img"><img src="images/panties-3.png">
+                                                  <div class="discontinued">
+                                                    <p>товар снят с производства</p>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="td td-2">
+                                                <div class="cart__left-description">
+                                                  <div class="cart__left-article">
+                                                    <p>Артикул:</p><span>114290</span>
+                                                  </div>
+                                                  <div class="cart__left-name">
+                                                    <p>Ползунки-штанишки</p>
+                                                  </div>
+                                                  <div class="cart__left-color">
+                                                    <p>Цвет:</p><span>Темно-серый</span>
+                                                  </div>
+                                                  <div class="cart__left-size">
+                                                    <p>Размер:</p><span>56</span>
+                                                  </div>
+                                                  <div class="cart__left-edit"><a href="#">
+                                                      <p>Редактировать</p></a></div>
+                                                  <div class="cart__left-save"><a href="#">
+                                                      <p>Отложить на потом</p></a></div>
+                                                </div>
+                                              </div>
+                                              <div class="td td-3">
+                                                <div class="cart__left-quantity"><span class="plus">+</span>
+                                                  <input class="input" value="1" type=""><span class="minus">-</span>
+                                                  <p class="limit">Осталось 2шт.</p>
+                                                </div>
+                                              </div>
+                                              <div class="td td-4">
+                                                <div class="cart__left-price"><a class="delete" href="#"></a>
+                                                  <div class="price price--now">
+                                                    <p>1140,00 грн.</p>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="tr discontinued">
+                                              <div class="td td-1">
+                                                <div class="cart__left-img discontinued"><img src="images/panties-3.png">
+                                                  <div class="discontinued">
+                                                    <p>товар снят с производства</p>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="td td-2 discontinued">
+                                                <div class="cart__left-description">
+                                                  <div class="cart__left-article">
+                                                    <p>Артикул:</p><span>114290</span>
+                                                  </div>
+                                                  <div class="cart__left-name">
+                                                    <p>Ползунки-штанишки</p>
+                                                  </div>
+                                                  <div class="cart__left-color">
+                                                    <p>Цвет:</p><span>Темно-серый</span>
+                                                  </div>
+                                                  <div class="cart__left-size">
+                                                    <p>Размер:</p><span>56</span>
+                                                  </div>
+                                                  <div class="cart__left-edit"><a href="#">
+                                                      <p>Редактировать</p></a></div>
+                                                  <div class="cart__left-save"><a href="#">
+                                                      <p>Отложить на потом</p></a></div>
+                                                </div>
+                                              </div>
+                                              <div class="td td-3 discontinued">
+                                                <div class="cart__left-quantity"><span class="plus">+</span>
+                                                  <input class="input" value="1" type=""><span class="minus">-</span>
+                                                  <p class="limit">Осталось 2шт.</p>
+                                                </div>
+                                              </div>
+                                              <div class="td td-4 discontinued">
+                                                <div class="cart__left-price"><a class="delete" href="#"></a>
+                                                  <div class="price price--now">
+                                                    <p>1140,00 грн.</p>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cart__left-sertificate clearfix">
+                  <div class="left">
+                    <p>Подарочный сертификат:</p><span>SMILGIFTSERTIFICATE2018
+                      <div class="delete"></div></span>
+                  </div>
+                  <div class="center">
+                    <ul>
+                      <li>
+                        <p>Всего за 4 товара:</p>
+                      </li>
+                      <li>
+                        <p>Скидка по сертификату:</p>
+                      </li>
+                      <li>
+                        <p>Скидка:</p>
+                      </li>
+                    </ul>
+                    <p class="total">Итого без учета доставки:</p>
+                  </div>
+                  <div class="right">
+                    <ul>
+                      <li>
+                        <p>-2170,00 грн.</p>
+                      </li>
+                      <li>
+                        <p>-500,00 грн.</p>
+                      </li>
+                      <li>
+                        <p>-217,00 грн.</p>
+                      </li>
+                    </ul>
+                    <p class="total total-price">1453,00 грн.</p>
+                  </div>
+                </div>
+                <div class="cart__left-free">
+                  <div class="cart__left-free-top">
+                    <p>Вам доступна бесплатная доставка до отделения перевозчика</p>
+                    <div class="close"></div>
+                  </div>
+                  <div class="cart__left-free-main">
+                    <button class="cart__left-add-package">Добавить упаковку</button>
+                    <ul class="row">
+                      <li class="cart__left-free-box col-lg-6 col-md-12 col-sm-6">
+                        <div class="cart__left-free-img"><img src="images/pic-2.png"></div>
+                        <div class="cart__left-free-info">
+                          <div>
+                            <div class="cart__left-free-name">
+                              <p>Простой пакет</p>
+                            </div>
+                            <div class="cart__left-free-price">
+                              <p>+12,00 грн.</p>
+                            </div>
+                          </div>
+                          <div>
+                            <div class="cart__left-free-size">
+                              <p>Размеры, см.</p>
+                            </div>
+                            <form>
+                              <select class="selectpicker custom-picker" title="21x32" required>
+                                <option>15x24</option>
+                                <option>18x28</option>
+                                <option>21x32</option>
+                                <option>23x35</option>
+                              </select>
+                              <button class="btn add">Добавить</button>
+                            </form>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="cart__left-free-box col-lg-6 col-md-12 col-sm-6">
+                        <div class="cart__left-free-img"><img src="images/pic-2.png"></div>
+                        <div class="cart__left-free-info">
+                          <div>
+                            <div class="cart__left-free-name">
+                              <p>Простой пакет</p>
+                            </div>
+                            <div class="cart__left-free-price">
+                              <p>+12,00 грн.</p>
+                            </div>
+                          </div>
+                          <div>
+                            <div class="cart__left-free-size">
+                              <p>Размеры, см.</p>
+                            </div>
+                            <form>
+                              <select class="selectpicker custom-picker" title="21x32" required>
+                                <option>15x24</option>
+                                <option>18x28</option>
+                                <option>21x32</option>
+                                <option>23x35</option>
+                              </select>
+                              <button class="btn add">Добавить</button>
+                            </form>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cart__right col-md-6">
+<div class="pop-up pop-up--login" id="popupLogin">
+  <div class="pop-up__close" id="closePopupLogin"></div>
+  <div class="pop-up__block">
+    <div class="pop-up-title pop-up--login__title"><span>Вы уже зарегистрированы</span>
+      <p>Войдите, чтобы оформить заказ было проще и быстрее</p>
+    </div>
+    <div class="pop-up--login__form">
+      <form>
+        <label for="login-email">Электронная почта</label>
+        <div class="form-group">
+          <input class="form-control" type="text" name="login-email" lid="login-email">
+        </div>
+        <label for="login-pwd">Пароль</label>
+        <div class="form-group">
+          <input class="form-control" type="password" name="login-pwd" id="login-pwd">
+        </div>
+        <button class="btn" type="submit">Войти</button>
+      </form><a class="forget-pwd" href="#">Забыли пароль?</a>
+    </div>
+  </div>
+</div>
+              <div class="cart__title">
+                <p>Оформление заказа</p><a class="cart__title-account" href="#" id="login">Есть учетная запись?</a>
+              </div>
+              <form class="cart__right-main">
+                <div class="cart__right-form-top">
+                  <div class="form-row row">
+                    <div class="form-group col-sm-6">
+                      <label for="name">Имя</label>
+                      <input class="form-control" type="text" id="name" name="name">
+                    </div>
+                    <div class="form-group col-sm-6">
+                      <label for="lastname">Фамилия</label>
+                      <input class="form-control" type="text" id="lastname" name="lastname">
+                    </div>
+                    <div class="form-group col-sm-6">
+                      <label for="email">Электронная почта</label>
+                      <input class="form-control" type="text" id="email" name="email">
+                    </div>
+                    <div class="form-group col-sm-6">
+                      <label for="tel">Телефон</label>
+                      <input class="form-control" type="text" id="tel" name="tel">
+                    </div>
+                    <div class="checkbox-block form-group col-sm-12">
+                      <div class="checkbox">
+                        <label for="checkbox1">
+                          <input type="checkbox" name="checkbox1" id="checkbox1">
+                          <div class="checkbox-square"></div>Получатель другое лицо
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cart__right-form-get">
+                  <div class="form-row row">
+                    <div class="form-group col-sm-12">
+                      <h5>Получатель</h5>
+                    </div>
+                    <div class="form-group col-sm-6">
+                      <label for="fullname">Имя и фамилия</label>
+                      <input class="form-control" type="text" id="fullname" name="fullname">
+                    </div>
+                    <div class="form-group col-sm-6">
+                      <label for="tel2">Телефон</label>
+                      <input class="form-control" type="tel" id="tel2" name="tel2">
+                    </div>
+                  </div>
+                </div>
+                <div class="cart__right-form-pay">
+                  <div class="form-row row">
+                    <div class="form-group col-sm-6">
+                      <h5>Доставка и оплата</h5>
+                    </div>
+                    <div class="form-group col-sm-6">
+                      <select class="selectpicker custom-picker select-transporter" title="Работа Новая Почта 99" id="delivery" required>
+                        <option>Работа Новая Почта 99</option>
+                        <option>Выбрать сохраненные</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-sm-12">
+                      <div class="no-select"><span>Страна</span>
+                        <div>
+                          <p>Украина</p><span>Доставка только по территории Украины!</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group col-sm-6">
+                      <label for="city">Город</label>
+                      <select class="selectpicker custom-picker" title="Одесса" id="city" required>
+                        <option>Львов</option>
+                        <option>Харьков</option>
+                        <option>Киев</option>
+                        <option>Днепр</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-sm-6">
+                      <label for="delivery">Тип доставки</label>
+                      <select class="selectpicker custom-picker" title="На склад перевозчика" id="delivery" required>
+                        <option>На склад перевозчика</option>
+                        <option>Курьером</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-sm-6">
+                      <label for="transporter">Перевозчик</label>
+                      <select class="selectpicker custom-picker" title="Новая почта" id="transporter" required>
+                        <option>Новая почта</option>
+                        <option>Укрпочта</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-sm-6">
+                      <label for="">Номер склада</label>
+                      <div class="dropdown-input"><a href="#" id="dropdownInput"><span class="dropdown-input__num">N:99</span><span class="dropdown-input__address">До 10 кг. Мини-отделение: площадь Греческая, 1</span></a>
+                        <div class="sub-menu">
+                          <ul>
+                            <li><a href="#"><span class="dropdown-input__num">N:99</span><span class="dropdown-input__address">До 10 кг. Мини-отделение: площадь Греческая, 1</span></a></li>
+                            <li><a href="#"><span class="dropdown-input__num">N:98</span><span class="dropdown-input__address">До 15 кг. Мини-отделение: площадь Греческая, 2</span></a></li>
+                            <li><a href="#"><span class="dropdown-input__num">N:97</span><span class="dropdown-input__address">До 20 кг. Мини-отделение: площадь Греческая, 3</span></a></li>
+                            <li><a href="#"><span class="dropdown-input__num">N:96</span><span class="dropdown-input__address">До 8 кг. Мини-отделение: площадь Греческая, 4</span></a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group col-sm-12">
+                      <label for="paytype">Способ оплаты</label>
+                      <select class="selectpicker custom-picker" title="Картой Visa/MasterCard" id="paytype" required>
+                        <option>Картой Visa/MasterCard</option>
+                        <option>Наложенным платежом</option>
+                      </select>
+                      <p class="description">Для оплаты заказа Вы будете перенаправлены на страницу оплаты LiqPay</p>
+                    </div>
+                    <div class="form-group col-sm-12">
+                      <label for="addinfo">Дополнительная информация</label>
+                      <textarea id="addinfo"></textarea>
+                      <div class="checkbox">
+                        <label for="checkbox2">
+                          <input type="checkbox" name="checkbox2" id="checkbox2">
+                          <div class="checkbox-square"></div>Сохранить адрес
+                          <input class="form-control hidden-input" type="text" id="address" name="address" placeholder="Введите название адреса">
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cart__right-form-bottom">
+                  <div class="form-row row">
+                    <ul class="col-sm-6 col-xs-8">
+                      <li>
+                        <p>Сумма заказа</p>
+                      </li>
+                      <li>
+                        <p>Скидка:</p>
+                      </li>
+                      <li>
+                        <p>Доставка:</p>
+                      </li>
+                      <li>
+                        <p>Общая сумма к оплате:</p>
+                      </li>
+                    </ul>
+                    <ul class="col-sm-6 col-xs-4">
+                      <li>
+                        <p>1953,00 грн.</p>
+                      </li>
+                      <li>
+                        <p>-217,00 грн.</p>
+                      </li>
+                      <li>
+                        <p>35,00 грн.</p>
+                      </li>
+                      <li>
+                        <p>1988,00 грн.</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="cart__right-form-accept">
+                  <p>Зарегистрировавшись вы можете получить<span>клубную карту</span></p>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="radio radio--first">
+                        <label for="radio1">
+                          <input type="radio" name="radioreg" id="radio1">
+                          <div class="radio-square"></div>Хочу получать персональные предложения и скидки по эл. почте
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="radio radio--sec">
+                        <label for="radio2">
+                          <input type="radio" name="radioreg" id="radio2">
+                          <div class="radio-square"></div>Использовать данные для регистрации
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="btn" type="submit">Подтвердить заказ, как гость</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+<footer>
+  <div class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__left">
+          <div class="footer__copyright"><span><span id="year"></span>Smil™</span><a href="#"><img src="images/work-ua.png" alt=""></a></div>
+        </div>
+        <div class="footer__center">
+          <div class="footer__company">
+            <p class="footer__title">Компания</p>
+            <ul>
+              <li><a href="about.html" title="О бренде">О бренде</a></li>
+              <li><a href="news-list.html" title="Новости">Новости</a></li>
+              <li><a href="vacancy.html" title="Вакансии">Вакансии</a></li>
+            </ul>
+          </div>
+          <div class="footer__programs">
+            <p class="footer__title">Программы лояльности</p>
+            <ul>
+              <li><a href="#" title="Клубная карта">Клубная карта</a></li>
+              <li><a href="#" title="Подарочный сертификат">Подарочный сертификат</a></li>
+            </ul>
+          </div>
+          <div class="footer__guide">
+            <p class="footer__title">Руководство по изделиям</p>
+            <ul>
+              <li><a href="textile.html" title="Виды полотен">Виды полотен</a></li>
+              <li><a href="sizing.html" title="Размерная сетка">Размерная сетка</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__right">
+          <div class="footer__socials">
+            <ul class="clearfix">
+              <li><a class="instagram" href="http://instagram.com" target="_blank"></a></li>
+              <li><a class="facebook" href="http://facebook.com" target="_blank"></a></li>
+              <li><a class="youtube" href="http://youtube.com" target="_blank"></a></li>
+              <li><a class="behance" href="http://vk.com" target="_blank"></a></li>
+            </ul>
+          </div>
+          <div class="footer__develop"><a href="#"></a></div>
+        </div>
+        <div class="footer__top"></div>
+        <div class="footer__mid"></div>
+        <div class="footer__bottom"></div>
+      </div>
+    </div>
+  </div>
+</footer>
+<div class="pop-up pop-up--login" id="popupLogin">
+  <div class="pop-up__close" id="closePopupLogin"></div>
+  <div class="pop-up__block">
+    <div class="pop-up-title pop-up--login__title"><span>Вы уже зарегистрированы</span>
+      <p>Войдите, чтобы оформить заказ было проще и быстрее</p>
+    </div>
+    <div class="pop-up--login__form">
+      <form>
+        <label for="login-email">Электронная почта</label>
+        <div class="form-group">
+          <input class="form-control" type="text" name="login-email" lid="login-email">
+        </div>
+        <label for="login-pwd">Пароль</label>
+        <div class="form-group">
+          <input class="form-control" type="password" name="login-pwd" id="login-pwd">
+        </div>
+        <button class="btn" type="submit">Войти</button>
+      </form><a class="forget-pwd" href="#">Забыли пароль?</a>
+    </div>
+  </div>
+</div>
+    </div>
+    <script></script>
+  <script type="text/javascript" src="js/bundle.js"></script></body>
+</html>

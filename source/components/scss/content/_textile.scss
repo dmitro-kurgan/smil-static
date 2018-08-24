@@ -1,0 +1,68 @@
+.textile {
+	&__title {
+		text-align: center;
+		margin-top: 29px;
+		margin-bottom: 61px;
+		@media #{$mobile} {
+			margin-bottom: 20px;
+		}
+		p {
+			font-size: 40px;
+			font-weight: 200;
+			line-height: 48px;
+			display: inline-block;
+			vertical-align: middle;
+			@media #{$mobile} {
+				font-size: 20px;
+			}
+		}
+	}
+	&__block {
+		padding-bottom: 117px;
+		@media #{$mobile} {
+			padding-bottom: 80px;
+		}
+		ul {
+			margin-left: -8px;
+			margin-right: -8px;
+		}
+	}
+	&__box {
+		padding-left: 8px;
+		padding-right: 8px;
+		margin-bottom: 48px;
+		@media #{$mobile} {
+			margin-bottom: 15px;
+		}
+	}
+	&__img {
+		min-height: 142px;
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		&:hover {
+			.textile__overlay {
+				opacity: 1;
+			}
+		}
+	}
+	&__overlay {
+		background-color: rgba(255, 255, 255, 0.2);
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		right: 0px;
+		bottom: 0px;
+		opacity: 0;
+		transition: 0.3s all ease;
+	}
+	&__name {
+		p {
+			color: #fff;
+			font-size: 12px;
+			font-weight: 700;
+			text-transform: uppercase;
+		}
+	}
+}

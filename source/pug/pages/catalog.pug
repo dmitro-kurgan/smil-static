@@ -1,0 +1,155 @@
+extends ../templates/base
+
+block variables
+	- var classBody = 'catalog-page';
+	- var classWrapper = 'catalog';
+
+block title
+	title Каталог
+
+block main
+	section.breadcrumb
+		.container
+			ul.clearfix
+				li
+					a(href='./') Назад
+			.breadcrumb__download
+				a(href="#") Скачать каталог
+					span PDF, 1.56MB
+	.catalog
+		.container
+			.catalog__title
+				p Ползунки-штанишки
+					i 98
+				span
+					| Философия компании основана на принципе создания
+					span уникального по сочетанию 
+					|  качества и цены продукта, удовлетворяющего запросы современного потребителя.
+			.catalog__block
+				.catalog__top
+					ul.catalog__nav-list.clearfix.hidden-xs
+						mixin li(name, className, id)
+							li(class="catalog__" + className)
+								a(href="#", id= id) #{name}
+								block
+						+li('Размер', 'size', 'size')
+						+li('Цвет', 'color', 'color')
+						+li('Коллекция', 'collection menu-item-has-children', 'collection')
+							.sub-menu
+								.sub-menu__top
+									h4 Выбрано 
+										span.sub-menu__count 4
+									a(href="#").sub-menu__clear Очистить
+								.sub-menu__chosen.clearfix
+									span Сереневый туман
+									span Каникулы Бонифация
+									span 1/2 землекопа
+								ul
+									li
+										a(href="#") Опять двадцать пять
+									li.active
+										a(href="#") Я у мамы таркторист
+									li
+										a(href="#") Вырванные годы
+									li.active
+										a(href="#") Сереневый туман
+									li
+										a(href="#") Крокодил Гена
+									li.active
+										a(href="#") Каникулы Бонифация
+									li.active
+										a(href="#") 1/2 землекопа
+					ul.catalog__nav-list.clearfix
+						+li('Сортировать', 'sort menu-item-has-children', 'sort')
+							.sub-menu
+								ul
+									li
+										a(href="#") Новинки
+									li
+										a(href="#") Сначала дешевые
+									li
+										a(href="#") Сначала дорогие
+				.catalog__main
+					ul.row.catalog__list
+						mixin searchResultItem(newItem, img, name, price, className)
+							li(class="col-xs-6 col-md-4 col-lg-3 catalog__item" + newItem)
+								.catalog__img
+									img(src=require('../../components/images/item-' + img + '.png'))
+								.catalog__info
+									.catalog__info-left
+										.catalog__name
+											p #{name}
+										.catalog__price(class= className)
+											p #{price}
+												span грн.
+										block
+									.catalog__info-right
+										ul
+											li.catalog__fav
+												a(href="#").like
+											li.catalog__cart
+												a(href="#")
+								.catalog__add-to
+									.catalog__add-to-close
+									.catalog__add-to-title
+										h4 Добавить в корзину
+									.row.catalog__add-to-btns
+										.col-sm-6.catalog__add-to-left
+											label Размер
+											select.selectpicker.custom-picker(title='132x134', required, class= classNamePicker)
+												option 132x134
+												option 118x128
+												option 211x132
+												option 123x135
+										.col-sm-6.catalog__add-to-right
+											label Количество
+											select.selectpicker.custom-picker(title='1', required, class= classNamePicker)
+												option 1
+												option 2
+												option 3
+												option 4
+									a(href="#").btn Добавить
+						-var cartItem = ' catalog__item--';
+						+searchResultItem(cartItem + 'new', '1', 'ползунки-штанишки', '449,00', '')
+						+searchResultItem('', '2', 'ползунки-штанишки', '549,00', '')
+						+searchResultItem('', '3', 'ползунки-штанишки', '699,00', '')
+						+searchResultItem('', '4', 'ползунки-штанишки', '329,00', 'catalog__price--sale')
+							.catalog__price.catalog__price--old
+								p 419,00
+									span грн.
+						+searchResultItem('', '12', 'ползунки-штанишки', '149,00', '')
+						+searchResultItem('', '5', 'ползунки-штанишки', '249,00', '')
+						+searchResultItem('', '6', 'ползунки-штанишки', '349,00', '')
+						+searchResultItem('', '7', 'ползунки-штанишки', '299,00', '')
+
+						+searchResultItem('', '13', 'ползунки-штанишки', '149,00', '')
+						li.col-sm-9.col-xs-12.catalog__item
+							.catalog__banner(style="background-image:url(" + require('../../components/images/img-13.jpg') + ")")
+								.catalog__banner-text
+									h6.catalog__banner-title На ребенке надето
+										span
+									ul.catalog__banner-list
+										mixin bannerList(img, name, price)
+											li.catalog__banner-item
+												.catalog__banner-left
+													.catalog__banner-img
+														img(src=require('../../components/images/pic-' + img + '.png'))
+													.catalog__banner-info
+														.catalog__banner-name
+															p #{name}
+														.catalog__banner-price
+															p #{price}
+																span грн.
+												.catalog__banner-right
+													ul
+														li.catalog__banner-fav
+															a(href="#").like
+														li.catalog__banner-cart
+															a(href="#")
+										+bannerList('15', 'топ с вышивкой', '119,00')
+										+bannerList('16', 'бермуды со шнурами', '749,00')
+										+bannerList('17', 'кеды с бантом', '349,00')
+						+searchResultItem('', '8', 'ползунки-штанишки', '149,00', '')
+						+searchResultItem('', '9', 'ползунки-штанишки', '249,00', '')
+						+searchResultItem('', '10', 'ползунки-штанишки', '349,00', '')
+						+searchResultItem('', '11', 'ползунки-штанишки', '299,00', '')

@@ -1,0 +1,33 @@
+extends ../templates/base
+
+block variables
+	- var classBody = 'textile-page';
+	- var classWrapper = 'textile';
+
+block title
+	title Виды полотен
+
+block main
+	section.breadcrumb
+		.container
+			ul.clearfix
+				li
+					a(href='./') Назад
+				li Виды полотен
+			.breadcrumb__download
+				a(href="#") Скачать каталог
+					span PDF, 1.56MB
+	.textile
+		.container
+			.textile__title
+				p Виды полотен
+			.textile__block
+				ul.row
+					each val, index in {1:'Кулир',2:'Ластик',3:'Интерлок',4:'Футер',5:'Капитон', 6:'Велюр',7:'Maxpa',8:'Кашкорс',9:'Велсофт',10:'Овечий велюр'}
+						li.col-sm-3.textile__box
+							a.textile__img(id="popupTextile" + index, href=require('../../components/images/textile-' + index + '.jpg'), style='background-image:url(' + require('../../components/images/textile-' + index + '.jpg') + ')')
+								.textile__overlay
+								.textile__name
+									p #{val}
+block modals
+	include ../modules/modals-textile

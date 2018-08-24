@@ -1,0 +1,119 @@
+extends ../templates/base
+
+block variables
+	- var classBody = 'index-page';
+	- var classWrapper = 'index';
+
+block title
+	title Главная страница
+
+block main
+	section.banner-main
+		.slider.slick-banner-main
+			mixin slickBannerMain(img)
+				div
+					.slick-banner-main__box(style="background-image:url(" + require('../../components/images/banner-main-' + img + '.jpg') + ")")
+			+slickBannerMain('1')
+			+slickBannerMain('2')
+		.container
+			.banner-main__content
+				form.banner-main__search
+					.form-group
+						input.form-control(type="search", placeholder="Поиск")
+						button(type="submit").banner-main__search-btn
+				ul.banner-main__list.row
+					mixin li(img, name)
+						li.col-sm-4.banner-main__list-item
+							a(href="catalog.html", style="background-image:url(" + require('../../components/images/banner-main-small-' + img + '.png') + ")")
+								p #{name}
+					+li('1', 'малыши')
+					+li('2', 'девочки')
+					+li('3', 'мальчики')
+	section.instagram-main
+		.container
+			h2 Подписывайтесь на наш Instagram 
+				a(href="#") @smilkids
+			.slider.slick-instagram-main
+				mixin slickInstagramMain(img)
+					div
+						a.slick-instagram-main__box(href="#", style="background-image:url(" + require('../../components/images/instagram-main-' + img + '.jpg') + ")")
+				+slickInstagramMain('1')
+				+slickInstagramMain('2')
+				+slickInstagramMain('3')
+				+slickInstagramMain('4')
+				+slickInstagramMain('1')
+				+slickInstagramMain('2')
+				+slickInstagramMain('3')
+				+slickInstagramMain('4')
+	section.popular
+		.container
+			.popular__block
+				mixin sliderPopularBox(img, name, price)
+					div
+						.catalog__item
+							.catalog__img
+								img(src=require('../../components/images/item-' + img + '.png'))
+							.catalog__info
+								.catalog__info-left
+									.catalog__name
+										p #{name}
+									.catalog__price(class= className)
+										p #{price}
+											span грн.
+								.catalog__info-right
+									ul
+										li.catalog__fav
+											a(href="#").like
+										li.catalog__cart
+											a(href="#")
+				mixin sliderPopular()
+					- for (var i = 0; i < 2; i++) {
+						+sliderPopularBox('12', 'ползунки-штанишки', '149,00', '')
+						+sliderPopularBox('5', 'ползунки-штанишки', '249,00', '')
+						+sliderPopularBox('6', 'ползунки-штанишки', '349,00', '')
+						+sliderPopularBox('7', 'ползунки-штанишки', '299,00', '')
+					- };
+				ul.nav.nav-tabs
+					li.active
+						a(data-toggle='tab', href='#popular', title='Популярные товары') Популярные товары
+					li
+						a(data-toggle='tab', href='#news', title='Новинки') Новинки
+					li
+						a(data-toggle='tab', href='#viewed', title='Вы смотрели') Вы смотрели
+				.tab-content.clearfix
+					#popular.tab-pane.fade.in.active
+						.slider.slick-popular
+							+sliderPopular()
+					#news.tab-pane.fade
+						.slider.slick-news
+							+sliderPopular()
+					#viewed.tab-pane.fade
+						.slider.slick-viewed
+							+sliderPopular()
+	section.banner-text
+		.container
+			.banner-text__content(style="background-image:url(" + require('../../components/images/img-14.jpg') + ")")
+				.banner-text__box
+					h6.banner-text__title На ребенке надето
+						span
+					ul.banner-text__list
+						mixin bannerList(img, name, price)
+							li.banner-text__item
+								.banner-text__left
+									.banner-text__img
+										img(src=require('../../components/images/pic-' + img + '.png'))
+									.banner-text__info
+										.banner-text__name
+											p #{name}
+										.banner-text__price
+											p #{price}
+												span грн.
+								.banner-text__right
+									ul
+										li.banner-text__fav
+											a(href="#").like
+										li.banner-text__cart
+											a(href="#")
+						+bannerList('15', 'топ с вышивкой', '119,00')
+						+bannerList('16', 'бермуды со шнурами', '749,00')
+						+bannerList('17', 'кеды с бантом', '349,00')

@@ -1,0 +1,130 @@
+.contacts {
+	padding-top: 49px;
+	margin-bottom: 130px;
+	@media #{$mobile} {
+		padding-top: 13px;
+	}
+	&__left {
+		@media #{$mobile} {
+			text-align: center;
+		}
+		.contacts__title {
+			margin-top: 16px;
+			margin-bottom: 65px;
+			@media #{$mobile} {
+				display: block;
+				text-align: center;
+				margin: 0 0 30px 0;
+			}
+			p {
+				@media #{$mobile} {
+					font-size: 20px;
+				}
+			}
+		}
+	}
+	&__right {
+		.contacts__title {
+			justify-content: center;
+			p {
+				font-size: 30px;
+			}
+		}
+	}
+	&__info {
+		&-title {
+			display: block;
+			color: #585858;
+			font-size: 10px;
+			font-weight: 700;
+			text-transform: uppercase;
+			margin-bottom: 15px;
+		}
+		&-worktime {
+			color: #585858;
+			font-size: 10px;
+			margin-top: 12px;
+			display: block;
+			@media #{$mobile} {
+				margin-bottom: 15px;
+			}
+		}
+		&-row {
+			margin-bottom: 47px;
+			@media #{$mobile} {
+				margin-bottom: 0;
+			}
+		}
+
+		ul {
+			float: left;
+			width: 50%;
+			@media #{$mobile} {
+				width: 100%;
+				float: none;
+				margin-bottom: 45px;
+			}
+			li {
+				a {
+					@media #{$mobile} {
+						font-size: 14px;
+						font-family: "HelveticaNeue";
+						font-weight: 700;	
+					}
+				}
+				& + li + li {
+					margin-top: 6px;
+				}
+			}
+		}
+	}
+	&__address {
+		font-size: 14px;
+		margin-top: 20px;
+	}
+	&__tel {
+		font-size: 14px;
+	}
+	&__form {
+		max-width: 554px;
+		margin: 0px 0px 0px auto;
+		@media #{$tablet} {
+			margin: 0 auto;
+		}
+		form {
+			padding: 48px 32px 48px 32px;
+			background-color: #fbfbfb;
+		}
+		.form-group {
+			padding-left: 8px;
+			padding-right: 8px;
+			margin-bottom: 22px;
+			&:last-child {
+				margin-bottom: 0px;
+			}
+		}
+		textarea {
+			padding-top: 17px;
+			height: 129px;
+			resize: none;
+		}
+		.btn {
+			margin: 9px auto auto;
+			display: block;
+			width: 210px;
+			height: 40px;
+			background-color: #67c9ee;
+			font-size: 14px;
+			color: #fff;
+		}
+	}
+	&__title {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 17px;
+		p {
+			font-size: 40px;
+			font-weight: 200;
+		}
+	}
+}

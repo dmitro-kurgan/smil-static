@@ -1,0 +1,26 @@
+extends ../templates/base
+
+block variables
+	- var classBody = 'error-page';
+	- var classWrapper = 'error';
+
+block title
+	title 404
+
+block main
+	.container
+		.free-top
+			p Бесплатная доставка при заказе от 1000 грн.
+			.free-top__close
+		section.breadcrumb
+			.container
+				ul.clearfix
+					li
+						a(href='./') Продолжить покупки
+		.error
+			.error__block
+				h1.error__title Что-то пошло не так...
+					span.error__img
+				p.error__text
+					| Такой страницы не существует, поспользуйтесь поиском или перейдите в каталог для выбора товаров
+				a(href="#").btn Перейти в каталог

@@ -1,0 +1,43 @@
+- var json = require('../../data/nav.json')
+
+footer
+	.footer
+		.container
+			.footer__content
+				.footer__left
+					.footer__copyright
+						span
+							span#year
+							| Smil™
+						a(href='#')
+							img(src=require('../../components/images/work-ua.png'), alt='')
+				.footer__center
+					.footer__company
+						p.footer__title Компания
+						ul
+							each link, name in json.navCompany
+								li
+									a(href= link, title= name)= name
+					.footer__programs
+						p.footer__title Программы лояльности
+						ul
+							each link, name in json.navPrograms
+								li
+									a(href= link, title= name)= name
+					.footer__guide
+						p.footer__title Руководство по изделиям
+						ul
+							each link, name in json.navGuide
+								li
+									a(href= link, title= name)= name
+				.footer__right
+					.footer__socials
+						ul.clearfix
+							each link, name in json.navSocials
+								li
+									a(href= link, target="_blank", class= name)
+					.footer__develop
+						a(href="#")
+				.footer__top
+				.footer__mid
+				.footer__bottom

@@ -1,0 +1,17 @@
+.pop-up.pop-up--login#popupLogin
+	.pop-up__close#closePopupLogin
+	.pop-up__block
+		.pop-up-title.pop-up--login__title
+			span Вы уже зарегистрированы
+			p
+				| Войдите, чтобы оформить заказ было проще и быстрее
+		.pop-up--login__form
+			form
+				label(for="login-email") Электронная почта
+				.form-group
+					input.form-control(type='text', name='login-email', lid='login-email')
+				label(for="login-pwd") Пароль
+				.form-group
+					input.form-control(type='password', name='login-pwd', id='login-pwd')
+				button.btn(type='submit') Войти
+			a(href="#").forget-pwd Забыли пароль?

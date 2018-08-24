@@ -1,0 +1,60 @@
+{
+  "navPages": {
+    "где купить?" : "where-to-buy.html",
+    "о бренде" : "about.html",
+    "партнерам" : "#",
+    "доставка и оплата" : "delivery-payment.html",
+    "контакты" : "contacts.html"
+  },
+  "navCategoriesDropdown1": {
+    "Аксессуары" : "catalog.html",
+    "Блузы" : "catalog.html",
+    "Боди" : "catalog.html",
+    "Бриджи, шорты" : "catalog.html",
+    "Брюки, штаны" : "catalog.html",
+    "Головные уборы" : "catalog.html",
+    "Гольфы" : "catalog.html"
+  },
+  "navCategoriesDropdown2": {
+    "Горловины" : "catalog.html",
+    "Жакеты, кофты, куртки, бомберы" : "catalog.html",
+    "Жилеты" : "catalog.html",
+    "Комбинезоны" : "catalog.html",
+    "Комплекты" : "catalog.html",
+    "Костюмы" : "catalog.html",
+    "Леггинсы, лосины" : "catalog.html"
+  },
+  "navCategoriesDropdown3": {
+    "Майки, футболки" : "catalog.html",
+    "Нижнее белье" : "catalog.html",
+    "Пижамы" : "catalog.html",
+    "Платья, сарафаны, туники, юбки" : "catalog.html",
+    "Свитшоты" : "catalog.html",
+    "2-6 лет" : "catalog.html",
+    "7-16 лет" : "catalog.html"
+  },
+  "navTel": {
+    "+38 (066) 638-72-67" : "+380666387267",
+    "+38 (066) 638-72-68" : "+380666387268",
+    "+38 (066) 638-72-69" : "+380666387269"
+  },
+  "navSocials": {
+    "instagram" : "http://instagram.com",
+    "facebook" : "http://facebook.com",
+    "youtube" : "http://youtube.com",
+    "behance" : "http://vk.com"
+  },
+  "navCompany": {
+    "О бренде" : "about.html",
+    "Новости" : "news-list.html",
+    "Вакансии" : "vacancy.html"
+  },
+  "navPrograms": {
+    "Клубная карта" : "#",
+    "Подарочный сертификат" : "#"
+  },
+  "navGuide": {
+    "Виды полотен" : "textile.html",
+    "Размерная сетка" : "sizing.html"
+  }
+}

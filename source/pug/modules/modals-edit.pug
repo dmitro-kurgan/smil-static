@@ -1,0 +1,69 @@
+.pop-up.pop-up--edit#popupEdit
+	.pop-up__dialog.pop-up--edit__dialog
+		.pop-up__close#closePopupEdit
+		.pop-up__block
+			.pop-up--edit__form
+				h6 Редактировать адрес
+				form.row
+					.form-group.col-sm-12
+						label(for="name") Название
+						input.form-control(type='text', name='name', id='name')
+					.form-group.col-sm-12
+						div.no-select
+							span Страна
+							div
+								p Украина
+								span Доставка только по территории Украины!
+					.form-group.col-sm-6
+						label(for="city") Город
+						select.selectpicker.custom-picker(title='Одесса', name="city", id='city', required)
+							option Одесса
+							option Харьков
+							option Киев
+							option Львов
+							option Днепр
+					.form-group.col-sm-6
+						label(for="type") Тип доставки
+						select.selectpicker.custom-picker(title='На склад перевозчика', name="type", id='type', required)
+							option На склад перевозчика
+							option Курьером
+					.form-group.col-sm-6
+						label(for="carrier") Город
+						select.selectpicker.custom-picker(title='Новая почта', name="carrier", id='carrier', required)
+							option Новая почта
+							option УкрПочта
+					.form-group.col-sm-6
+						label(for="") Номер склада
+						.dropdown-input
+							a(href="#")#dropdownInput
+								span.dropdown-input__num N:99
+								span.dropdown-input__address До 10 кг. Мини-отделение: площадь Греческая, 1
+							.sub-menu
+								ul
+									li
+										a(href="#")
+											span.dropdown-input__num N:99
+											span.dropdown-input__address До 10 кг. Мини-отделение: площадь Греческая, 1
+									li
+										a(href="#")
+											span.dropdown-input__num N:98
+											span.dropdown-input__address До 15 кг. Мини-отделение: площадь Греческая, 2
+									li
+										a(href="#")
+											span.dropdown-input__num N:97
+											span.dropdown-input__address До 20 кг. Мини-отделение: площадь Греческая, 3
+									li
+										a(href="#")
+											span.dropdown-input__num N:96
+											span.dropdown-input__address До 8 кг. Мини-отделение: площадь Греческая, 4
+					.form-group.col-sm-12
+						label(for="pay") Способ оплаты
+						select.selectpicker.custom-picker(title='Картой Visa/MasterCard', name="pay", id='pay', required)
+							option Картой Visa/MasterCard
+							option Картой Visa/MasterCard
+						p.form-group__alert Для оплаты заказа Вы будете направлены на страницу оплаты LiqPay
+					.form-group.col-sm-12
+						label(for="add-info") Дополнительная информация
+						textarea.form-control(name="add-info", id="add-info")
+					.form-group.col-sm-12
+						button(type='submit').btn.btn--save Сохранить

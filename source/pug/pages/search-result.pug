@@ -1,0 +1,102 @@
+extends ../templates/base
+
+block variables
+	- var classBody = 'search-result-page';
+	- var classWrapper = 'search-result';
+
+block title
+	title Результаты поиска
+
+block main
+	section.breadcrumb
+		.container
+			ul.clearfix
+				li
+					a(href='./') Назад
+			.breadcrumb__download
+				a(href="#") Скачать каталог
+					span PDF, 1.56MB
+	.search-result
+		.container
+			.search-result__title
+				p Поиск по запросу: Позлуки
+					i 7
+				span Также мы искали по
+					span ползунки
+			.search-result__block
+				.search-result__top
+					ul.catalog__nav-list.clearfix.hidden-xs
+						mixin li(name, className, id)
+							li(class="catalog__" + className)
+								a(href="#", id= id) #{name}
+								block
+						+li('Для кого', 'who', 'who')
+						+li('Размер', 'size', 'size')
+						+li('Цвет', 'color', 'color')
+						+li('Коллекция', 'collection menu-item-has-children', 'collection')
+							.sub-menu
+								.sub-menu__top
+									h4 Выбрано 
+										span.sub-menu__count 4
+									a(href="#").sub-menu__clear Очистить
+								.sub-menu__chosen.clearfix
+									span Сереневый туман
+									span Каникулы Бонифация
+									span 1/2 землекопа
+								ul
+									li
+										a(href="#") Опять двадцать пять
+									li.active
+										a(href="#") Я у мамы таркторист
+									li
+										a(href="#") Вырванные годы
+									li.active
+										a(href="#") Сереневый туман
+									li
+										a(href="#") Крокодил Гена
+									li.active
+										a(href="#") Каникулы Бонифация
+									li.active
+										a(href="#") 1/2 землекопа
+					ul.catalog__nav-list.clearfix
+						+li('Сортировать', 'sort menu-item-has-children', 'sort')
+							.sub-menu
+								ul
+									li
+										a(href="#") Новинки
+									li
+										a(href="#") Сначала дешевые
+									li
+										a(href="#") Сначала дорогие
+				.search-result__main
+					ul.row.catalog__list
+						mixin searchResultItem(img, name, price, className, newItem)
+							li.col-xs-6.col-md-4.col-lg-3(class="catalog__item" + newItem)
+								.catalog__img
+									img(src=require('../../components/images/item-' + img + '.png'))
+								.catalog__info
+									.catalog__info-left
+										.catalog__name
+											p #{name}
+										idv(class="catalog__price" + className)
+											p #{price}
+												span грн.
+										block
+									.catalog__info-right
+										ul
+											li.catalog__fav
+												a(href="#").like
+											li.catalog__cart
+												a(href="#")
+						- var catItem = ' catalog__item--new';
+						- var sale = ' catalog__price--sale';
+						+searchResultItem('1', 'ползунки-штанишки', '449,00', '', catItem)
+						+searchResultItem('2', 'ползунки-штанишки', '549,00', '', '')
+						+searchResultItem('3', 'ползунки-штанишки', '699,00', '', '')
+						+searchResultItem('4', 'ползунки-штанишки', '329,00', sale, '')
+							.catalog__price.catalog__price--old
+								p 419,00
+									span грн.
+						+searchResultItem('5', 'ползунки-штанишки', '249,00', '', '')
+						+searchResultItem('6', 'ползунки-штанишки', '349,00', '', '')
+						+searchResultItem('7', 'ползунки-штанишки', '299,00', '', '')

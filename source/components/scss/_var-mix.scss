@@ -1,0 +1,62 @@
+// VARIABLES
+//fonts
+
+$font1: HelveticaNeue, Arial, sans-serif;
+// $Calibri: NotoSans, Arial, sans-serif;
+// $PTSerif: Rubik, Arial, sans-serif;
+
+//other
+
+// ----colors---
+$yellow-green: #a1c33a;
+$emerald: #54d960;
+$orange: #faab18;
+$red: #ff6654;
+$blue: #50afdc;
+$aliceblue: #f0f8fc;
+
+$zambezi: #585858;
+$dim-grey: #676767;
+$dark-grey: #a9a9a9;
+$silver: #bdbdbd;
+$snow: #fbfbfb;
+
+$main_color: #fff;
+$main_transition: .3s all;
+// $title-spacing: 3px;
+
+// $full-hd: "screen and (max-width: 1869px)";
+// $desctop-lg: "screen and (max-width: 1520px)";
+$desctop-lg: "screen and (max-width: 1599px)";
+$desctop-md: "screen and (max-width: 1299px)";
+
+$desctop: "screen and (max-width: 1199px)";
+$tablet: "screen and (max-width: 991px)";
+$mobile: "screen and (max-width: 767px)";
+
+//MIXINS
+
+@mixin background($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+$prefixes: "-webkit-", "-o-", "-moz-", "-ms-";
+
+@mixin addPrefix($item, $val) {
+	@each $tmp in $prefixes {
+		#{$tmp}#{$item}:#{$val};
+	}
+	#{$item}: $val;
+}
+
+$prefixes-placeholder: "&::-webkit-input-", "&::-moz-", "&:-moz-", "&:-ms-";
+
+@mixin addPrefixPlaceholder($placeholder, $item, $val) {
+	@each $tmp in $prefixes-placeholder {
+		#{$tmp}#{$placeholder}{#{$item}:#{$val}};
+	}
+	#{$placeholder}{#{$item}: $val};
+}

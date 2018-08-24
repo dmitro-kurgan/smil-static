@@ -1,0 +1,48 @@
+extends ../templates/base
+
+block variables
+	- var classBody = 'news-list-page';
+	- var classWrapper = 'news-list';
+
+block title
+	title Новости
+
+block main
+	.container
+		section.breadcrumb
+			.container
+				ul.clearfix
+					li
+						a(href='./') Назад
+					li Новости
+				.breadcrumb__download
+					a(href="#") Скачать каталог
+						span PDF, 1.56MB
+		.news-list
+			.news-list__title
+				p Новости
+			.news-list__block.row
+				mixin listBox(img, data, views, text)
+					a(href="news-item.html").news-list__box.col-md-3.col-sm-6
+						.news-list__img(style="background-image:url(" + require('../../components/images/img-' + img + '.jpg') + ")")
+						.news-list__data
+							p #{data}
+						.news-list__views
+							p #{views}
+						.news-list__text
+							p #{text}
+				+listBox('1', '7 марта 2018', '130', 'ТМ "СМИЛ" представляет новую коллекцию "Готовимся к праздникам"')
+				+listBox('2', '7 марта 2018', '130', 'ТМ "СМИЛ" представляет новую коллекцию "Готовимся к праздникам"')
+				+listBox('3', '7 марта 2018', '130', 'ТМ "СМИЛ" представляет новую коллекцию "Готовимся к праздникам"')
+				+listBox('4', '7 марта 2018', '130', 'ТМ "СМИЛ" представляет новую коллекцию "Готовимся к праздникам"')
+				+listBox('5', '7 марта 2018', '130', 'ТМ "СМИЛ" представляет новую коллекцию "Готовимся к праздникам"')
+				+listBox('6', '7 марта 2018', '130', 'ТМ "СМИЛ" представляет новую коллекцию "Готовимся к праздникам"')
+				+listBox('7', '7 марта 2018', '130', 'ТМ "СМИЛ" представляет новую коллекцию "Готовимся к праздникам"')
+				+listBox('8', '7 марта 2018', '130', 'ТМ "СМИЛ" представляет новую коллекцию "Готовимся к праздникам"')
+				+listBox('9', '7 марта 2018', '130', 'ТМ "СМИЛ" представляет новую коллекцию "Готовимся к праздникам"')
+				+listBox('10', '7 марта 2018', '130', 'ТМ "СМИЛ" представляет новую коллекцию "Готовимся к праздникам"')
+			a(href="#").news-list__loadmore
+				p
+					| Показать
+					span больше
+					| новостей

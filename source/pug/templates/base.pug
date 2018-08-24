@@ -1,0 +1,21 @@
+block variables
+
+doctype html
+html(lang="en")
+	head
+		block title
+			title Index
+		meta(charset="UTF-8")
+		meta(name="viewport", content="initial-scale=1.0, width=device-width, user-scalable=no")
+		block headscript
+	body(class='' + classBody)
+		.loader
+		div(class='wrapper wrapper--' + classWrapper)
+			block header
+				include ../modules/header
+			.content
+				block main
+			block footer
+				include ../modules/footer
+			block modals
+		block script

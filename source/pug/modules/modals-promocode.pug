@@ -1,0 +1,12 @@
+.pop-up.pop-up--promocode#popupPromocode
+	.pop-up__close#closePopupPromocode
+	.pop-up__block
+		.pop-up--promocode__form
+			form
+				label(for="promocode-num") Введите промо-код или номер сертификата
+				.form-group
+					input.form-control(type='text', name='promocode-num', id='promocode-num')
+				button.btn(type='submit')
+					img(src=require('../../components/images/arrow-right.png'))
+			p.pop-up--promocode__alert
+				| Такого кода не существует

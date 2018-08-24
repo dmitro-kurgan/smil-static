@@ -1,0 +1,177 @@
+extends ../templates/base
+
+block variables
+	- var classBody = 'account-page';
+	- var classWrapper = 'account';
+
+block title
+	title История заказов
+
+block main
+	section.breadcrumb
+		.container
+			ul.clearfix
+				li
+					a(href='./') Назад
+				li История заказов
+			.breadcrumb__download
+				a(href="#") Скачать каталог
+					span PDF, 1.56MB
+	.account.orders-history
+		.container
+			.row
+				.col-md-3.orders-history__left-side
+					.account__nav
+						h2.account__nav-title Личный кабинет
+						ul
+							mixin li(name, link)
+								li
+									a(href= link) #{name}
+							+li('Личные данные', 'account-socials-in.html')
+							+li('Изменение пароля', 'change-pwd.html')
+							+li('Адреса доставки', 'delivery-address.html')
+							li(class="active")
+								a(href="orders-history.html") История заказов
+							+li('Просмотренные товары', 'viewed-goods.html')
+							li
+								a(href="#", class="account__log-out") Выйти
+				.col-md-9.orders-history__right-side
+					.account__title
+						h1 История заказов
+					.account__content
+						.account__orders-history
+							.table
+								.thead
+									.tr
+										.th.th-1
+											p Номер заказа
+										.th.th-2
+											p Дата
+										.th.th-3
+											p Единиц товара
+										.th.th-4
+											p Сумма к оплате
+										.th.th-5
+											p Статус
+										.th.th-6
+											p Распечатать
+								#accordion.panel-group.orders-history__accordion
+									mixin panelBox(className, num, numOrder, data, quantity, sum, status, statusClass)
+										.tbody.panel
+											.panel-heading
+												a(data-toggle='collapse', data-parent='#accordion', href='#collapse' + num)
+													.tr
+														.td.td-1
+															p #{numOrder}
+														.td.td-2
+															p.orders-history__data #{data}
+														.td.td-3
+															p #{quantity}
+														.td.td-4
+															p #{sum}
+																i грн.
+														.td.td-5
+															p(class="orders-history__status orders-history__status--" + statusClass) #{status}
+														.td.td-6
+															object.orders-history__print
+																a(href="#")
+																	img(src=require('../../components/images/print.png'))
+																	p Распечатать заказ
+											div(class="panel-collapse collapse" + className, id="collapse" + num)
+												.panel-body
+													block
+									mixin goodsItem(img, color, quantity, price)
+										li.orders-history__item
+											.orders-history__img(class= className)
+												img(src=require("../../components/images/panties-" + img + ".png"))
+											.orders-history__description
+												.orders-history__article
+													p Артикул:
+													span 114290
+												.orders-history__name
+													p Ползунки-штанишки
+												.orders-history__color
+													p Цвет:
+													span #{color}
+												.orders-history__size
+													p Размер:
+													span 56
+											.orders-history__quantity
+												p #{quantity}
+											.orders-history__price
+												p #{price}
+													i грн.
+									mixin goodsInfo()
+										.account__delivery-address-item
+											.account__delivery-address-main
+												.row.account__delivery-address-row
+													.col-xs-5.account__delivery-address-left
+														p Страна:
+													.col-xs-7.account__delivery-address-right
+														p Украина
+												.row.account__delivery-address-row
+													.col-xs-5.account__delivery-address-left
+														p Город:
+													.col-xs-7.account__delivery-address-right
+														p Одесса
+												.row.account__delivery-address-row
+													.col-xs-5.account__delivery-address-left
+														p Тип доставки:
+													.col-xs-7.account__delivery-address-right
+														p На склад перевозчика
+												.row.account__delivery-address-row
+													.col-xs-5.account__delivery-address-left
+														p Перевозчик:
+													.col-xs-7.account__delivery-address-right
+														p Новая почта
+												.row.account__delivery-address-row
+													.col-xs-5.account__delivery-address-left
+														p Номер склада:
+													.col-xs-7.account__delivery-address-right.account__delivery-address-address
+														p №99 До 10 кг. Мини-отделение: площадь Греческая, 1
+												.row.account__delivery-address-row
+													.col-xs-5.account__delivery-address-left
+														p Дополнительная информация:
+													.col-xs-7.account__delivery-address-right.account__delivery-address-info
+														p Упакуйте в коробку
+									mixin panelBody()
+										.row.panel-body__content
+											.col-sm-7.col-lg-8.panel-body__left
+												ul.orders-history__list
+													block
+											.col-sm-5.col-lg-4.panel-body__right
+												+goodsInfo()
+									+panelBox('', '1', '55688765445662', '12.03.2018', '5', '1860,00', 'Ожидается', 'waiting')
+										+panelBody()
+											+goodsItem('1', 'Красный', '1', '1140,00')
+											+goodsItem('2', 'Желтый', '2', '1141,00')
+											+goodsItem('3', 'Красный', '3', '1142,00')
+									+panelBox('', '2', '66846845465468', '08.02.2018', '2', '762,00', 'Выполнен', 'done')
+										+panelBody()
+											+goodsItem('1', 'Красный', '2', '1140,00')
+									+panelBox('', '3', '14548654324358', '10.01.2018', '1', '450,00', 'Отменен', 'canceled')
+										+panelBody()
+											+goodsItem('1', 'Красный', '2', '1140,00')
+									+panelBox('', '4', '45688765445662', '06.12.2017', '1', '820,00', 'Выполнен', 'done')
+										+panelBody()
+											+goodsItem('1', 'Красный', '2', '1140,00')
+									+panelBox('', '5', '96846845465468', '06.07.2017', '3', '762,00', 'Выполнен', 'done')
+										+panelBody()
+											+goodsItem('1', 'Красный', '2', '1140,00')
+									+panelBox('', '6', '64548654324358', '10.04.2017', '3', '1953,00', 'Выполнен', 'done')
+										+panelBody()
+											+goodsItem('1', 'Красный', '2', '1140,00')
+											+goodsItem('2', 'желтый', '1', '520,00')
+											+goodsItem('1', 'Темно-серый', '1', '510,00')
+											li.orders-history__item.orders-history__delivery
+												.orders-history__delivery-img
+													img(src=require("../../components/images/car.png"))
+												.orders-history__delivery-name
+													p Доставка Новой Почтой
+												.orders-history__delivery-price
+													p 35,00
+														i грн.
+									+panelBox('', '7', '78988765445662', '02.02.2017', '1', '460,00', 'Выполнен', 'done')
+										+panelBody()
+											+goodsItem('1', 'Красный', '2', '1140,00')
+											

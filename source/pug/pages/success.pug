@@ -1,0 +1,31 @@
+extends ../templates/base
+
+block variables
+	- var classBody = 'success-page';
+	- var classWrapper = 'success';
+
+block title
+	title success
+
+block main
+	.success
+		.container
+			.free-top
+				p Бесплатная доставка при заказе от 1000 грн.
+				.free-top__close
+			.success__block
+				h1.success__title Спасибо за заказ!
+					.span.success__ok
+				p.success__text
+					| В ближайшее время с вами свяжется менеджер для уточнения деталей заказа
+				.success__info
+					.success__num
+						span Заказ
+							p №146436924
+					.success__send-email
+						p 
+							| Детали  заказа вы отправили на вашу эл. почту
+							a(href="mailto:customer@email.com") customer@email.com.
+					.success__print
+						a(href="#") Распечатать детали заказа
+

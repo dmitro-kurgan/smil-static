@@ -1,0 +1,178 @@
+extends ../templates/base
+
+block variables
+	- var classBody = 'recover-page';
+	- var classWrapper = 'recover';
+
+block title
+	title Корзина
+
+block main
+	.container
+		.free-top
+			p Бесплатная доставка при заказе от 1000 грн.
+			.free-top__close
+		.back-to
+			a(href="#") Продолжить покупки
+		.cart.row
+			.cart__left.col-md-6
+				.cart__title 
+					p Корзина
+					a(href="cart.html").cart__title-delete Восстановить все
+				.cart__left-main
+					.cart__left-goods
+						.table
+							.thead
+								.tr
+									.th.th-1
+										p Товар
+									.th.th-2
+										p Описание
+									.th.th-3
+										p Кол-во
+									.th.th-4
+										p Цена
+					.cart__left-alert
+						p Минимальная сумма заказа 200 грн.
+					.cart__left-free
+						.cart__left-free-main
+							button.cart__left-add-package Добавить упаковку
+							ul.row
+								li.cart__left-free-box.col-lg-6.col-md-12.col-sm-6
+									.cart__left-free-img
+										img(src=require("../../components/images/pic-2.png"))
+									.cart__left-free-info
+										div
+											.cart__left-free-name
+												p Простой пакет
+											.cart__left-free-price
+												p +12,00 грн.
+										div
+											.cart__left-free-size
+												p Размеры, см.
+											form
+												select.selectpicker.custom-picker(title='21x32', required)
+													option 15x24
+													option 18x28
+													option 21x32
+													option 23x35
+												button.btn.add Добавить
+								li.cart__left-free-box.col-lg-6.col-md-12.col-sm-6
+									.cart__left-free-img
+										img(src=require("../../components/images/pic-2.png"))
+									.cart__left-free-info
+										div
+											.cart__left-free-name
+												p Простой пакет
+											.cart__left-free-price
+												p +12,00 грн.
+										div
+											.cart__left-free-size
+												p Размеры, см.
+											form
+												select.selectpicker.custom-picker(title='21x32', required)
+													option 15x24
+													option 18x28
+													option 21x32
+													option 23x35
+												button.btn.add Добавить
+			.cart__right.col-md-6
+				.cart__title
+					p Оформление заказа
+					a(href="#").cart__title-account Есть учетная запись?
+				form.cart__right-main
+					.cart__right-form-top
+						.form-row.row
+							.form-group.col-sm-6
+								label(for='name') Имя
+								input.form-control(type='text', id='name', name='name', placeholder='Александр')
+							.form-group.col-sm-6
+								label(for='lastname') Фамилия
+								input.form-control(type='text', id='lastname', name='lastname', placeholder='Иванов')
+							.form-group.col-sm-6
+								label(for='email') Электронная почта
+								input.form-control(type='text', id='email', name='email', placeholder='customer@email.com')
+							.form-group.col-sm-6
+								label(for='tel') Телефон
+								input.form-control(type='text', id='tel', name='tel', placeholder='+38 093 123 45 67')
+							.checkbox-block.form-group.col-sm-12
+								.checkbox
+									label(for='checkbox1')
+										input(type='checkbox', name='checkbox1', id='checkbox1')
+										.checkbox-square
+										| Получатель другое лицо
+					.cart__right-form-get
+						.form-row.row
+							.form-group.col-sm-12
+								h5 Получатель
+							.form-group.col-sm-6
+								label(for='fullname') Имя и фамилия
+								input.form-control(type='text', id='fullname', name='fullname', placeholder='Василий Уткин')
+							.form-group.col-sm-6
+								label(for='tel2') Телефон
+								input.form-control(type='text', id='tel2', name='tel2', placeholder='+38 093 123 45 67')
+					.cart__right-form-pay
+						.form-row.row
+							.form-group.col-sm-6
+								h5 Доставка и оплата
+							.form-group.col-sm-6
+								select.selectpicker.custom-picker.select-transporter(title='Работа Новая Почта 99', id='delivery', required)
+									option Работа Новая Почта 99
+									option Выбрать сохраненные
+							.form-group.col-sm-12
+								div.no-select
+									span Страна
+									div
+										p Украина
+										span Доставка только по территории Украины!
+							.form-group.col-sm-6
+								label(for='city') Город
+								select.selectpicker.custom-picker(title='Одесса', id='city', required)
+									option Львов
+									option Харьков
+									option Киев
+									option Днепр
+							.form-group.col-sm-6
+								label(for='delivery') Тип доставки
+								select.selectpicker.custom-picker(title='На склад перевозчика', id='delivery', required)
+									option На склад механика
+									option На склад неудержимых
+									option На склад Рембо
+									option На склад Джона Уика
+							.form-group.col-sm-6
+								label(for='transporter') Перевозчик
+								select.selectpicker.custom-picker(title='Новая почта', id='transporter', required)
+									option Новая почта
+									option Укрпочта
+							.form-group.col-sm-6
+								label(for='warehouse') Номер склада
+								select.selectpicker.custom-picker(title='№99', id='warehouse', required)
+									option №99
+									option №87
+									option №23
+									option №1
+							.form-group.col-sm-12
+								label(for='paytype') Способ оплаты
+								select.selectpicker.custom-picker(title='Картой Visa/MasterCard', id='paytype', required)
+									option Картой Visa/MasterCard
+									option Наложенным платежом
+								p.description Для оплаты заказа Вы будете перенаправлены на страницу оплаты LiqPay
+							.form-group.col-sm-12
+								label(for='addinfo') Дополнительная информация
+								textarea(id='addinfo')
+								.checkbox
+									label(for='checkbox2')
+										input(type='checkbox', name='checkbox2', id='checkbox2')
+										.checkbox-square
+										| Сохранить адрес
+										input.form-control.hidden-input(type='text', id='address', name='address', placeholder='Введите название адреса')
+					.cart__right-form-accept
+						.row
+							.col-sm-6
+								.radio
+									label(for='radio1')
+										input(type='radio', name='radioreg', id='radio1')
+										.radio-square
+										| Хочу получать персональные предложения и скидки по эл. почте
+							.col-sm-6
+								button.btn(type='submit') Подтвердить заказ, как гость

@@ -1,0 +1,43 @@
+.error {
+	@media #{$mobile} {
+		margin-bottom: 110px;
+		height: auto;
+	}
+	&__img {
+		position: absolute;
+		top: -72px;
+		left: 0px;
+		right: 0px;
+		margin: auto;
+		width: 50px;
+		height: 50px;
+		border: 1px solid #ffdad6;
+		border-radius: 50%;
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			right: 0px;
+			bottom: 0px;
+			margin: auto;
+			width: 14px;
+			height: 14px;
+			background: url(../images/error.png)no-repeat center;
+			background-size: contain;
+		}
+	}
+	&__block {
+	    margin-top: 143px;
+		h1 {
+		    margin-bottom: 13px;
+		}
+		.btn {
+			margin-top: 32px;
+			width: 208px;
+		}
+	}
+	&__text {
+		max-width: 340px;
+	}
+}

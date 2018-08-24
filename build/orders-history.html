@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>История заказов</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=no">
+  <link href="./css/style.css" rel="stylesheet"></head>
+  <body class="account-page">
+    <div class="loader"></div>
+    <div class="wrapper wrapper--account">
+      <header>
+        <div class="header">
+          <div class="header__top" style="background-image: url(images/top-bar.jpg)">
+            <p>Распродажа прошлых коллекций! Скидка до -50%</p>
+          </div>
+          <div class="header__main">
+            <div class="container">
+              <div class="header__logo">
+                <!-- a(href="./", style='background-image: url(' + require('../../components/images/logo.png') + ')')--><a href="./"><span class="header__logo-img"></span></a><span class="circle circle--small"></span><span class="circle circle--mid"></span><span class="circle circle--large"></span>
+              </div>
+              <div class="header__content">
+                <div class="header__content-top">
+                  <div class="header__hamburger" id="hamburger"><span class="top"></span><span class="mid"></span><span class="bottom"></span></div>
+                  <ul class="header__nav clearfix">
+                    <li><a href="where-to-buy.html">где купить?</a></li>
+                    <li><a href="about.html">о бренде</a></li>
+                    <li><a href="#">партнерам</a></li>
+                    <li><a href="delivery-payment.html">доставка и оплата</a></li>
+                    <li><a href="contacts.html">контакты</a></li>
+                  </ul>
+                  <ul class="header__tel">
+                    <li><a href="tel:+380666387267">+38 (066) 638-72-67</a>
+                      <ul class="header__tel-sub">
+                        <li><a href="tel:+380666387267">+38 (066) 638-72-67</a></li>
+                        <li><a href="tel:+380666387268">+38 (066) 638-72-68</a></li>
+                        <li><a href="tel:+380666387269">+38 (066) 638-72-69</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <ul class="header__right">
+                    <li class="header__search--mob"><a href="#" id="searchBtn"></a></li>
+                    <li class="header__login login" id="headerLogin"><a href="login-reg.html">
+                        <div class="description">Вход и регистрация</div></a></li>
+                    <li class="header__fav" id="headerFav"><a href="wishlist.html">
+                        <div class="description">Список желаний</div><span class="header__quantity">1</span></a></li>
+                    <li class="header__cart" id="headerCart"><a href="#">
+                        <div class="description">Корзина</div><span class="header__quantity">1</span></a>
+                      <div class="header__cart-dropdown" id="headerCartDropdown">
+                        <ul class="header__cart-dropdown-list">
+                                                    <li class="header__cart-dropdown-box">
+                                                      <div class="header__cart-dropdown-img"><img src="images/cart-item-1.png"></div>
+                                                      <div class="header__cart-dropdown-info">
+                                                        <div class="header__cart-dropdown-name">
+                                                          <p>Ползунки-штанишки</p>
+                                                        </div>
+                                                        <div class="header__cart-dropdown-size">
+                                                          <p>Размер: <span>18</span></p>
+                                                        </div>
+                                                        <div class="header__cart-dropdown-quantity"><span class="plus">+</span>
+                                                          <input class="input" value="1" type=""><span class="minus">-</span>
+                                                        </div>
+                                                      </div>
+                                                      <div class="header__cart-dropdown-price">
+                                                        <p class="header__cart-dropdown-cost">1140,00<span>грн.</span></p>
+                                                      </div><a class="header__cart-dropdown-del-item" href="#"></a>
+                                                    </li>
+                                                    <li class="header__cart-dropdown-box">
+                                                      <div class="header__cart-dropdown-img"><img src="images/cart-item-2.png"></div>
+                                                      <div class="header__cart-dropdown-info">
+                                                        <div class="header__cart-dropdown-name">
+                                                          <p>Комбинезон</p>
+                                                        </div>
+                                                        <div class="header__cart-dropdown-size">
+                                                          <p>Размер: <span>s</span></p>
+                                                        </div>
+                                                        <div class="header__cart-dropdown-quantity"><span class="plus">+</span>
+                                                          <input class="input" value="1" type=""><span class="minus">-</span>
+                                                        </div>
+                                                      </div>
+                                                      <div class="header__cart-dropdown-price">
+                                                        <p class="header__cart-dropdown-cost">649,00<span>грн.</span></p>
+                                                      </div><a class="header__cart-dropdown-del-item" href="#"></a>
+                                                    </li>
+                                                    <li class="header__cart-dropdown-box">
+                                                      <div class="header__cart-dropdown-img"><img src="images/cart-item-3.png"></div>
+                                                      <div class="header__cart-dropdown-info">
+                                                        <div class="header__cart-dropdown-name">
+                                                          <p>Платье</p>
+                                                        </div>
+                                                        <div class="header__cart-dropdown-size">
+                                                          <p>Размер: <span>14</span></p>
+                                                        </div>
+                                                        <div class="header__cart-dropdown-quantity"><span class="plus">+</span>
+                                                          <input class="input" value="1" type=""><span class="minus">-</span>
+                                                        </div>
+                                                      </div>
+                                                      <div class="header__cart-dropdown-price">
+                                                        <p class="header__cart-dropdown-cost">5049,00<span>грн.</span></p>
+                                                      </div><a class="header__cart-dropdown-del-item" href="#"></a>
+                                                    </li>
+                        </ul>
+                        <div class="header__cart-dropdown-total">
+                          <p>Общая сумма</p><span>6838,00 грн.</span>
+                        </div><a class="btn header__cart-dropdown-order" href="#">Оформить заказ</a>
+                        <div class="header__cart-dropdown-free">
+                          <p>Бесплатная доставка при заказе от 1000 грн.</p>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="header__content-bottom">
+                  <ul class="header__categories clearfix">
+                          <li><a href="#">Малышам</a>
+                          </li>
+                          <li><a href="#">Девочкам</a>
+                            <div class="header__dropdown">
+                              <div class="container">
+                                <div class="header__dropdown-content">
+                                  <div class="header__dropdown-left">
+                                    <ul class="nav nav-tabs">
+                                      <li class="active"><a data-toggle="tab" href="#tab1">Новая коллекция</a></li>
+                                      <li><a data-toggle="tab" href="#tab2">Look</a></li>
+                                      <li><a data-toggle="tab" href="#tab3">Распродажа</a></li>
+                                    </ul>
+                                  </div>
+                                  <div class="header__dropdown-center">
+                                    <div class="tab-content clearfix">
+                                      <div class="tab-pane fade in active" id="tab1">
+                                              <ul>
+                                                <li><a href="catalog.html">Аксессуары</a></li>
+                                                <li><a href="catalog.html">Блузы</a></li>
+                                                <li><a href="catalog.html">Боди</a></li>
+                                                <li><a href="catalog.html">Бриджи, шорты</a></li>
+                                                <li><a href="catalog.html">Брюки, штаны</a></li>
+                                                <li><a href="catalog.html">Головные уборы</a></li>
+                                                <li><a href="catalog.html">Гольфы</a></li>
+                                              </ul>
+                                              <ul>
+                                                <li><a href="catalog.html">Горловины</a></li>
+                                                <li><a href="catalog.html">Жакеты, кофты, куртки, бомберы</a></li>
+                                                <li><a href="catalog.html">Жилеты</a></li>
+                                                <li><a href="catalog.html">Комбинезоны</a></li>
+                                                <li><a href="catalog.html">Комплекты</a></li>
+                                                <li><a href="catalog.html">Костюмы</a></li>
+                                                <li><a href="catalog.html">Леггинсы, лосины</a></li>
+                                              </ul>
+                                              <ul>
+                                                <li><a href="catalog.html">Майки, футболки</a></li>
+                                                <li><a href="catalog.html">Нижнее белье</a></li>
+                                                <li><a href="catalog.html">Пижамы</a></li>
+                                                <li><a href="catalog.html">Платья, сарафаны, туники, юбки</a></li>
+                                                <li><a href="catalog.html">Свитшоты</a></li>
+                                                <li><a href="catalog.html">2-6 лет</a></li>
+                                                <li><a href="catalog.html">7-16 лет</a></li>
+                                              </ul>
+                                      </div>
+                                      <div class="tab-pane fade" id="tab2">
+                                              <ul>
+                                                <li><a href="catalog.html">Аксессуары</a></li>
+                                                <li><a href="catalog.html">Блузы</a></li>
+                                                <li><a href="catalog.html">Боди</a></li>
+                                                <li><a href="catalog.html">Бриджи, шорты</a></li>
+                                                <li><a href="catalog.html">Брюки, штаны</a></li>
+                                                <li><a href="catalog.html">Головные уборы</a></li>
+                                                <li><a href="catalog.html">Гольфы</a></li>
+                                              </ul>
+                                              <ul>
+                                                <li><a href="catalog.html">Горловины</a></li>
+                                                <li><a href="catalog.html">Жакеты, кофты, куртки, бомберы</a></li>
+                                                <li><a href="catalog.html">Жилеты</a></li>
+                                                <li><a href="catalog.html">Комбинезоны</a></li>
+                                                <li><a href="catalog.html">Комплекты</a></li>
+                                                <li><a href="catalog.html">Костюмы</a></li>
+                                                <li><a href="catalog.html">Леггинсы, лосины</a></li>
+                                              </ul>
+                                              <ul>
+                                                <li><a href="catalog.html">Майки, футболки</a></li>
+                                                <li><a href="catalog.html">Нижнее белье</a></li>
+                                                <li><a href="catalog.html">Пижамы</a></li>
+                                                <li><a href="catalog.html">Платья, сарафаны, туники, юбки</a></li>
+                                                <li><a href="catalog.html">Свитшоты</a></li>
+                                                <li><a href="catalog.html">2-6 лет</a></li>
+                                                <li><a href="catalog.html">7-16 лет</a></li>
+                                              </ul>
+                                      </div>
+                                      <div class="tab-pane fade" id="tab3">
+                                              <ul>
+                                                <li><a href="catalog.html">Аксессуары</a></li>
+                                                <li><a href="catalog.html">Блузы</a></li>
+                                                <li><a href="catalog.html">Боди</a></li>
+                                                <li><a href="catalog.html">Бриджи, шорты</a></li>
+                                                <li><a href="catalog.html">Брюки, штаны</a></li>
+                                                <li><a href="catalog.html">Головные уборы</a></li>
+                                                <li><a href="catalog.html">Гольфы</a></li>
+                                              </ul>
+                                              <ul>
+                                                <li><a href="catalog.html">Горловины</a></li>
+                                                <li><a href="catalog.html">Жакеты, кофты, куртки, бомберы</a></li>
+                                                <li><a href="catalog.html">Жилеты</a></li>
+                                                <li><a href="catalog.html">Комбинезоны</a></li>
+                                                <li><a href="catalog.html">Комплекты</a></li>
+                                                <li><a href="catalog.html">Костюмы</a></li>
+                                                <li><a href="catalog.html">Леггинсы, лосины</a></li>
+                                              </ul>
+                                              <ul>
+                                                <li><a href="catalog.html">Майки, футболки</a></li>
+                                                <li><a href="catalog.html">Нижнее белье</a></li>
+                                                <li><a href="catalog.html">Пижамы</a></li>
+                                                <li><a href="catalog.html">Платья, сарафаны, туники, юбки</a></li>
+                                                <li><a href="catalog.html">Свитшоты</a></li>
+                                                <li><a href="catalog.html">2-6 лет</a></li>
+                                                <li><a href="catalog.html">7-16 лет</a></li>
+                                              </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="header__dropdown-right">
+                                    <div class="header__dropdown-banner" style="background-image: url(images/banner-1.jpg)">
+                                      <h4>«НАРЯДНАЯ ОДЕЖДА»</h4><span>новая коллекция</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li><a href="#">Мальчикам</a>
+                          </li>
+                          <li><a href="#">Школьная форма</a>
+                          </li>
+                          <li><a href="#">Распродажа</a>
+                          </li>
+                  </ul>
+                  <form class="header__search" id="searchInput">
+                    <div class="form-group">
+                      <input class="form-control" type="search" placeholder="Поиск">
+                      <button type="submit"></button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="content">
+        <section class="breadcrumb">
+          <div class="container">
+            <ul class="clearfix">
+              <li><a href="./">Назад</a></li>
+              <li>История заказов</li>
+            </ul>
+            <div class="breadcrumb__download"><a href="#">Скачать каталог<span>PDF, 1.56MB</span></a></div>
+          </div>
+        </section>
+        <div class="account orders-history">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3 orders-history__left-side">
+                <div class="account__nav">
+                  <h2 class="account__nav-title">Личный кабинет</h2>
+                  <ul>
+                                        <li><a href="account-socials-in.html">Личные данные</a></li>
+                                        <li><a href="change-pwd.html">Изменение пароля</a></li>
+                                        <li><a href="delivery-address.html">Адреса доставки</a></li>
+                    <li class="active"><a href="orders-history.html">История заказов</a></li>
+                                        <li><a href="viewed-goods.html">Просмотренные товары</a></li>
+                    <li><a class="account__log-out" href="#">Выйти</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-9 orders-history__right-side">
+                <div class="account__title">
+                  <h1>История заказов</h1>
+                </div>
+                <div class="account__content">
+                  <div class="account__orders-history">
+                    <div class="table">
+                      <div class="thead">
+                        <div class="tr">
+                          <div class="th th-1">
+                            <p>Номер заказа</p>
+                          </div>
+                          <div class="th th-2">
+                            <p>Дата</p>
+                          </div>
+                          <div class="th th-3">
+                            <p>Единиц товара</p>
+                          </div>
+                          <div class="th th-4">
+                            <p>Сумма к оплате</p>
+                          </div>
+                          <div class="th th-5">
+                            <p>Статус</p>
+                          </div>
+                          <div class="th th-6">
+                            <p>Распечатать</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel-group orders-history__accordion" id="accordion">
+                                                <div class="tbody panel">
+                                                  <div class="panel-heading"><a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                                                      <div class="tr">
+                                                        <div class="td td-1">
+                                                          <p>55688765445662</p>
+                                                        </div>
+                                                        <div class="td td-2">
+                                                          <p class="orders-history__data">12.03.2018</p>
+                                                        </div>
+                                                        <div class="td td-3">
+                                                          <p>5</p>
+                                                        </div>
+                                                        <div class="td td-4">
+                                                          <p>1860,00<i>грн.</i></p>
+                                                        </div>
+                                                        <div class="td td-5">
+                                                          <p class="orders-history__status orders-history__status--waiting">Ожидается</p>
+                                                        </div>
+                                                        <div class="td td-6">
+                                                          <object class="orders-history__print"><a href="#"><img src="images/print.png">
+                                                              <p>Распечатать заказ</p></a></object>
+                                                        </div>
+                                                      </div></a></div>
+                                                  <div class="panel-collapse collapse" id="collapse1">
+                                                    <div class="panel-body">
+                                                                              <div class="row panel-body__content">
+                                                                                <div class="col-sm-7 col-lg-8 panel-body__left">
+                                                                                  <ul class="orders-history__list">
+                                                                                                            <li class="orders-history__item">
+                                                                                                              <div class="orders-history__img"><img src="images/panties-1.png"></div>
+                                                                                                              <div class="orders-history__description">
+                                                                                                                <div class="orders-history__article">
+                                                                                                                  <p>Артикул:</p><span>114290</span>
+                                                                                                                </div>
+                                                                                                                <div class="orders-history__name">
+                                                                                                                  <p>Ползунки-штанишки</p>
+                                                                                                                </div>
+                                                                                                                <div class="orders-history__color">
+                                                                                                                  <p>Цвет:</p><span>Красный</span>
+                                                                                                                </div>
+                                                                                                                <div class="orders-history__size">
+                                                                                                                  <p>Размер:</p><span>56</span>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="orders-history__quantity">
+                                                                                                                <p>1</p>
+                                                                                                              </div>
+                                                                                                              <div class="orders-history__price">
+                                                                                                                <p>1140,00<i>грн.</i></p>
+                                                                                                              </div>
+                                                                                                            </li>
+                                                                                                            <li class="orders-history__item">
+                                                                                                              <div class="orders-history__img"><img src="images/panties-2.png"></div>
+                                                                                                              <div class="orders-history__description">
+                                                                                                                <div class="orders-history__article">
+                                                                                                                  <p>Артикул:</p><span>114290</span>
+                                                                                                                </div>
+                                                                                                                <div class="orders-history__name">
+                                                                                                                  <p>Ползунки-штанишки</p>
+                                                                                                                </div>
+                                                                                                                <div class="orders-history__color">
+                                                                                                                  <p>Цвет:</p><span>Желтый</span>
+                                                                                                                </div>
+                                                                                                                <div class="orders-history__size">
+                                                                                                                  <p>Размер:</p><span>56</span>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="orders-history__quantity">
+                                                                                                                <p>2</p>
+                                                                                                              </div>
+                                                                                                              <div class="orders-history__price">
+                                                                                                                <p>1141,00<i>грн.</i></p>
+                                                                                                              </div>
+                                                                                                            </li>
+                                                                                                            <li class="orders-history__item">
+                                                                                                              <div class="orders-history__img"><img src="images/panties-3.png"></div>
+                                                                                                              <div class="orders-history__description">
+                                                                                                                <div class="orders-history__article">
+                                                                                                                  <p>Артикул:</p><span>114290</span>
+                                                                                                                </div>
+                                                                                                                <div class="orders-history__name">
+                                                                                                                  <p>Ползунки-штанишки</p>
+                                                                                                                </div>
+                                                                                                                <div class="orders-history__color">
+                                                                                                                  <p>Цвет:</p><span>Красный</span>
+                                                                                                                </div>
+                                                                                                                <div class="orders-history__size">
+                                                                                                                  <p>Размер:</p><span>56</span>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="orders-history__quantity">
+                                                                                                                <p>3</p>
+                                                                                                              </div>
+                                                                                                              <div class="orders-history__price">
+                                                                                                                <p>1142,00<i>грн.</i></p>
+                                                                                                              </div>
+                                                                                                            </li>
+                                                                                  </ul>
+                                                                                </div>
+                                                                                <div class="col-sm-5 col-lg-4 panel-body__right">
+                                                                                                          <div class="account__delivery-address-item">
+                                                                                                            <div class="account__delivery-address-main">
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Страна:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right">
+                                                                                                                  <p>Украина</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Город:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right">
+                                                                                                                  <p>Одесса</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Тип доставки:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right">
+                                                                                                                  <p>На склад перевозчика</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Перевозчик:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right">
+                                                                                                                  <p>Новая почта</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Номер склада:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right account__delivery-address-address">
+                                                                                                                  <p>№99 До 10 кг. Мини-отделение: площадь Греческая, 1</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Дополнительная информация:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right account__delivery-address-info">
+                                                                                                                  <p>Упакуйте в коробку</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                            </div>
+                                                                                                          </div>
+                                                                                </div>
+                                                                              </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="tbody panel">
+                                                  <div class="panel-heading"><a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                                                      <div class="tr">
+                                                        <div class="td td-1">
+                                                          <p>66846845465468</p>
+                                                        </div>
+                                                        <div class="td td-2">
+                                                          <p class="orders-history__data">08.02.2018</p>
+                                                        </div>
+                                                        <div class="td td-3">
+                                                          <p>2</p>
+                                                        </div>
+                                                        <div class="td td-4">
+                                                          <p>762,00<i>грн.</i></p>
+                                                        </div>
+                                                        <div class="td td-5">
+                                                          <p class="orders-history__status orders-history__status--done">Выполнен</p>
+                                                        </div>
+                                                        <div class="td td-6">
+                                                          <object class="orders-history__print"><a href="#"><img src="images/print.png">
+                                                              <p>Распечатать заказ</p></a></object>
+                                                        </div>
+                                                      </div></a></div>
+                                                  <div class="panel-collapse collapse" id="collapse2">
+                                                    <div class="panel-body">
+                                                                              <div class="row panel-body__content">
+                                                                                <div class="col-sm-7 col-lg-8 panel-body__left">
+                                                                                  <ul class="orders-history__list">
+                                                                                                            <li class="orders-history__item">
+                                                                                                              <div class="orders-history__img"><img src="images/panties-1.png"></div>
+                                                                                                              <div class="orders-history__description">
+                                                                                                                <div class="orders-history__article">
+                                                                                                                  <p>Артикул:</p><span>114290</span>
+                                                                                                                </div>
+                                                                                                                <div class="orders-history__name">
+                                                                                                                  <p>Ползунки-штанишки</p>
+                                                                                                                </div>
+                                                                                                                <div class="orders-history__color">
+                                                                                                                  <p>Цвет:</p><span>Красный</span>
+                                                                                                                </div>
+                                                                                                                <div class="orders-history__size">
+                                                                                                                  <p>Размер:</p><span>56</span>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="orders-history__quantity">
+                                                                                                                <p>2</p>
+                                                                                                              </div>
+                                                                                                              <div class="orders-history__price">
+                                                                                                                <p>1140,00<i>грн.</i></p>
+                                                                                                              </div>
+                                                                                                            </li>
+                                                                                  </ul>
+                                                                                </div>
+                                                                                <div class="col-sm-5 col-lg-4 panel-body__right">
+                                                                                                          <div class="account__delivery-address-item">
+                                                                                                            <div class="account__delivery-address-main">
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Страна:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right">
+                                                                                                                  <p>Украина</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Город:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right">
+                                                                                                                  <p>Одесса</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Тип доставки:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right">
+                                                                                                                  <p>На склад перевозчика</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Перевозчик:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right">
+                                                                                                                  <p>Новая почта</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Номер склада:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right account__delivery-address-address">
+                                                                                                                  <p>№99 До 10 кг. Мини-отделение: площадь Греческая, 1</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Дополнительная информация:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right account__delivery-address-info">
+                                                                                                                  <p>Упакуйте в коробку</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                            </div>
+                                                                                                          </div>
+                                                                                </div>
+                                                                              </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="tbody panel">
+                                                  <div class="panel-heading"><a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                                                      <div class="tr">
+                                                        <div class="td td-1">
+                                                          <p>14548654324358</p>
+                                                        </div>
+                                                        <div class="td td-2">
+                                                          <p class="orders-history__data">10.01.2018</p>
+                                                        </div>
+                                                        <div class="td td-3">
+                                                          <p>1</p>
+                                                        </div>
+                                                        <div class="td td-4">
+                                                          <p>450,00<i>грн.</i></p>
+                                                        </div>
+                                                        <div class="td td-5">
+                                                          <p class="orders-history__status orders-history__status--canceled">Отменен</p>
+                                                        </div>
+                                                        <div class="td td-6">
+                                                          <object class="orders-history__print"><a href="#"><img src="images/print.png">
+                                                              <p>Распечатать заказ</p></a></object>
+                                                        </div>
+                                                      </div></a></div>
+                                                  <div class="panel-collapse collapse" id="collapse3">
+                                                    <div class="panel-body">
+                                                                              <div class="row panel-body__content">
+                                                                                <div class="col-sm-7 col-lg-8 panel-body__left">
+                                                                                  <ul class="orders-history__list">
+                                                                                                            <li class="orders-history__item">
+                                                                                                              <div class="orders-history__img"><img src="images/panties-1.png"></div>
+                                                                                                              <div class="orders-history__description">
+                                                                                                                <div class="orders-history__article">
+                                                                                                                  <p>Артикул:</p><span>114290</span>
+                                                                                                                </div>
+                                                                                                                <div class="orders-history__name">
+                                                                                                                  <p>Ползунки-штанишки</p>
+                                                                                                                </div>
+                                                                                                                <div class="orders-history__color">
+                                                                                                                  <p>Цвет:</p><span>Красный</span>
+                                                                                                                </div>
+                                                                                                                <div class="orders-history__size">
+                                                                                                                  <p>Размер:</p><span>56</span>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="orders-history__quantity">
+                                                                                                                <p>2</p>
+                                                                                                              </div>
+                                                                                                              <div class="orders-history__price">
+                                                                                                                <p>1140,00<i>грн.</i></p>
+                                                                                                              </div>
+                                                                                                            </li>
+                                                                                  </ul>
+                                                                                </div>
+                                                                                <div class="col-sm-5 col-lg-4 panel-body__right">
+                                                                                                          <div class="account__delivery-address-item">
+                                                                                                            <div class="account__delivery-address-main">
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Страна:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right">
+                                                                                                                  <p>Украина</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Город:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right">
+                                                                                                                  <p>Одесса</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Тип доставки:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right">
+                                                                                                                  <p>На склад перевозчика</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Перевозчик:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right">
+                                                                                                                  <p>Новая почта</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Номер склада:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right account__delivery-address-address">
+                                                                                                                  <p>№99 До 10 кг. Мини-отделение: площадь Греческая, 1</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Дополнительная информация:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right account__delivery-address-info">
+                                                                                                                  <p>Упакуйте в коробку</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                            </div>
+                                                                                                          </div>
+                                                                                </div>
+                                                                              </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="tbody panel">
+                                                  <div class="panel-heading"><a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+                                                      <div class="tr">
+                                                        <div class="td td-1">
+                                                          <p>45688765445662</p>
+                                                        </div>
+                                                        <div class="td td-2">
+                                                          <p class="orders-history__data">06.12.2017</p>
+                                                        </div>
+                                                        <div class="td td-3">
+                                                          <p>1</p>
+                                                        </div>
+                                                        <div class="td td-4">
+                                                          <p>820,00<i>грн.</i></p>
+                                                        </div>
+                                                        <div class="td td-5">
+                                                          <p class="orders-history__status orders-history__status--done">Выполнен</p>
+                                                        </div>
+                                                        <div class="td td-6">
+                                                          <object class="orders-history__print"><a href="#"><img src="images/print.png">
+                                                              <p>Распечатать заказ</p></a></object>
+                                                        </div>
+                                                      </div></a></div>
+                                                  <div class="panel-collapse collapse" id="collapse4">
+                                                    <div class="panel-body">
+                                                                              <div class="row panel-body__content">
+                                                                                <div class="col-sm-7 col-lg-8 panel-body__left">
+                                                                                  <ul class="orders-history__list">
+                                                                                                            <li class="orders-history__item">
+                                                                                                              <div class="orders-history__img"><img src="images/panties-1.png"></div>
+                                                                                                              <div class="orders-history__description">
+                                                                                                                <div class="orders-history__article">
+                                                                                                                  <p>Артикул:</p><span>114290</span>
+                                                                                                                </div>
+                                                                                                                <div class="orders-history__name">
+                                                                                                                  <p>Ползунки-штанишки</p>
+                                                                                                                </div>
+                                                                                                                <div class="orders-history__color">
+                                                                                                                  <p>Цвет:</p><span>Красный</span>
+                                                                                                                </div>
+                                                                                                                <div class="orders-history__size">
+                                                                                                                  <p>Размер:</p><span>56</span>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="orders-history__quantity">
+                                                                                                                <p>2</p>
+                                                                                                              </div>
+                                                                                                              <div class="orders-history__price">
+                                                                                                                <p>1140,00<i>грн.</i></p>
+                                                                                                              </div>
+                                                                                                            </li>
+                                                                                  </ul>
+                                                                                </div>
+                                                                                <div class="col-sm-5 col-lg-4 panel-body__right">
+                                                                                                          <div class="account__delivery-address-item">
+                                                                                                            <div class="account__delivery-address-main">
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Страна:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right">
+                                                                                                                  <p>Украина</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Город:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right">
+                                                                                                                  <p>Одесса</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Тип доставки:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right">
+                                                                                                                  <p>На склад перевозчика</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Перевозчик:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right">
+                                                                                                                  <p>Новая почта</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Номер склада:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right account__delivery-address-address">
+                                                                                                                  <p>№99 До 10 кг. Мини-отделение: площадь Греческая, 1</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Дополнительная информация:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right account__delivery-address-info">
+                                                                                                                  <p>Упакуйте в коробку</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                            </div>
+                                                                                                          </div>
+                                                                                </div>
+                                                                              </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="tbody panel">
+                                                  <div class="panel-heading"><a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
+                                                      <div class="tr">
+                                                        <div class="td td-1">
+                                                          <p>96846845465468</p>
+                                                        </div>
+                                                        <div class="td td-2">
+                                                          <p class="orders-history__data">06.07.2017</p>
+                                                        </div>
+                                                        <div class="td td-3">
+                                                          <p>3</p>
+                                                        </div>
+                                                        <div class="td td-4">
+                                                          <p>762,00<i>грн.</i></p>
+                                                        </div>
+                                                        <div class="td td-5">
+                                                          <p class="orders-history__status orders-history__status--done">Выполнен</p>
+                                                        </div>
+                                                        <div class="td td-6">
+                                                          <object class="orders-history__print"><a href="#"><img src="images/print.png">
+                                                              <p>Распечатать заказ</p></a></object>
+                                                        </div>
+                                                      </div></a></div>
+                                                  <div class="panel-collapse collapse" id="collapse5">
+                                                    <div class="panel-body">
+                                                                              <div class="row panel-body__content">
+                                                                                <div class="col-sm-7 col-lg-8 panel-body__left">
+                                                                                  <ul class="orders-history__list">
+                                                                                                            <li class="orders-history__item">
+                                                                                                              <div class="orders-history__img"><img src="images/panties-1.png"></div>
+                                                                                                              <div class="orders-history__description">
+                                                                                                                <div class="orders-history__article">
+                                                                                                                  <p>Артикул:</p><span>114290</span>
+                                                                                                                </div>
+                                                                                                                <div class="orders-history__name">
+                                                                                                                  <p>Ползунки-штанишки</p>
+                                                                                                                </div>
+                                                                                                                <div class="orders-history__color">
+                                                                                                                  <p>Цвет:</p><span>Красный</span>
+                                                                                                                </div>
+                                                                                                                <div class="orders-history__size">
+                                                                                                                  <p>Размер:</p><span>56</span>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="orders-history__quantity">
+                                                                                                                <p>2</p>
+                                                                                                              </div>
+                                                                                                              <div class="orders-history__price">
+                                                                                                                <p>1140,00<i>грн.</i></p>
+                                                                                                              </div>
+                                                                                                            </li>
+                                                                                  </ul>
+                                                                                </div>
+                                                                                <div class="col-sm-5 col-lg-4 panel-body__right">
+                                                                                                          <div class="account__delivery-address-item">
+                                                                                                            <div class="account__delivery-address-main">
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Страна:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right">
+                                                                                                                  <p>Украина</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Город:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right">
+                                                                                                                  <p>Одесса</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Тип доставки:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right">
+                                                                                                                  <p>На склад перевозчика</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Перевозчик:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right">
+                                                                                                                  <p>Новая почта</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Номер склада:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right account__delivery-address-address">
+                                                                                                                  <p>№99 До 10 кг. Мини-отделение: площадь Греческая, 1</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Дополнительная информация:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right account__delivery-address-info">
+                                                                                                                  <p>Упакуйте в коробку</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                            </div>
+                                                                                                          </div>
+                                                                                </div>
+                                                                              </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="tbody panel">
+                                                  <div class="panel-heading"><a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+                                                      <div class="tr">
+                                                        <div class="td td-1">
+                                                          <p>64548654324358</p>
+                                                        </div>
+                                                        <div class="td td-2">
+                                                          <p class="orders-history__data">10.04.2017</p>
+                                                        </div>
+                                                        <div class="td td-3">
+                                                          <p>3</p>
+                                                        </div>
+                                                        <div class="td td-4">
+                                                          <p>1953,00<i>грн.</i></p>
+                                                        </div>
+                                                        <div class="td td-5">
+                                                          <p class="orders-history__status orders-history__status--done">Выполнен</p>
+                                                        </div>
+                                                        <div class="td td-6">
+                                                          <object class="orders-history__print"><a href="#"><img src="images/print.png">
+                                                              <p>Распечатать заказ</p></a></object>
+                                                        </div>
+                                                      </div></a></div>
+                                                  <div class="panel-collapse collapse" id="collapse6">
+                                                    <div class="panel-body">
+                                                                              <div class="row panel-body__content">
+                                                                                <div class="col-sm-7 col-lg-8 panel-body__left">
+                                                                                  <ul class="orders-history__list">
+                                                                                                            <li class="orders-history__item">
+                                                                                                              <div class="orders-history__img"><img src="images/panties-1.png"></div>
+                                                                                                              <div class="orders-history__description">
+                                                                                                                <div class="orders-history__article">
+                                                                                                                  <p>Артикул:</p><span>114290</span>
+                                                                                                                </div>
+                                                                                                                <div class="orders-history__name">
+                                                                                                                  <p>Ползунки-штанишки</p>
+                                                                                                                </div>
+                                                                                                                <div class="orders-history__color">
+                                                                                                                  <p>Цвет:</p><span>Красный</span>
+                                                                                                                </div>
+                                                                                                                <div class="orders-history__size">
+                                                                                                                  <p>Размер:</p><span>56</span>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="orders-history__quantity">
+                                                                                                                <p>2</p>
+                                                                                                              </div>
+                                                                                                              <div class="orders-history__price">
+                                                                                                                <p>1140,00<i>грн.</i></p>
+                                                                                                              </div>
+                                                                                                            </li>
+                                                                                                            <li class="orders-history__item">
+                                                                                                              <div class="orders-history__img"><img src="images/panties-2.png"></div>
+                                                                                                              <div class="orders-history__description">
+                                                                                                                <div class="orders-history__article">
+                                                                                                                  <p>Артикул:</p><span>114290</span>
+                                                                                                                </div>
+                                                                                                                <div class="orders-history__name">
+                                                                                                                  <p>Ползунки-штанишки</p>
+                                                                                                                </div>
+                                                                                                                <div class="orders-history__color">
+                                                                                                                  <p>Цвет:</p><span>желтый</span>
+                                                                                                                </div>
+                                                                                                                <div class="orders-history__size">
+                                                                                                                  <p>Размер:</p><span>56</span>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="orders-history__quantity">
+                                                                                                                <p>1</p>
+                                                                                                              </div>
+                                                                                                              <div class="orders-history__price">
+                                                                                                                <p>520,00<i>грн.</i></p>
+                                                                                                              </div>
+                                                                                                            </li>
+                                                                                                            <li class="orders-history__item">
+                                                                                                              <div class="orders-history__img"><img src="images/panties-1.png"></div>
+                                                                                                              <div class="orders-history__description">
+                                                                                                                <div class="orders-history__article">
+                                                                                                                  <p>Артикул:</p><span>114290</span>
+                                                                                                                </div>
+                                                                                                                <div class="orders-history__name">
+                                                                                                                  <p>Ползунки-штанишки</p>
+                                                                                                                </div>
+                                                                                                                <div class="orders-history__color">
+                                                                                                                  <p>Цвет:</p><span>Темно-серый</span>
+                                                                                                                </div>
+                                                                                                                <div class="orders-history__size">
+                                                                                                                  <p>Размер:</p><span>56</span>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="orders-history__quantity">
+                                                                                                                <p>1</p>
+                                                                                                              </div>
+                                                                                                              <div class="orders-history__price">
+                                                                                                                <p>510,00<i>грн.</i></p>
+                                                                                                              </div>
+                                                                                                            </li>
+                                                                                    <li class="orders-history__item orders-history__delivery">
+                                                                                      <div class="orders-history__delivery-img"><img src="images/car.png"></div>
+                                                                                      <div class="orders-history__delivery-name">
+                                                                                        <p>Доставка Новой Почтой</p>
+                                                                                      </div>
+                                                                                      <div class="orders-history__delivery-price">
+                                                                                        <p>35,00<i>грн.</i></p>
+                                                                                      </div>
+                                                                                    </li>
+                                                                                  </ul>
+                                                                                </div>
+                                                                                <div class="col-sm-5 col-lg-4 panel-body__right">
+                                                                                                          <div class="account__delivery-address-item">
+                                                                                                            <div class="account__delivery-address-main">
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Страна:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right">
+                                                                                                                  <p>Украина</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Город:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right">
+                                                                                                                  <p>Одесса</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Тип доставки:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right">
+                                                                                                                  <p>На склад перевозчика</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Перевозчик:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right">
+                                                                                                                  <p>Новая почта</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Номер склада:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right account__delivery-address-address">
+                                                                                                                  <p>№99 До 10 кг. Мини-отделение: площадь Греческая, 1</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Дополнительная информация:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right account__delivery-address-info">
+                                                                                                                  <p>Упакуйте в коробку</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                            </div>
+                                                                                                          </div>
+                                                                                </div>
+                                                                              </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="tbody panel">
+                                                  <div class="panel-heading"><a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
+                                                      <div class="tr">
+                                                        <div class="td td-1">
+                                                          <p>78988765445662</p>
+                                                        </div>
+                                                        <div class="td td-2">
+                                                          <p class="orders-history__data">02.02.2017</p>
+                                                        </div>
+                                                        <div class="td td-3">
+                                                          <p>1</p>
+                                                        </div>
+                                                        <div class="td td-4">
+                                                          <p>460,00<i>грн.</i></p>
+                                                        </div>
+                                                        <div class="td td-5">
+                                                          <p class="orders-history__status orders-history__status--done">Выполнен</p>
+                                                        </div>
+                                                        <div class="td td-6">
+                                                          <object class="orders-history__print"><a href="#"><img src="images/print.png">
+                                                              <p>Распечатать заказ</p></a></object>
+                                                        </div>
+                                                      </div></a></div>
+                                                  <div class="panel-collapse collapse" id="collapse7">
+                                                    <div class="panel-body">
+                                                                              <div class="row panel-body__content">
+                                                                                <div class="col-sm-7 col-lg-8 panel-body__left">
+                                                                                  <ul class="orders-history__list">
+                                                                                                            <li class="orders-history__item">
+                                                                                                              <div class="orders-history__img"><img src="images/panties-1.png"></div>
+                                                                                                              <div class="orders-history__description">
+                                                                                                                <div class="orders-history__article">
+                                                                                                                  <p>Артикул:</p><span>114290</span>
+                                                                                                                </div>
+                                                                                                                <div class="orders-history__name">
+                                                                                                                  <p>Ползунки-штанишки</p>
+                                                                                                                </div>
+                                                                                                                <div class="orders-history__color">
+                                                                                                                  <p>Цвет:</p><span>Красный</span>
+                                                                                                                </div>
+                                                                                                                <div class="orders-history__size">
+                                                                                                                  <p>Размер:</p><span>56</span>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="orders-history__quantity">
+                                                                                                                <p>2</p>
+                                                                                                              </div>
+                                                                                                              <div class="orders-history__price">
+                                                                                                                <p>1140,00<i>грн.</i></p>
+                                                                                                              </div>
+                                                                                                            </li>
+                                                                                  </ul>
+                                                                                </div>
+                                                                                <div class="col-sm-5 col-lg-4 panel-body__right">
+                                                                                                          <div class="account__delivery-address-item">
+                                                                                                            <div class="account__delivery-address-main">
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Страна:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right">
+                                                                                                                  <p>Украина</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Город:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right">
+                                                                                                                  <p>Одесса</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Тип доставки:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right">
+                                                                                                                  <p>На склад перевозчика</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Перевозчик:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right">
+                                                                                                                  <p>Новая почта</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Номер склада:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right account__delivery-address-address">
+                                                                                                                  <p>№99 До 10 кг. Мини-отделение: площадь Греческая, 1</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="row account__delivery-address-row">
+                                                                                                                <div class="col-xs-5 account__delivery-address-left">
+                                                                                                                  <p>Дополнительная информация:</p>
+                                                                                                                </div>
+                                                                                                                <div class="col-xs-7 account__delivery-address-right account__delivery-address-info">
+                                                                                                                  <p>Упакуйте в коробку</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                            </div>
+                                                                                                          </div>
+                                                                                </div>
+                                                                              </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<footer>
+  <div class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__left">
+          <div class="footer__copyright"><span><span id="year"></span>Smil™</span><a href="#"><img src="images/work-ua.png" alt=""></a></div>
+        </div>
+        <div class="footer__center">
+          <div class="footer__company">
+            <p class="footer__title">Компания</p>
+            <ul>
+              <li><a href="about.html" title="О бренде">О бренде</a></li>
+              <li><a href="news-list.html" title="Новости">Новости</a></li>
+              <li><a href="vacancy.html" title="Вакансии">Вакансии</a></li>
+            </ul>
+          </div>
+          <div class="footer__programs">
+            <p class="footer__title">Программы лояльности</p>
+            <ul>
+              <li><a href="#" title="Клубная карта">Клубная карта</a></li>
+              <li><a href="#" title="Подарочный сертификат">Подарочный сертификат</a></li>
+            </ul>
+          </div>
+          <div class="footer__guide">
+            <p class="footer__title">Руководство по изделиям</p>
+            <ul>
+              <li><a href="textile.html" title="Виды полотен">Виды полотен</a></li>
+              <li><a href="sizing.html" title="Размерная сетка">Размерная сетка</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__right">
+          <div class="footer__socials">
+            <ul class="clearfix">
+              <li><a class="instagram" href="http://instagram.com" target="_blank"></a></li>
+              <li><a class="facebook" href="http://facebook.com" target="_blank"></a></li>
+              <li><a class="youtube" href="http://youtube.com" target="_blank"></a></li>
+              <li><a class="behance" href="http://vk.com" target="_blank"></a></li>
+            </ul>
+          </div>
+          <div class="footer__develop"><a href="#"></a></div>
+        </div>
+        <div class="footer__top"></div>
+        <div class="footer__mid"></div>
+        <div class="footer__bottom"></div>
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+  <script type="text/javascript" src="js/bundle.js"></script></body>
+</html>

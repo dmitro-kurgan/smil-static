@@ -1,0 +1,46 @@
+extends ../templates/base
+
+block variables
+	- var classBody = 'reset-pwd-page';
+	- var classWrapper = 'reset-pwd-list';
+
+block title
+	title Вход и регистрация
+
+block main
+	section.breadcrumb
+		.container
+			ul.clearfix
+				li
+					a(href='./') Вернуться
+	.reset-pwd.reset-pwd-success
+		.container
+			.reset-pwd__block.row
+				.reset-pwd__left.col-sm-6
+					.reset-pwd__title
+						p Восстановление пароля
+					form.reset-pwd__form
+						p
+							| Пароль успешно отправлен на почту!
+					.reset-pwd__social-enter
+						p Войти как пользователь
+						div
+							a(href="#").btn.btn--fb Facebook
+							a(href="#").btn.btn--google Google
+				.reset-pwd__right.col-sm-6
+					.reset-pwd__title
+						p Регистрация
+					form.reset-pwd__form
+						.form-group
+							label(for='name') Имя
+							input.form-control(type='text', id='name', name='name')
+						.form-group
+							label(for='lastname') Фамилия
+							input.form-control(type='text', id='lastname', name='lastname')
+						.form-group
+							label(for='email') Электронная почта
+							input.form-control(type='text', id='email', name='email')
+						.form-group
+							label(for='pwd') Придумайте пароль
+							input.form-control(type='password', id='pwd', name='pwd')
+						button.btn(type='submit') Зарегистрироваться

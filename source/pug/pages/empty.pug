@@ -1,0 +1,24 @@
+extends ../templates/base
+
+block variables
+	- var classBody = 'empty-page';
+	- var classWrapper = 'empty';
+
+block title
+	title Empty
+
+block main
+	.empty
+		.container
+			.free-top
+				p Бесплатная доставка при заказе от 1000 грн.
+				.free-top__close
+			.empty__block
+				h1.empty__title Ваша корзина пуста!
+					span.empty__cart-img
+				p.empty__text
+					| Если в корзине были товары
+					span -
+					a(href="#") авторизуйтесь,
+					| чтобы посмотреть список.
+				a(href="#").btn Перейти в каталог

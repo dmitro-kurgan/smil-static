@@ -1,0 +1,109 @@
+extends ../templates/base
+
+block variables
+	- var classBody = 'account-page';
+	- var classWrapper = 'account';
+
+block title
+	title Адреса доставки
+
+block main
+	section.breadcrumb
+		.container
+			ul.clearfix
+				li
+					a(href='./') Назад
+				li Изменение пароля
+			.breadcrumb__download
+				a(href="#") Скачать каталог
+					span PDF, 1.56MB
+	.account
+		.container
+			.row
+				.col-sm-3
+					.account__nav
+						h2.account__nav-title Личный кабинет
+						ul
+							mixin li(name, link)
+								li
+									a(href= link) #{name}
+							+li('Личные данные', 'account-socials-in.html')
+							+li('Изменение пароля', 'change-pwd.html')
+							li(class="active")
+								a(href="delivery-address.html") Адреса доставки
+							+li('История заказов', 'orders-history.html')
+							+li('Просмотренные товары', 'viewed-goods.html')
+							li
+								a(href="#", class="account__log-out") Выйти
+				.col-sm-9
+					.account__title
+						h1 Адреса доставки
+					.account__content
+						.account__delivery-address
+							ul.account__delivery-address-list.row
+								mixin addInfo(addInfo)
+									.row.account__delivery-address-row
+										.col-xs-5.account__delivery-address-left
+											p Дополнительная информация:
+										.col-xs-7.account__delivery-address-right.account__delivery-address-info
+											p #{addInfo}
+								mixin addressItem(name, deliveryType, carrier, placeType, placeAddress, costType, radio)
+									li.col-md-6.col-lg-4
+										.account__delivery-address-item
+											h3.account__delivery-address-title #{name}
+											.account__delivery-address-block
+												.account__delivery-address-main
+													.row.account__delivery-address-row
+														.col-xs-5.account__delivery-address-left
+															p Страна:
+														.col-xs-7.account__delivery-address-right
+															p Украина
+													.row.account__delivery-address-row
+														.col-xs-5.account__delivery-address-left
+															p Город:
+														.col-xs-7.account__delivery-address-right
+															p Одесса
+													.row.account__delivery-address-row
+														.col-xs-5.account__delivery-address-left
+															p Тип доставки:
+														.col-xs-7.account__delivery-address-right
+															p #{deliveryType}
+													.row.account__delivery-address-row
+														.col-xs-5.account__delivery-address-left
+															p Перевозчик:
+														.col-xs-7.account__delivery-address-right
+															p #{carrier}
+													.row.account__delivery-address-row
+														.col-xs-5.account__delivery-address-left
+															p #{placeType}:
+														.col-xs-7.account__delivery-address-right.account__delivery-address-address
+															p #{placeAddress}
+													.row.account__delivery-address-row
+														.col-xs-5.account__delivery-address-left
+															p Способ оплаты:
+														.col-xs-7.account__delivery-address-right
+															p #{costType}
+													block
+												.account__delivery-address-custom
+													a(href="#").account__delivery-address-edit Редактировать
+													a(href="#").account__delivery-address-del Удалить
+												.radio-block
+													.radio
+														label(for='radio' + radio)
+															input(type='radio', name='radio-default', id='radio' + radio)
+															.radio-square
+															| Использовать как адрес по умолчанию
+								+addressItem('Работа', 'На склад перевозчика', 'Новая почта', 'Номер склада', '№99 До 10 кг. Мини-отделение: площадь Греческая, 1', 'Наложенный платеж', '1')
+									+addInfo('Упакуйте коробку')
+								+addressItem('Дом курьером ИнТайм', 'Курьером', 'ИнТайм', 'Адрес доставки', 'ул.Днепропетровская дорога, 260/5, кв., 156', 'На карту ПриватБанка', '2')
+									+addInfo('8 этаж, первая дверь от лифта направо код от парадной 2564')
+								+addressItem('Работа УкрПочта', 'На склад перевозчика', 'УкрПочта', 'Адрес доставки', 'пер. Вице-Адмирала Жукова 5', 'Картой Visa/MasterCard', '3')
+									+addInfo('Кафе "Белый Кит" подойти к бармену')
+								+addressItem('Домой на склад Новой Почты', 'На склад перевозчика', 'Новая почта', 'Номер склада', '№111(до 15кг), Мини-отделение: ул. Сахарова, 22', 'Наложенный платеж', '4')
+								li.col-md-6.col-lg-4
+									a(href="#").account__delivery-address-add
+										div
+											img(src=require('../../components/images/add.png'))
+											p Добавить новый адрес
+block modals
+	include ../modules/modals-edit

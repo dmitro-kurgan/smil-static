@@ -1,0 +1,139 @@
+.wrapper {
+	&--sizing{
+		.breadcrumb {
+			li {
+				&:nth-child(2) {
+					&:before {
+						content: '';
+						position: absolute;
+						right: 0px;
+						top: 0px;
+						bottom: 0px;
+						margin: auto;
+					}
+					&:before {
+						width: 0px;
+						height: 0px;
+						padding: 2px;
+						border-width: 0px 1px 1px 0px;
+						border-color: #585858;
+						border-style: solid;
+						@include addPrefix(transform, rotate(-45deg));
+					}
+					a {
+						padding-right: 15px;
+						position: relative;
+						
+					}
+				}
+				& + li + li {
+					border-left: none;
+					margin-left: 8px;
+					padding-left: 0px;
+				}
+			}
+		}
+	}
+}
+.sizing {
+	padding-bottom: 63px;
+	@media #{$mobile} {
+		padding-bottom: 0;
+	}
+	&__title {
+		text-align: center;
+		margin-top: 29px;
+		margin-bottom: 53px;
+		@media #{$mobile} {
+			margin-bottom: 40px;
+		}
+		p {
+			font-size: 40px;
+			font-weight: 200;
+			line-height: 48px;
+			display: inline-block;
+			vertical-align: middle;
+			@media #{$mobile} {
+				font-size: 20px;
+			}	
+		}
+	}
+	&__block {
+		h5 {
+			font-size: 20px;
+			font-weight: 300;
+		    margin-bottom: 25px;
+		    @media #{$mobile} {
+		    	font-size: 16px;
+		    	text-align: center;
+		    }
+		}
+		ul {
+			&:nth-child(2n+2) {
+				.sizing__box {
+					margin-left: auto;
+				}
+				table {
+					
+				}
+			}
+		}
+		table {
+			
+			tr {
+				td {
+					&:first-child {
+						padding-left: 18px;
+						width: 198px;
+					}
+
+					&:nth-child(n+2) {
+						text-align: center;
+						width: 25%;
+					}
+					// &:nth-child(2) {
+					// 	width: 127px;
+					// }
+					// &:nth-child(3) {
+					// 	width: 127px;
+					// }
+					&:last-child {
+						padding-right: 0px;
+						width: 115px;
+					}
+				}
+			}
+		}
+		thead {
+			font-size: 10px;
+			text-transform: uppercase;
+			tr {
+				td {
+					// text-align: center;
+					padding-bottom: 5px;
+
+				}
+			}
+		}
+		tbody {
+			font-size: 14px;
+			tr {
+				td {
+					&:first-child {
+						font-weight: 700;
+					}
+					
+				}
+				td {
+					// padding-bottom: 9px;
+					padding: 17px 8px;
+				}
+			}
+			
+		}
+	}
+	&__box {
+		max-width: 505px;
+		margin-bottom: 83px;
+	}
+}

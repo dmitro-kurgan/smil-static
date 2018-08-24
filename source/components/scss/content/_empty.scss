@@ -1,0 +1,55 @@
+.wrapper {
+	overflow: hidden;
+	&--empty {
+
+	}
+}
+.empty, .error {
+	&__block {
+		.btn {
+			margin-top: 30px;
+			width: 255px;
+			height: 40px;
+			border-radius: 3px;
+			background-color: #54d960;
+			font-size: 14px;
+			padding: 8px 12px;
+			color: #fff;
+		}
+	}
+	&__text {
+		font-size: 12px;
+		max-width: 290px;
+		line-height: 2;
+		margin: auto;
+		span {
+			margin-left: 5px;
+			margin-right: 5px;
+		}
+		a {
+			font-weight: 700;
+			position: relative;
+			margin-right: 5px;
+			display: inline-block;
+			line-height: 1.25;
+			&:after {
+				content: '';
+				position: absolute;
+				bottom: -2px;
+				left: 0px;
+				right: 0px;
+				height: 1px;
+				width: 100%;
+				background-color: #cccccc;
+			}
+		}
+	}
+	&__cart-img {
+		@extend .success__ok;
+		&:before {
+			background: url(../images/cart.png)no-repeat center;
+			width: 21px;
+			height: 17px;
+		}
+	}
+}

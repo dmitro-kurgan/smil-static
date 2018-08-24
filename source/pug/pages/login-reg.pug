@@ -1,0 +1,64 @@
+extends ../templates/base
+
+block variables
+	- var classBody = 'login-reg-page';
+	- var classWrapper = 'login-reg';
+
+block title
+	title Вход и регистрация
+
+block main
+	section.breadcrumb
+		.container
+			ul.clearfix
+				li
+					a(href='./') Вернуться
+	.login-reg
+		.container
+			.login-reg__block.row
+				.login-reg__left.col-sm-6
+					.login-reg__title
+						p Восстановление пароля
+					form.login-reg__form
+						.form-group.has-error
+							label(for='mail') Электронная почта
+							input.form-control(type='text', id='mail', name='mail')
+							.has-error__alert
+								p Неизвестная почта/Введите эл.почту
+								span.has-error__close
+						.form-group.has-error
+							label(for='password') Пароль
+							input.form-control(type='password', id='password', name='password')
+							.has-error__alert
+								p Неверный пароль
+								span.has-error__close
+						.checkbox
+							label(for='checkbox')
+								input(type='checkbox', name='checkbox', id='checkbox')
+								.radio-square
+								| Запомнить меня
+						button.btn(type='submit') Войти
+						.login-reg__back-to
+							a(href="#") Забыли пароль?
+					.login-reg__social-enter
+						p Войти как пользователь
+						div
+							a(href="#").btn.btn--fb Facebook
+							a(href="#").btn.btn--google Google
+				.login-reg__right.col-sm-6
+					.login-reg__title
+						p Регистрация
+					form.login-reg__form
+						.form-group
+							label(for='name') Имя
+							input.form-control(type='text', id='name', name='name')
+						.form-group
+							label(for='lastname') Фамилия
+							input.form-control(type='text', id='lastname', name='lastname')
+						.form-group
+							label(for='email') Электронная почта
+							input.form-control(type='text', id='email', name='email')
+						.form-group
+							label(for='pwd') Придумайте пароль
+							input.form-control(type='password', id='pwd', name='pwd')
+						button.btn(type='submit') Зарегистрироваться

@@ -1,0 +1,76 @@
+extends ../templates/base
+
+block variables
+	- var classBody = 'contacts-page';
+	- var classWrapper = 'contacts';
+
+block title
+	title Контакты
+
+block main
+	.container
+		section.breadcrumb
+			.container
+				ul.clearfix
+					li
+						a(href='./') Назад
+					li
+						a(href='#') Виды полотен
+				.breadcrumb__download
+					a(href="#") Скачать каталог
+						span PDF, 1.56MB
+		.contacts.row
+			.contacts__left.col-md-6
+				.contacts__title
+					p Контакты
+				.contacts__info
+					.row.contacts__info-row
+						ul.col-sm-6
+							li
+								span.contacts__info-title Интернет-магазин "смил"
+							li
+								a(href="tel:+380666387267").contacts__tel +38 (066) 638-72-67
+							li
+								a(href="tel:+380985356226").contacts__tel +38 (098) 535-62-26
+							li
+								p.contacts__info-worktime с 8:00 до 17:00 (по будням)
+						ul.col-sm-6
+							li
+								span.contacts__info-title производство тм "смил"
+							li
+								a(href="tel:+380666387267").contacts__tel +38 (066) 638-72-67
+							li
+								a(href="tel:+380985356226").contacts__tel +38 (098) 535-62-26
+					.row.contacts__info-row
+						ul.col-sm-6
+							li
+								span.contacts__info-title по вопросам сотрудничества
+							li
+								a(href="mailto:list@smil.ua") list@smil.ua
+						ul.col-sm-6
+							li
+								span.contacts__info-title по вопросам рекламы и благотворительности:
+							li
+								a(href="mailto:shevchenko_julia@smil.ua") shevchenko_julia@smil.ua
+					.row.contacts__info-row
+						ul.col-sm-6
+							li
+								span.contacts__info-title адрес фабрики:
+							li
+								p.contacts__address Одесса, Балтская дорога, 5, 65042
+			.contacts__right.col-md-6
+				.contacts__form
+					.contacts__title 
+						p Задать вопрос
+					form.row
+						.form-group.col-sm-6
+							label(for='name') Имя
+							input.form-control(type='text', id='name', name='name')
+						.form-group.col-sm-6
+							label(for='email') Электронная почта
+							input.form-control(type='text', id='email', name='email')
+						.form-group.col-sm-12
+							label(for='addinfo') Ваш вопрос
+							textarea.form-control(id='addinfo')
+						.form-group.col-sm-12
+							button.btn(type='submit') Отправить

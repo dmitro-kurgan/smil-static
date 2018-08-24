@@ -1,0 +1,69 @@
+extends ../templates/base
+
+block variables
+	- var classBody = 'sizing-page';
+	- var classWrapper = 'sizing';
+
+block title
+	title Размеры
+
+block main
+	section.breadcrumb
+		.container
+			ul.clearfix
+				li
+					a(href='./') Назад
+				li
+					a(href='./') Новости
+				li Коллекция «Готовимся к холодам» уже в продаже!
+			.breadcrumb__download
+				a(href="#") Скачать каталог
+					span PDF, 1.56MB
+	.sizing
+		.container
+			.sizing__title
+				p Таблица размеров одежды
+			.sizing__block.row
+				mixin sizingTr(age, height, chest, head)
+					tr
+						td #{age}
+						td #{height}
+						td #{chest}
+						td #{head}
+				mixin sizingBox(title)
+					ul.col-sm-6
+						.sizing__box
+							h5 #{title}
+							table.table
+								thead
+									tr
+										td Возраст
+										td Рост, см
+										td Обхват груди, см
+										td Обхват головы
+								tbody
+									block
+				+sizingBox('Новорожденная группа')
+					+sizingTr('0-1 мес.', '50', '40', '35')
+					+sizingTr('1-2 мес.', '56', '40', '37')
+					+sizingTr('3 мес.', '62', '40', '39')
+				+sizingBox('Ясельная группа')
+					+sizingTr('6 мес.', '68', '44', '41')
+					+sizingTr('9 мес.', '74', '48', '43')
+					+sizingTr('12 мес.', '80', '48', '45')
+					+sizingTr('18 мес.', '86', '52', '47')
+				+sizingBox('Дошкольная группа')
+					+sizingTr('2 года', '92', '52', '49')
+					+sizingTr('3 года', '98', '56', '51')
+					+sizingTr('4 года', '104', '56', '51')
+					+sizingTr('5 лет', '110', '60', '53')
+					+sizingTr('6 лет', '116', '60', '53')
+				+sizingBox('Школьная группа')
+					+sizingTr('7 лет', '122', '64', '53')
+					+sizingTr('8 лет', '128', '64', '54')
+					+sizingTr('9 лет', '134', '68', '54')
+					+sizingTr('10 лет', '140', '68', '55')
+					+sizingTr('11 лет', '146', '72', '55')
+					+sizingTr('12 лет', '152', '76', '55')
+					+sizingTr('13 лет', '158', '80', '56')
+					+sizingTr('14 лет', '164', '84', '56')

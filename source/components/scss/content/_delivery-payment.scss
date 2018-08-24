@@ -1,0 +1,128 @@
+.delivery-payment {
+	padding-bottom: 152px;
+	@media #{$mobile} {
+		padding-bottom: 80px;
+	}
+	&__block {
+		max-width: 1040px;
+		margin-left: auto;
+		padding-top: 29px;
+	}
+	&__left, &__right {
+		float: left;
+	}
+	&__left {
+		max-width: 730px;	
+	}
+	&__right {
+		padding-top: 45px;
+	}
+	&__how-get, &__how-pay { 
+	    .delivery-payment {
+	    	&__title {
+				margin-bottom: 5px;
+				p {
+					font-size: 40px;
+					font-weight: 200;
+					line-height: 48px;
+					@media #{$mobile} {
+						font-size: 20px;
+					}
+				}
+				span {
+					display: block;
+					font-size: 14px;
+					margin-top: 41px;
+					@media #{$mobile} {
+						margin-top: 20px;
+					}
+				}
+		    }
+		}
+		h6 {
+			font-size: 14px;
+			font-weight: 700;
+			margin-bottom: 21px;
+			margin-top: 42px;
+			@media #{$mobile} {
+				margin-top: 21px;
+			}
+		}
+		ul {
+			margin-bottom: 32px;
+		}
+		li {
+			position: relative;
+			padding-left: 23px;
+			counter-increment: item;
+			margin-bottom: 8px;
+			font-size: 14px;
+			line-height: 24px;
+			&:before {
+				position: absolute;
+				left: 0px;
+				content: counter(item);
+				font-size: 14px;
+				font-weight: 700;
+				display: inline-block;
+			}
+		}
+		p {
+			font-size: 14px;
+			line-height: 24px;
+			& + p {
+				margin-top: 12px;
+			}
+			span {
+				font-weight: 700;
+			}
+		}
+	}
+	&__how-pay {
+		.delivery-payment {
+			&__title {
+				margin-top: 88px;
+				@media #{$mobile} {
+					margin-top: 44px;
+				}
+			}
+		}
+	}
+	&__get-card {
+		min-height: 330px;
+		width: 292px;
+		background-color: #fafafa;
+		text-align: center;
+		padding-top: 40px;
+		img {
+			display: inline-block;
+			@include addPrefix(filter, drop-shadow(0px 8px 5px rgba(0,0,0,0.3)));
+		}
+		p {
+			font-size: 20px;
+			line-height: 24px;
+			font-weight: 300;
+			margin: 22px auto auto;
+			max-width: 220px;
+		}
+		a {
+			display: inline-block;
+			font-size: 12px;
+			font-weight: 700;
+			// text-decoration: underline;
+			margin-top: 25px;
+			position: relative;
+			&:after {
+				content: '';
+				position: absolute;
+				bottom: -3px;
+				left: 0px;
+				right: 0px;
+				margin: auto;
+				height: 1px;
+				width: 100%;
+				background-color: #cccccc;
+			}
+		}
+	}
+}

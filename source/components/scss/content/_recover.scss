@@ -1,0 +1,22 @@
+.wrapper {
+	&--recover {
+		.table {
+			margin-bottom: 8px;
+		}
+		.cart {
+			&__right {
+				pointer-events: none;
+				opacity: 0.5;
+				&-form-accept {
+					margin-top: 15px;
+					.btn {
+						margin: 0px 0px 0px auto;
+						@media #{$mobile} {
+							margin: 20px auto auto;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,53 @@
+extends ../templates/base
+
+block variables
+	- var classBody = 'account-page';
+	- var classWrapper = 'account';
+
+block title
+	title Изменение пароля
+
+block main
+	section.breadcrumb
+		.container
+			ul.clearfix
+				li
+					a(href='./') Назад
+				li Изменение пароля
+			.breadcrumb__download
+				a(href="#") Скачать каталог
+					span PDF, 1.56MB
+	.account.personal-data
+		.container
+			.row
+				.col-sm-3
+					.account__nav
+						h2.account__nav-title Личный кабинет
+						ul
+							mixin li(name, link)
+								li
+									a(href= link) #{name}
+							+li('Личные данные', 'account-socials-in.html')
+							li(class="active")
+								a(href="change-pwd.html") Изменение пароля
+							+li('Адреса доставки', 'delivery-address.html')
+							+li('История заказов', 'orders-story')
+							+li('Просмотренные товары', 'viewed-goods.html')
+							li
+								a(href="#", class="account__log-out") Выйти
+				.col-sm-9
+					.account__title
+						h1 Изменение пароля
+					.account__content
+						.account__change-pwd
+							form.account__form
+								.form-group
+									label(for="oldpwd") Старый пароль
+									input.form-control(type="password", name="oldpwd", id="oldpwd", required)
+								.form-group
+									label(for="newpwd") Новый пароль
+									input.form-control.account__new-pwd(type="password", name="newpwd", id="newpwd", required)
+								.form-group
+									label(for="rewrite") Повторите новый пароль
+									input.form-control.account__new-pwd(type="password", name="rewrite", id="rewrite", required)
+								button(type="submit").btn Изменить

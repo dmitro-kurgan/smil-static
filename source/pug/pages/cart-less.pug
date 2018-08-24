@@ -1,0 +1,173 @@
+extends ../templates/base
+
+block variables
+	- var classBody = 'cart-page';
+	- var classWrapper = 'cart';
+
+block title
+	title Корзина
+
+block main
+	.container
+		.free-top
+			p Бесплатная доставка при заказе от 1000 грн.
+			.free-top__close
+		.back-to
+			a(href="#") Продолжить покупки
+		.cart.row
+			.cart__left.col-md-6
+				.cart__title 
+					p Корзина
+					a(href="recover.html").cart__title-delete Удалить все
+				.cart__left-main
+					.cart__left-goods
+						.table
+							.thead
+								.tr
+									.th.th-1
+										p Товар
+									.th.th-2
+										p Описание
+									.th.th-3
+										p Кол-во
+									.th.th-4
+										p Цена
+							.tbody
+								mixin goodsBox(img, color, className)
+									.tr(class= className)
+										.td.td-1
+											.cart__left-img(class= className)
+												img(src=require("../../components/images/panties-" + img + ".png"))
+												.discontinued
+													p товар снят с производства
+										.td.td-2(class= className)
+											.cart__left-description
+												.cart__left-article
+													p Артикул:
+													span 114290
+												.cart__left-name
+													p Ползунки-штанишки
+												.cart__left-color
+													p Цвет:
+													span #{color}
+												.cart__left-size
+													p Размер:
+													span 56
+												.cart__left-edit
+													a(href="#")
+														p Редактировать
+												.cart__left-save
+													a(href="#")
+														p Отложить на потом
+										.td.td-3(class= className)
+											.cart__left-quantity
+												span.plus +
+												input.input(value='1', type='')
+												span.minus -
+										.td.td-4(class= className)
+											.cart__left-price
+												a(href="#").delete
+												if block
+													block
+												else
+													.price.price--now
+														p 1140,00 грн.
+								+goodsBox('1', 'Красный', '')
+										.price.price--now
+											p 140,00 грн.
+					.cart__left-sertificate.clearfix
+						block modals
+							include ../modules/modals-promocode
+						.left
+							a(href="#")#promocode Активировать промо-код или сертификат
+						.center
+							p.total
+								| Итого без учета доставки:
+						.right
+							p.total.total-price
+								| 140,00 грн.
+					.cart__left-free
+						.cart__left-alert
+							p Минимальная сумма заказа 
+								strong 200
+								| грн.
+							.close
+						.cart__left-free-main
+							button.cart__left-add-package Добавить упаковку
+							ul.row
+								li.cart__left-free-box.col-lg-6.col-md-12.col-sm-6
+									.cart__left-free-img
+										img(src=require("../../components/images/pic-2.png"))
+									.cart__left-free-info
+										div
+											.cart__left-free-name
+												p Простой пакет
+											.cart__left-free-price
+												p +12,00 грн.
+										div
+											.cart__left-free-size
+												p Размеры, см.
+											form
+												select.selectpicker.custom-picker(title='21x32', required)
+													option 15x24
+													option 18x28
+													option 21x32
+													option 23x35
+												button.btn.add Добавить
+								li.cart__left-free-box.col-lg-6.col-md-12.col-sm-6
+									.cart__left-free-img
+										img(src=require("../../components/images/pic-2.png"))
+									.cart__left-free-info
+										div
+											.cart__left-free-name
+												p Простой пакет
+											.cart__left-free-price
+												p +12,00 грн.
+										div
+											.cart__left-free-size
+												p Размеры, см.
+											form
+												select.selectpicker.custom-picker(title='21x32', required)
+													option 15x24
+													option 18x28
+													option 21x32
+													option 23x35
+												button.btn.add Добавить
+			.cart__right.col-md-6
+				.cart__recomended
+					.cart__recomended-title
+						span Рекомендуемые товары
+						p предлагаем вам товары для минимального заказа
+					.slick.slick-recomended
+						mixin slick-recomended()
+							div
+								ul.slick-recomended__list
+									block
+						mixin slick-recomended-item(img, name, price)
+							li.slick-recomended__item
+								.slick-recomended__left
+									.slick-recomended__img
+										img(src=require('../../components/images/pic-' + img + '.png'))
+									.slick-recomended__info
+										.slick-recomended__name
+											p= name
+										.slick-recomended__price
+											p= price
+												span грн.
+								.slick-recomended__right
+									ul
+										li.slick-recomended__fav
+											a(href="#")
+										li.slick-recomended__cart
+											a(href="#")
+						+slick-recomended()
+							+slick-recomended-item('3', 'носки', '60,00')
+							+slick-recomended-item('4', 'кепка', '72,00')
+							+slick-recomended-item('5', 'сумка', '99,00')
+						+slick-recomended()
+							+slick-recomended-item('4', 'кепка', '72,00')
+						+slick-recomended()
+							+slick-recomended-item('3', 'носки', '60,00')
+							+slick-recomended-item('5', 'сумка', '99,00')
+					a(href="#").btn Посмотреть в каталоге
+block script

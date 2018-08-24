@@ -1,0 +1,228 @@
+extends ../templates/base-2
+
+block variables
+	- var classBody = 'wholesale-catalog-page';
+	- var classWrapper = 'wholesale-catalog';
+
+block title
+	title Каталог
+
+block main
+	section.breadcrumb
+		.container
+			ul.clearfix
+				li
+					a(href='./') Назад
+				li
+					a(href='./') Девочкам
+				li Ползунки-штанишки
+			.breadcrumb__download
+				a(href="#") Скачать каталог
+					span PDF, 1.56MB
+	.wholesale-catalog
+		.container
+			.wholesale-catalog__title
+				p Ползунки-штанишки
+					i 98
+				span
+					| Философия компании основана на принципе создания
+					span уникального по сочетанию 
+					|  качества и цены продукта, удовлетворяющего запросы современного потребителя.
+			.row.wholesale-catalog__block
+				.col-sm-3.wholesale-catalog__left-block
+					mixin button(type, num, name)
+						li
+							div(class= type + "-block")
+								div(class= type)
+									label(for= type + num)
+										input(type= type, name= type, id= type + num)
+										div(class= type + "-square")
+										p #{name}
+					.wholesale-catalog__left-top
+						h3#quantityChecked Фильтр
+							i 4
+						a(href="#")#removeChecked
+					#accordion.panel-group.wholesale-catalog__accordion
+						mixin panel(className, num, title, value)
+							.panel
+								.panel-heading
+									a(data-toggle='collapse', href='#collapse' + num, aria-expanded= value) #{title}
+								div(class="panel-collapse collapse" + className, id="collapse" + num)
+									.panel-body
+										block
+						+panel(' in', '1', 'Для кого', 'true')
+							ul.wholesale-catalog__filter-list
+								+button('radio', '1', 'Мальчик')
+								+button('radio', '2', 'Девочка')
+						+panel(' in', '2', 'Вид продукции', 'true')
+							ul.wholesale-catalog__filter-list
+								+button('checkbox', '1', 'Аксессуары')
+								+button('checkbox', '2', 'Блуза')
+								+button('checkbox', '3', 'Боди')
+								+button('checkbox', '4', 'Бриджи, Шорты')
+								+button('checkbox', '5', 'Брюки, Штаны')
+								+button('checkbox', '6', 'Головные уборы')
+								+button('checkbox', '7', 'Гольф')
+								+button('checkbox', '8', 'Горловина')
+								+button('checkbox', '9', 'Жакет, Пиджак')
+								+button('checkbox', '10', 'Аксессуары')
+								+button('checkbox', '11', 'Блуза')
+								+button('checkbox', '12', 'Боди')
+								+button('checkbox', '13', 'Бриджи, Шорты')
+								+button('checkbox', '14', 'Брюки, Штаны')
+								+button('checkbox', '15', 'Головные уборы')
+								+button('checkbox', '16', 'Гольф')
+								+button('checkbox', '17', 'Горловина')
+								+button('checkbox', '18', 'Жакет, Пиджак')
+							a(href="#").wholesale-catalog__show-more Показать все
+						+panel('', '3', 'Рост', 'false')
+							ul.wholesale-catalog__filter-list
+								+button('checkbox', '19', '100 см.')
+								+button('checkbox', '20', '105 см.')
+								+button('checkbox', '21', '110 см.')
+								+button('checkbox', '22', '115 см.')
+								+button('checkbox', '23', '120 см.')
+						+panel('', '4', 'Окружность головы', 'false')
+							ul.wholesale-catalog__filter-list
+								+button('checkbox', '24', '48 см.')
+								+button('checkbox', '25', '49 см.')
+								+button('checkbox', '26', '50 см.')
+								+button('checkbox', '27', '51 см.')
+								+button('checkbox', '28', '52 см.')
+								+button('checkbox', '29', '53 см.')
+						+panel(' in', '5', 'Коллеция', 'true')
+							ul.wholesale-catalog__filter-list
+								li
+									.form-group
+										input.form-control(type="text")
+								+button('checkbox', '30', 'Опять двадцать пять')
+								+button('checkbox', '31', 'Я у мамы тракторист')
+								+button('checkbox', '32', 'Вырванные годы')
+								+button('checkbox', '33', 'Сереневый туман')
+								+button('checkbox', '34', 'Крокодил Гена')
+								+button('checkbox', '35', 'Каникулы Бонифация')
+								+button('checkbox', '36', '1/2 землекопа')
+
+				.col-sm-9.wholesale-catalog__right-block
+					.catalog__top
+						ul
+							li(class="catalog__sort menu-item-has-children")
+								a(href="#", id="sort") Сортировать
+								.sub-menu
+									ul
+										li
+											a(href="#") Новинки
+										li
+											a(href="#") Сначала дешевые
+										li
+											a(href="#") Сначала дорогие
+					ul.row.catalog__list
+						mixin catalogItem(className, img)
+							li(class="col-sm-6 col-md-4 catalog__item " + className)
+								.catalog__img
+									img(src=require('../../components/images/item-' + img + '.png'))
+								.wholesale-catalog__info
+									.wholesale-catalog__sizes
+										p Размеры:
+										ul.clearfix
+											mixin li(size)
+												li
+													p #{size}
+											+li('92')
+											+li('98')
+											+li('100')
+											+li('102')
+											+li('104')
+											+li('106')
+									.wholesale-catalog__article
+										p Артикул:
+										span 114290
+									.wholesale-catalog__collection
+										p Коллекция:
+										span Я у мамы тракторист
+									.wholesale-catalog__name
+										p Ползунки-штанишки
+									.wholesale-catalog__buy
+										ul
+											li.wholesale-catalog__price
+												p 549,00 грн.
+											li.catalog__cart.wholesale-catalog__cart
+												a(href="#", data-toggle="modal", data-target="#wholesaleModal")
+						-var catItem = 'catalog__item--';
+						+catalogItem(catItem + 'new', '2')
+						+catalogItem('', '3')
+						+catalogItem('', '4')
+						+catalogItem('', '5')
+						+catalogItem('', '6')
+						+catalogItem('', '7')
+						+catalogItem('', '13')
+						+catalogItem('', '12')
+						+catalogItem(catItem + 'new', '1')
+					.wholesale-catalog__load-more
+						a(href="#") Показать еще
+							span 36
+							| товаров
+block modals
+	#wholesaleModal.modal.wholesale-modal(role='dialog')
+		.modal-dialog.wholesale-modal__dialog
+			.modal-content.wholesale-modal__content
+				.modal-header.wholesale-modal__header
+					ul.nav.nav-tabs.wholesale-modal__tabs
+						li.active
+							a(data-toggle='tab', href='#selectively') Выборочно
+						li
+							a(data-toggle='tab', href='#lot') Лот
+						li
+							a(data-toggle='tab', href='#sizes') Ростовка
+				.pop-up__close(data-dismiss="modal")
+				.modal-body.wholesale-modal__body
+					.tab-content.clearfix
+						mixin table()
+							table.table
+								thead
+									mixin th(className, value)
+										th(class= className)
+											p #{value}
+									tr
+										+th('th-name', 'Все расцветки')
+										+th('th-size', '104')
+										+th('th-size', '110')
+										+th('th-size', '116')
+										+th('th-size', '92')
+										+th('th-size', '98')
+										+th('th-size', 'Все размеры')
+								tbody
+									mixin td(value)
+										td.td-size
+											.wholesale-catalog__quantity
+												span.plus +
+												input.input(value= value, type='')
+												span.minus -
+												block
+									tr
+										td.td-name
+											p Микс 1
+										+td('0')
+											p.limit Осталось 2шт.
+										+td('5')
+										+td('78')
+										+td('14')
+											p.limit Осталось 2шт.
+										+td('9')
+										+td('55')
+									tr
+										td.td-name
+											p Микс 2
+										+td('123')
+										+td('45')
+										+td('95')
+										+td('11')
+										+td('9')
+										+td('7')
+							a(href="#").btn В корзину
+						#selectively.tab-pane.fade.in.active
+							+table()
+						#lot.tab-pane.fade
+							+table()
+						#sizes.tab-pane.fade
+							+table()

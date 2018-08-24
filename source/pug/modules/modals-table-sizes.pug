@@ -1,0 +1,25 @@
+.pop-up.pop-up--table-sizes#popupTableSizes
+	.pop-up__close#closePopupTableSizes
+	.pop-up__block
+		.pop-up--table-sizes__content
+			mixin sizingTr(age, height, chest, head)
+				tr
+					td #{age}
+					td #{height}
+					td #{chest}
+					td #{head}
+			mixin sizingBox(title)
+				h5 #{title}
+				table.table
+					thead
+						tr
+							td Возраст
+							td Рост, см
+							td Обхват груди, см
+							td Обхват головы
+					tbody
+						block
+			+sizingBox('Новорожденная группа')
+				+sizingTr('0-1 мес.', '50', '40', '35')
+				+sizingTr('1-2 мес.', '56', '40', '37')
+				+sizingTr('3 мес.', '62', '40', '39')

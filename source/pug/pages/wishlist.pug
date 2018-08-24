@@ -1,0 +1,91 @@
+extends ../templates/base
+
+block variables
+	- var classBody = 'wishlist-page';
+	- var classWrapper = 'wishlist';
+
+block title
+	title Отложенные товары
+
+block main
+	section.breadcrumb
+		.container
+			ul.clearfix
+				li
+					a(href='./') Малышам
+				li Отложенные товары
+			.breadcrumb__download
+				a(href="#") Скачать каталог
+					span PDF, 1.56MB
+	.wishlist
+		.container
+			.wishlist__title
+				p Отложенные товары
+					i 8
+				span Товары удаляются из этого списка через
+					span 60 дней
+			.wishlist__block
+				.wishlist__top
+					mixin li(name)
+						li
+							a(href="#") #{name}
+					//- ul
+					//- 	+li('Сортировать')
+					ul.catalog__nav-list.clearfix
+						li(class="catalog__sort menu-item-has-children")
+							a(href="#", id="sort") Сортировать
+							.sub-menu
+								ul
+									li
+										a(href="#") Новинки
+									li
+										a(href="#") Сначала дешевые
+									li
+										a(href="#") Сначала дорогие
+				.wishlist__main
+					ul.row.wishlist__list
+						mixin searchResultItem(className, img, days, name, price, classNamePrice, classNamePicker, classNameBtn)
+							li.col-sm-3.col-xs-6.wishlist__item(class= className)
+								.wishlist__remain
+									p
+									| Осталось
+									span #{days}
+									| дней
+								.wishlist__close
+								.catalog__img.wishlist__img
+									img(src=require('../../components/images/item-' + img + '.png'))
+								.catalog__info.wishlist__info
+									.catalog__info-left.wishlist__info-left
+										.catalog__name.wishlist__name
+											p #{name}
+										.catalog__price.wishlist__price(class= classNamePrice)
+											p #{price}
+												span грн.
+										block
+								.wishlist__select-group.clearfix
+									select.selectpicker.custom-picker(title='21x32', required, class= classNamePicker)
+										option 15x24
+										option 18x28
+										option 21x32
+										option 23x35
+									select.selectpicker.custom-picker(title='Черно-белый', class= classNamePicker)
+										option Черно-белый
+										option Красный
+										option Зеленый
+										option Черный
+								a.btn.wishlist__btn(href="#", class= classNameBtn) В корзину
+						- var item = 'wishlist__item--';
+						- var price = 'catalog__price--sale';
+						- var select = 'custom-picker--';
+						- var btn = 'wishlist__btn--';
+						+searchResultItem('', '1', '60', 'ползунки-штанишки', '449,00', '', '')
+						+searchResultItem('', '2', '59', 'ползунки-штанишки', '549,00', '', select + 'disabled', '')
+						+searchResultItem('', '3', '58', 'ползунки-штанишки', '699,00', '', '', btn + 'disabled')
+						+searchResultItem('', '4', '57', 'ползунки-штанишки', '329,00', price)
+							.catalog__price.catalog__price--old
+								p 419,00
+									span грн.
+						+searchResultItem('', '12', '52', 'ползунки-штанишки', '149,00', '', '', btn + 'disabled')
+						+searchResultItem(item + 'disabled', '5', '22', 'ползунки-штанишки', '249,00', '',select + 'disabled', btn + 'disabled')
+						+searchResultItem(item + 'discontinued', '6', '18', 'ползунки-штанишки', '349,00', '', select + 'disabled', btn + 'disabled')
+						+searchResultItem(item + 'has-not', '7', '7', 'ползунки-штанишки', '299,00', '', '', btn + 'disabled')

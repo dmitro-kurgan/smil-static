@@ -1,0 +1,75 @@
+extends ../templates/base
+
+block variables
+	- var classBody = 'collections-page';
+	- var classWrapper = 'collections';
+
+block title
+	title Коллекция
+
+block main
+	section.breadcrumb
+		.container
+			ul.clearfix
+				li
+					a(href='./') Назад
+				li
+					a(href='./') Девочкам
+				li Коллекция
+			.breadcrumb__download
+				a(href="#") Скачать каталог
+					span PDF, 1.56MB
+	.collections
+		.container
+			.collections__block
+				.collections__top.row
+					.collections__top-right.col-xs-12.col-sm-8.col-sm-push-4
+						.collections__title
+							h5 Коллекция
+							p «Готовимся к праздникам»
+							span
+								| Наша новая коллекция «Готовимся к праздникам» готова дарить праздничное настроение не только их обладательницам, но и всем окружающим. Пышные юбки, придадут особую изысканность и очарование, дадут возможность каждой девочке, почувствовать себя принцессой.
+							h6 Пошиты из полотен:
+								ul
+									li ластик
+									li кулир
+									li стрейчевый кулир
+					.collections__top-left.col-xs-12.col-sm-4.col-sm-pull-8
+						.collections__top-img(style='background-image: url(' + require('../../components/images/img-11.jpg')+ ')')
+				.collections__main
+					ul.row.catalog__list
+						mixin searchResultItem(newItem, img, name, price, className)
+							li(class="col-sm-3 col-xs-6 catalog__item" + newItem)
+								.catalog__img
+									img(src=require('../../components/images/item-' + img + '.png'))
+								.catalog__info
+									.catalog__info-left
+										.catalog__name
+											p #{name}
+										.catalog__price(class= className)
+											p #{price}
+												span грн.
+										block
+									.catalog__info-right
+										ul
+											li.catalog__fav
+												a(href="#").like
+											li.catalog__cart
+												a(href="#")
+						-var cartItem = ' catalog__item--new';
+						-var sale = ' catalog__price--sale';
+						+searchResultItem(cartItem, '1', 'ползунки-штанишки', '449,00', '')
+						+searchResultItem('', '2', 'ползунки-штанишки', '549,00', '')
+						+searchResultItem('', '3', 'ползунки-штанишки', '699,00', '')
+						+searchResultItem('', '4', 'ползунки-штанишки', '329,00', sale)
+							.catalog__price.catalog__price--old
+								p 419,00
+									span грн.
+						+searchResultItem('', '12', 'ползунки-штанишки', '149,00', '')
+						+searchResultItem('', '5', 'ползунки-штанишки', '249,00', '')
+						li.col-sm-6.col-xs-12.catalog__item.collections__item
+							.catalog__img.collections__img.collections__img--mod(style="background-image:url(" + require('../../components/images/img-12.jpg') + ")")
+						+searchResultItem('', '8', 'ползунки-штанишки', '149,00', '')
+						+searchResultItem('', '9', 'ползунки-штанишки', '249,00', '')
+						+searchResultItem('', '10', 'ползунки-штанишки', '349,00', '')
+						+searchResultItem('', '11', 'ползунки-штанишки', '299,00', '')

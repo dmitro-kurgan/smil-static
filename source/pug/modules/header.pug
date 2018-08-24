@@ -1,0 +1,132 @@
+- var json = require('../../data/nav.json');
+
+mixin categories(link, title)
+	li
+		a(href= link) #{title}
+		block
+
+mixin dropdown()
+	ul
+		each link, title in json.navCategoriesDropdown1
+			li
+				a(href= link) #{title}
+	ul
+		each link, title in json.navCategoriesDropdown2
+			li
+				a(href= link) #{title}
+	ul
+		each link, title in json.navCategoriesDropdown3
+			li
+				a(href= link) #{title}
+
+header
+	.header
+		.header__top(style='background-image: url(' + require('../../components/images/top-bar.jpg') + ')')
+			p Распродажа прошлых коллекций! Скидка до -50%
+		.header__main
+			.container
+				.header__logo
+					// a(href="./", style='background-image: url(' + require('../../components/images/logo.png') + ')')
+					a(href="./")
+						span.header__logo-img
+					span.circle.circle--small
+					span.circle.circle--mid
+					span.circle.circle--large
+				.header__content
+					.header__content-top
+						.header__hamburger#hamburger
+							span.top
+							span.mid
+							span.bottom
+						ul.header__nav.clearfix
+							each link, title in json.navPages
+								li
+									a(href= link)= title
+						ul.header__tel
+							li
+								a(href="tel:+380666387267") +38 (066) 638-72-67
+								ul.header__tel-sub
+									each link, tel in json.navTel
+										li
+											a(href= "tel:" + link)= tel
+						ul.header__right
+							li.header__search--mob
+								a(href="#")#searchBtn
+							li.header__login.login#headerLogin
+								a(href="login-reg.html")
+									.description Вход и регистрация
+							li.header__fav#headerFav
+								a(href="wishlist.html")
+									.description Список желаний
+									span.header__quantity 1
+							li.header__cart#headerCart
+								a(href="#")
+									.description Корзина
+									span.header__quantity 1
+								.header__cart-dropdown#headerCartDropdown
+									ul.header__cart-dropdown-list
+										mixin cartDropdownBox(img, name, size, price)
+											li.header__cart-dropdown-box
+												.header__cart-dropdown-img
+													img(src=require("../../components/images/cart-item-" + img + ".png"))
+												.header__cart-dropdown-info
+													.header__cart-dropdown-name
+														p #{name}
+													.header__cart-dropdown-size
+														p Размер: 
+															span #{size}
+													.header__cart-dropdown-quantity
+														span.plus +
+														input.input(value='1', type='')
+														span.minus -
+												.header__cart-dropdown-price
+													p.header__cart-dropdown-cost #{price}
+														span грн.
+												a(href="#").header__cart-dropdown-del-item
+										+cartDropdownBox('1', 'Ползунки-штанишки', '18', '1140,00')
+										+cartDropdownBox('2', 'Комбинезон', 's', '649,00')
+										+cartDropdownBox('3', 'Платье', '14', '5049,00')
+									.header__cart-dropdown-total
+										p Общая сумма
+										span 6838,00 грн.
+									a(href="#").btn.header__cart-dropdown-order Оформить заказ
+									.header__cart-dropdown-free
+										p Бесплатная доставка при заказе от 1000 грн.
+					.header__content-bottom
+						ul.header__categories.clearfix
+							+categories('#', 'Малышам')
+							+categories('#', 'Девочкам')
+								.header__dropdown
+									.container
+										.header__dropdown-content
+											.header__dropdown-left
+												ul.nav.nav-tabs
+													li.active
+														a(data-toggle='tab', href='#tab1') Новая коллекция
+													li
+														a(data-toggle='tab', href='#tab2') Look
+													li
+														a(data-toggle='tab', href='#tab3') Распродажа
+											.header__dropdown-center
+												.tab-content.clearfix
+													#tab1.tab-pane.fade.in.active
+														+dropdown()
+													#tab2.tab-pane.fade
+														+dropdown()
+													#tab3.tab-pane.fade
+														+dropdown()
+											.header__dropdown-right
+												.header__dropdown-banner(style="background-image: url(" + require('../../components/images/banner-1.jpg') + ")")
+													h4 «НАРЯДНАЯ ОДЕЖДА»
+													span новая коллекция
+							+categories('#', 'Мальчикам')
+							+categories('#', 'Школьная форма')
+							+categories('#', 'Распродажа')
+						form.header__search#searchInput
+							.form-group
+								input(type='search', placeholder='Поиск').form-control
+								button(type='submit')
+		//- .header__mob-menu#mobMenu
+		//- 	.header__mob-menu-inner
+		//- 		ul.header__mob-menu-list
+		//- 	.header__mob-menu-close#closeMobMenu

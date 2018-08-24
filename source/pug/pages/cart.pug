@@ -1,0 +1,312 @@
+extends ../templates/base
+
+block variables
+	- var classBody = 'cart-page';
+	- var classWrapper = 'cart';
+
+block title
+	title Корзина
+
+block main
+	.container
+		.free-top
+			p Бесплатная доставка при заказе от 1000 грн.
+			.free-top__close
+		.back-to
+			a(href="#") Продолжить покупки
+		.cart.row
+			.cart__left.col-md-6
+				.cart__title 
+					p Корзина
+					a(href="recover.html").cart__title-delete Удалить все
+				.cart__left-main
+					.cart__left-alert
+						p По некоторым позициям кол-во доступных единиц меньше, чем было выбрано.
+						.close
+					.cart__left-goods
+						.table
+							.thead
+								.tr
+									.th.th-1
+										p Товар
+									.th.th-2
+										p Описание
+									.th.th-3
+										p Кол-во
+									.th.th-4
+										p Цена
+							.tbody
+								mixin goodsBox(img, color, className)
+									.tr(class= className)
+										.td.td-1
+											.cart__left-img(class= className)
+												img(src=require("../../components/images/panties-" + img + ".png"))
+												.discontinued
+													p товар снят с производства
+										.td.td-2(class= className)
+											.cart__left-description
+												.cart__left-article
+													p Артикул:
+													span 114290
+												.cart__left-name
+													p Ползунки-штанишки
+												.cart__left-color
+													p Цвет:
+													span #{color}
+												.cart__left-size
+													p Размер:
+													span 56
+												.cart__left-edit
+													a(href="#")
+														p Редактировать
+												.cart__left-save
+													a(href="#")
+														p Отложить на потом
+										.td.td-3(class= className)
+											.cart__left-quantity
+												span.plus +
+												input.input(value='1', type='')
+												span.minus -
+												p.limit Осталось 2шт.
+										.td.td-4(class= className)
+											.cart__left-price
+												a(href="#").delete
+												if block
+													block
+												else
+													.price.price--now
+														p 1140,00 грн.
+								+goodsBox('1', 'Красный', '')
+										// .price.price--increase
+										// 	p 
+										// 		| Стоимость увеличилась с
+										// 		span 510,00
+										// 		| грн.
+										.price.price--old
+											p 1540,00 грн.
+										.price.price--now
+											p 1140,00 грн.
+										.price.price--per-one 
+											p за 1 шт.
+											span 570,00 грн.
+								+goodsBox('2', 'Желтый', '')
+								+goodsBox('3', 'Темно-серый', '')
+								+goodsBox('3', 'Темно-серый', 'discontinued')
+					.cart__left-sertificate.clearfix
+						.left
+							p Подарочный сертификат:
+							span SMILGIFTSERTIFICATE2018
+								.delete
+						.center
+							ul
+								li
+									p Всего за 4 товара:
+								li
+									p Скидка по сертификату:
+								li
+									p Скидка:
+							p.total
+								| Итого без учета доставки:
+						.right
+							ul
+								li
+									p -2170,00 грн.
+								li
+									p -500,00 грн.
+								li
+									p -217,00 грн.
+							p.total.total-price
+								| 1453,00 грн.
+					.cart__left-free
+						.cart__left-free-top
+							p Вам доступна бесплатная доставка до отделения перевозчика
+							.close
+						.cart__left-free-main
+							button.cart__left-add-package Добавить упаковку
+							ul.row
+								li.cart__left-free-box.col-lg-6.col-md-12.col-sm-6
+									.cart__left-free-img
+										img(src=require("../../components/images/pic-2.png"))
+									.cart__left-free-info
+										div
+											.cart__left-free-name
+												p Простой пакет
+											.cart__left-free-price
+												p +12,00 грн.
+										div
+											.cart__left-free-size
+												p Размеры, см.
+											form
+												select.selectpicker.custom-picker(title='21x32', required)
+													option 15x24
+													option 18x28
+													option 21x32
+													option 23x35
+												button.btn.add Добавить
+								li.cart__left-free-box.col-lg-6.col-md-12.col-sm-6
+									.cart__left-free-img
+										img(src=require("../../components/images/pic-2.png"))
+									.cart__left-free-info
+										div
+											.cart__left-free-name
+												p Простой пакет
+											.cart__left-free-price
+												p +12,00 грн.
+										div
+											.cart__left-free-size
+												p Размеры, см.
+											form
+												select.selectpicker.custom-picker(title='21x32', required)
+													option 15x24
+													option 18x28
+													option 21x32
+													option 23x35
+												button.btn.add Добавить
+			.cart__right.col-md-6
+				block modals
+					include ../modules/modals-login
+				.cart__title
+					p Оформление заказа
+					a(href="#").cart__title-account#login Есть учетная запись?
+				form.cart__right-main
+					.cart__right-form-top
+						.form-row.row
+							.form-group.col-sm-6
+								label(for='name') Имя
+								input.form-control(type='text', id='name', name='name')
+							.form-group.col-sm-6
+								label(for='lastname') Фамилия
+								input.form-control(type='text', id='lastname', name='lastname')
+							.form-group.col-sm-6
+								label(for='email') Электронная почта
+								input.form-control(type='text', id='email', name='email')
+							.form-group.col-sm-6
+								label(for='tel') Телефон
+								input.form-control(type='text', id='tel', name='tel')
+							.checkbox-block.form-group.col-sm-12
+								.checkbox
+									label(for='checkbox1')
+										input(type='checkbox', name='checkbox1', id='checkbox1')
+										.checkbox-square
+										| Получатель другое лицо
+					.cart__right-form-get
+						.form-row.row
+							.form-group.col-sm-12
+								h5 Получатель
+							.form-group.col-sm-6
+								label(for='fullname') Имя и фамилия
+								input.form-control(type='text', id='fullname', name='fullname')
+							.form-group.col-sm-6
+								label(for='tel2') Телефон
+								input.form-control(type='tel', id='tel2', name='tel2')
+					.cart__right-form-pay
+						.form-row.row
+							.form-group.col-sm-6
+								h5 Доставка и оплата
+							.form-group.col-sm-6
+								select.selectpicker.custom-picker.select-transporter(title='Работа Новая Почта 99', id='delivery', required)
+									option Работа Новая Почта 99
+									option Выбрать сохраненные
+							.form-group.col-sm-12
+								div.no-select
+									span Страна
+									div
+										p Украина
+										span Доставка только по территории Украины!
+							.form-group.col-sm-6
+								label(for='city') Город
+								select.selectpicker.custom-picker(title='Одесса', id='city', required)
+									option Львов
+									option Харьков
+									option Киев
+									option Днепр
+							.form-group.col-sm-6
+								label(for='delivery') Тип доставки
+								select.selectpicker.custom-picker(title='На склад перевозчика', id='delivery', required)
+									option На склад перевозчика
+									option Курьером
+							.form-group.col-sm-6
+								label(for='transporter') Перевозчик
+								select.selectpicker.custom-picker(title='Новая почта', id='transporter', required)
+									option Новая почта
+									option Укрпочта
+							.form-group.col-sm-6
+								label(for="") Номер склада
+								.dropdown-input
+									a(href="#")#dropdownInput
+										span.dropdown-input__num N:99
+										span.dropdown-input__address До 10 кг. Мини-отделение: площадь Греческая, 1
+									.sub-menu
+										ul
+											li
+												a(href="#")
+													span.dropdown-input__num N:99
+													span.dropdown-input__address До 10 кг. Мини-отделение: площадь Греческая, 1
+											li
+												a(href="#")
+													span.dropdown-input__num N:98
+													span.dropdown-input__address До 15 кг. Мини-отделение: площадь Греческая, 2
+											li
+												a(href="#")
+													span.dropdown-input__num N:97
+													span.dropdown-input__address До 20 кг. Мини-отделение: площадь Греческая, 3
+											li
+												a(href="#")
+													span.dropdown-input__num N:96
+													span.dropdown-input__address До 8 кг. Мини-отделение: площадь Греческая, 4
+							.form-group.col-sm-12
+								label(for='paytype') Способ оплаты
+								select.selectpicker.custom-picker(title='Картой Visa/MasterCard', id='paytype', required)
+									option Картой Visa/MasterCard
+									option Наложенным платежом
+								p.description Для оплаты заказа Вы будете перенаправлены на страницу оплаты LiqPay
+							.form-group.col-sm-12
+								label(for='addinfo') Дополнительная информация
+								textarea(id='addinfo')
+								.checkbox
+									label(for='checkbox2')
+										input(type='checkbox', name='checkbox2', id='checkbox2')
+										.checkbox-square
+										| Сохранить адрес
+										input.form-control.hidden-input(type='text', id='address', name='address', placeholder='Введите название адреса')
+					.cart__right-form-bottom
+						.form-row.row
+							ul.col-sm-6.col-xs-8
+								li
+									p Сумма заказа
+								li
+									p Скидка:
+								li
+									p Доставка:
+								li
+									p Общая сумма к оплате:
+							ul.col-sm-6.col-xs-4
+								li
+									p 1953,00 грн.
+								li
+									p -217,00 грн.
+								li
+									p 35,00 грн.
+								li
+									p 1988,00 грн.
+					.cart__right-form-accept
+						p
+							| Зарегистрировавшись вы можете получить
+							span клубную карту
+						.row
+							.col-sm-6
+								.radio.radio--first
+									label(for='radio1')
+										input(type='radio', name='radioreg', id='radio1')
+										.radio-square
+										| Хочу получать персональные предложения и скидки по эл. почте
+							.col-sm-6
+								.radio.radio--sec
+									label(for='radio2')
+										input(type='radio', name='radioreg', id='radio2')
+										.radio-square
+										| Использовать данные для регистрации
+						button.btn(type='submit') Подтвердить заказ, как гость
+block script
+	script.
+		

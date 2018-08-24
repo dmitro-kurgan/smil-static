@@ -1,0 +1,72 @@
+extends ../templates/base
+
+block variables
+	- var classBody = 'account-page';
+	- var classWrapper = 'account';
+
+block title
+	title Просмотренные товары
+
+block main
+	section.breadcrumb
+		.container
+			ul.clearfix
+				li
+					a(href='./') Назад
+				li Просмотренные товары
+			.breadcrumb__download
+				a(href="#") Скачать каталог
+					span PDF, 1.56MB
+	.account
+		.container
+			.row
+				.col-sm-3
+					.account__nav
+						h2.account__nav-title Личный кабинет
+						ul
+							mixin li(name, link)
+								li
+									a(href= link) #{name}
+							+li('Личные данные', 'account-socials-in.html')
+							+li('Изменение пароля', 'change-pwd.html')
+							+li('Адреса доставки', 'delivery-address.html')
+							+li('История заказов', 'orders-history.html')
+							li(class="active")
+								a(href="viewed-goods.html") Просмотренные товары
+							li
+								a(href="#", class="account__log-out") Выйти
+				.col-sm-9
+					.account__title
+						h1 Просмотренные товары
+					.account__content
+						.account__viewed-goods
+							ul.row.catalog__list
+								mixin searchResultItem(img, name, price, className, newItem)
+									li.col-xs-6.col-lg-4(class="catalog__item" + newItem)
+										.catalog__img
+											img(src=require('../../components/images/item-' + img + '.png'))
+										.catalog__info
+											.catalog__info-left
+												.catalog__name
+													p #{name}
+												.catalog__price(class= className)
+													p #{price}
+														span грн.
+												block
+											.catalog__info-right
+												ul
+													li.catalog__fav
+														a(href="#").like
+													li.catalog__cart
+														a(href="#")
+								- var newItem = ' catalog__item--new';
+								- var price = ' catalog__price--sale';
+								+searchResultItem('13', 'ползунки-штанишки', '149,00', '', '')
+								+searchResultItem('2', 'ползунки-штанишки', '549,00', '', '')
+								+searchResultItem('3', 'ползунки-штанишки', '549,00', '', newItem)
+								+searchResultItem('8', 'ползунки-штанишки', '149,00', '', '')
+								+searchResultItem('1', 'ползунки-штанишки', '449,00', '', '')
+								+searchResultItem('4', 'ползунки-штанишки', '329,00', price, '')
+									.catalog__price.catalog__price--old
+										p 419,00
+											span грн.
